@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 620" width="680" height="620" font-family="sans-serif">
+  <title>ピアニカ発音機構の分析</title>
+  <desc>加圧型の分類確認、空気経路、3方式比較、実験ベンチとしての位置づけ</desc>
+  <defs>
+    <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">ピアニカ発音機構の分析</text>
+  <line x1="40" y1="54" x2="640" y2="54" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="80" font-size="14" font-weight="500" fill="#534AB7">空気経路の同定</text>
+
+  <rect x="60" y="100" width="120" height="40" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5" rx="4"/>
+  <text x="120" y="124" font-size="14" font-weight="500" text-anchor="middle" fill="#0C447C">吹き口</text>
+
+  <rect x="210" y="100" width="120" height="40" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5" rx="4"/>
+  <text x="270" y="116" font-size="14" font-weight="500" text-anchor="middle" fill="#0C447C">空気室</text>
+  <text x="270" y="132" font-size="12" text-anchor="middle" fill="#0C447C">加圧チャンバー</text>
+
+  <rect x="360" y="100" width="120" height="40" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5" rx="4"/>
+  <text x="420" y="116" font-size="14" font-weight="500" text-anchor="middle" fill="#854F0B">バルブ</text>
+  <text x="420" y="132" font-size="12" text-anchor="middle" fill="#854F0B">鍵で開閉</text>
+
+  <rect x="510" y="100" width="120" height="40" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="4"/>
+  <text x="570" y="116" font-size="14" font-weight="500" text-anchor="middle" fill="#712B13">リード</text>
+  <text x="570" y="132" font-size="12" text-anchor="middle" fill="#712B13">プレート下</text>
+
+  <line x1="180" y1="120" x2="205" y2="120" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arr1)"/>
+  <line x1="330" y1="120" x2="355" y2="120" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arr1)"/>
+  <line x1="480" y1="120" x2="505" y2="120" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+  <text x="340" y="165" font-size="12" text-anchor="middle" fill="#5F5E5A">下方への排出 -> 楽器底面から外気</text>
+
+  <line x1="40" y1="185" x2="640" y2="185" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="211" font-size="14" font-weight="500" fill="#0F6E56">分類: 加圧型フリーリード</text>
+
+  <text x="40" y="236" font-size="12" fill="#5F5E5A">駆動源: 奏者の呼気(加圧)</text>
+  <text x="40" y="254" font-size="12" fill="#5F5E5A">気流向き: リード上面(高圧) -> 下面(大気) = 下向き</text>
+  <text x="40" y="272" font-size="12" fill="#5F5E5A">リード位置: プレートの下側</text>
+  <text x="40" y="290" font-size="12" fill="#5F5E5A">楽器族: ハーモニカ、アコーディオン、ハルモニウムと同じ</text>
+
+  <line x1="40" y1="308" x2="640" y2="308" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="334" font-size="14" font-weight="500" fill="#BA7517">3方式の比較(更新)</text>
+
+  <rect x="40" y="350" width="190" height="20" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5" rx="3"/>
+  <text x="135" y="364" font-size="12" text-anchor="middle" fill="#854F0B">加圧型(ピアニカ、ハーモニカ)</text>
+  <rect x="240" y="350" width="190" height="20" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5" rx="3"/>
+  <text x="335" y="364" font-size="12" text-anchor="middle" fill="#854F0B">加圧型(ハルモニウム)</text>
+  <rect x="440" y="350" width="190" height="20" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="535" y="364" font-size="12" text-anchor="middle" fill="#04342C">吸引型(アメリカン・オルガン)</text>
+
+  <text x="135" y="395" font-size="12" text-anchor="middle" fill="#5F5E5A">呼気駆動、小型</text>
+  <text x="135" y="411" font-size="12" text-anchor="middle" fill="#5F5E5A">倍音多、明るい</text>
+  <text x="135" y="427" font-size="12" text-anchor="middle" fill="#5F5E5A">アタック速</text>
+  <text x="135" y="443" font-size="12" text-anchor="middle" fill="#5F5E5A">音量中</text>
+
+  <text x="335" y="395" font-size="12" text-anchor="middle" fill="#5F5E5A">ふいご駆動、大型</text>
+  <text x="335" y="411" font-size="12" text-anchor="middle" fill="#5F5E5A">倍音豊富、華やか</text>
+  <text x="335" y="427" font-size="12" text-anchor="middle" fill="#5F5E5A">アタック速</text>
+  <text x="335" y="443" font-size="12" text-anchor="middle" fill="#5F5E5A">音量大</text>
+
+  <text x="535" y="395" font-size="12" text-anchor="middle" fill="#5F5E5A">真空室駆動、大型</text>
+  <text x="535" y="411" font-size="12" text-anchor="middle" fill="#5F5E5A">倍音少、柔らか</text>
+  <text x="535" y="427" font-size="12" text-anchor="middle" fill="#5F5E5A">アタック緩</text>
+  <text x="535" y="443" font-size="12" text-anchor="middle" fill="#5F5E5A">音量中</text>
+
+  <line x1="40" y1="463" x2="640" y2="463" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="489" font-size="14" font-weight="500" fill="#D85A30">実験ベンチとしてのピアニカ</text>
+
+  <text x="40" y="512" font-size="12" fill="#5F5E5A">検証可能: リード単体動作、共鳴箱効果、ホーン効果、穴Rの効果</text>
+  <text x="40" y="530" font-size="12" fill="#5F5E5A">検証不可: 吸引型の音色、リコーダー的柔らかさ(駆動方式が逆のため)</text>
+  <text x="40" y="548" font-size="12" fill="#5F5E5A">結論: フリーリード原理検証には使える。音色検証には吸引型の別実験が要る</text>
+
+  <line x1="40" y1="566" x2="640" y2="566" stroke="#888780" stroke-width="0.8"/>
+
+  <text x="40" y="590" font-size="12" fill="#888780">ピアニカ = 小型化された加圧型オルガン機構(パレットバルブ付き)</text>
+  <text x="40" y="608" font-size="12" fill="#888780">過去議論の図1(加圧型)と同じ物理、本体が手持ちサイズ</text>
+</svg>

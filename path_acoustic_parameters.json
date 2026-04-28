@@ -1,0 +1,215 @@
+{
+  "A1": {
+    "name": "リード -> 箱内 -> 穴 -> 外部",
+    "power_uw": 168.0,
+    "f_char_hz": 124.3281438907725,
+    "delay_ms": 0.0728862973760933,
+    "phase": "immediate",
+    "q": 5,
+    "category": "A",
+    "damping_ms": 5
+  },
+  "A2": {
+    "name": "箱内空気 -> ABS壁面振動 (音圧駆動)",
+    "power_uw": 8.0,
+    "f_char_hz": 323.0,
+    "delay_ms": 0.07,
+    "phase": "immediate",
+    "q": 33,
+    "category": "A",
+    "damping_ms": 33,
+    "note": "箱内音圧の壁への音響-機械結合 (剛壁近似からの乖離分)"
+  },
+  "A3": {
+    "name": "箱内空気 -> 閉じたバルブ振動",
+    "power_uw": 0.5,
+    "f_char_hz": 50,
+    "delay_ms": 0.07,
+    "phase": "immediate",
+    "q": 3,
+    "category": "A",
+    "damping_ms": 20
+  },
+  "A4": {
+    "name": "箱内 -> パイプ逆流 -> 奏者口腔",
+    "power_uw": 10.0,
+    "f_char_hz": 200,
+    "delay_ms": 0.5,
+    "phase": "delayed",
+    "q": 8,
+    "category": "A",
+    "damping_ms": 15
+  },
+  "A5": {
+    "name": "箱内定在波 -> 隣リード連成",
+    "power_uw": 3.0,
+    "f_char_hz": 535.9375,
+    "delay_ms": 0.1,
+    "phase": "standing_wave",
+    "q": 15,
+    "category": "A",
+    "damping_ms": 8
+  },
+  "B1a": {
+    "name": "リード -> リベット -> リードプレート (固体直接)",
+    "power_uw": 30000.0,
+    "f_char_hz": 440,
+    "delay_ms": 0.001,
+    "phase": "immediate",
+    "q": 1000,
+    "category": "B",
+    "damping_ms": 800
+  },
+  "B1b": {
+    "name": "リード -> スロット隙間空気 -> リードプレート面",
+    "power_uw": 18000.0,
+    "f_char_hz": 880,
+    "delay_ms": 0.05,
+    "phase": "phase_shifted_90deg",
+    "q": 30,
+    "category": "B",
+    "damping_ms": 11
+  },
+  "B2": {
+    "name": "リードプレート -> ネジ -> ABS上面",
+    "power_uw": 15000.0,
+    "f_char_hz": 440,
+    "delay_ms": 0.01,
+    "phase": "immediate",
+    "q": 50,
+    "category": "B",
+    "damping_ms": 36
+  },
+  "B3": {
+    "name": "リードプレート -> パッキン -> ABS上面",
+    "power_uw": 10500.0,
+    "f_char_hz": 440,
+    "delay_ms": 0.05,
+    "phase": "phase_shifted_30deg",
+    "q": 20,
+    "category": "B",
+    "damping_ms": 14
+  },
+  "B4": {
+    "name": "ABS上面 -> 側面 -> 底面 (一体成型)",
+    "power_uw": 25000.0,
+    "f_char_hz": 323,
+    "delay_ms": 0.21166010488516726,
+    "phase": "immediate",
+    "q": 33,
+    "category": "B",
+    "damping_ms": 33
+  },
+  "B5": {
+    "name": "ABS -> ゴムパッキン -> フレーム -> 鍵盤",
+    "power_uw": 200.0,
+    "f_char_hz": 100,
+    "delay_ms": 0.5,
+    "phase": "phase_shifted",
+    "q": 5,
+    "category": "B",
+    "damping_ms": 16
+  },
+  "B6": {
+    "name": "ABS -> ネジ -> 外装カバー",
+    "power_uw": 1500.0,
+    "f_char_hz": 250,
+    "delay_ms": 0.1,
+    "phase": "immediate",
+    "q": 20,
+    "category": "B",
+    "damping_ms": 25
+  },
+  "B7": {
+    "name": "外装カバー -> テーブル/手",
+    "power_uw": 50.0,
+    "f_char_hz": 150,
+    "delay_ms": 0.5,
+    "phase": "damped",
+    "q": 3,
+    "category": "B",
+    "damping_ms": 6
+  },
+  "C1": {
+    "name": "ABS底面/側面振動 -> 外部空気へ直接放射",
+    "power_uw": 15000.0,
+    "f_char_hz": 323,
+    "delay_ms": 0.0,
+    "phase": "immediate",
+    "q": 33,
+    "category": "C",
+    "damping_ms": 33,
+    "note": "壁面振動エネルギー25,000μWの放射効率σ≈0.6での外部放射"
+  },
+  "C2": {
+    "name": "ABS壁 -> 箱内再放射 -> 鍵盤穴",
+    "power_uw": 5000.0,
+    "f_char_hz": 323,
+    "delay_ms": 0.1,
+    "phase": "phase_shifted",
+    "q": 33,
+    "category": "C",
+    "damping_ms": 33,
+    "note": "壁の箱内再放射のうち鍵盤穴経由で外部に漏出する分"
+  },
+  "C3": {
+    "name": "閉じたバルブ振動 -> 外部空気",
+    "power_uw": 0.2,
+    "f_char_hz": 50,
+    "delay_ms": 0.0,
+    "phase": "immediate",
+    "q": 3,
+    "category": "C",
+    "damping_ms": 20
+  },
+  "C4": {
+    "name": "外装カバー振動 -> 外部空気",
+    "power_uw": 800.0,
+    "f_char_hz": 250,
+    "delay_ms": 0.0,
+    "phase": "immediate",
+    "q": 20,
+    "category": "C",
+    "damping_ms": 25
+  },
+  "C5": {
+    "name": "パイプ振動 -> 外部空気",
+    "power_uw": 30.0,
+    "f_char_hz": 200,
+    "delay_ms": 0.0,
+    "phase": "immediate",
+    "q": 10,
+    "category": "C",
+    "damping_ms": 16
+  },
+  "D1": {
+    "name": "箱内圧力変動 -> リード自身 (自励振動本体)",
+    "power_uw": 0.0,
+    "f_char_hz": 440,
+    "delay_ms": 0.07,
+    "phase": "positive_feedback",
+    "q": 100,
+    "category": "D",
+    "damping_ms": 70
+  },
+  "D2": {
+    "name": "ABS壁振動 -> 箱内 -> リード (二次FB)",
+    "power_uw": 0.0,
+    "f_char_hz": 323,
+    "delay_ms": 0.2,
+    "phase": "phase_complex",
+    "q": 33,
+    "category": "D",
+    "damping_ms": 33
+  },
+  "D3": {
+    "name": "リードプレート曲げ -> 隣リード (機械的連成)",
+    "power_uw": 0.0,
+    "f_char_hz": 517.0,
+    "delay_ms": 0.001,
+    "phase": "mechanical_coupling",
+    "q": 80,
+    "category": "D",
+    "damping_ms": 50
+  }
+}

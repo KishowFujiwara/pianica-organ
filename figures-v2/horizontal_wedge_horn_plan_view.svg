@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 880" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .tiny { font-size: 10px; fill: #666; }
+    .eq { font-size: 12px; font-family: serif; font-style: italic; }
+    .cabinet { fill: #f8f0dc; stroke: #5a3a1a; stroke-width: 2.5; }
+    .wedge { fill: #b8d8e8; stroke: #1a4a6a; stroke-width: 1.8; opacity: 0.85; }
+    .creature { fill: #e8dcf0; stroke: #5a1a7a; stroke-width: 1.8; opacity: 0.9; }
+    .soundboard { fill: #dcc8a0; stroke: #6a4a1a; stroke-width: 1.5; }
+    .pianica { fill: #c89b6b; stroke: #5a3a1a; stroke-width: 1.5; }
+    .axis { stroke: #333; stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+    .flow { fill: none; stroke: #2a7; stroke-width: 2; marker-end: url(#ar); }
+    .primary { fill: none; stroke: #5a1a7a; stroke-width: 2; marker-end: url(#arp); }
+    .box { fill: #f8f4ec; stroke: #555; stroke-width: 1; }
+    .dim { stroke: #666; stroke-width: 1; fill: none; marker-end: url(#dA); marker-start: url(#dA); }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2a7"/>
+    </marker>
+    <marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a1a7a"/>
+    </marker>
+    <marker id="dA" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2,2 L8,5 L2,8 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" class="title">水平面内 楔形ホーン -- 平面図 + 側面図 + Creature合流部</text>
+
+  <!-- === (A) 平面図 (上から見た図) === -->
+  <text x="40" y="60" class="sub">(A) 平面図 -- 上から見た図 (水平面内の楔形展開)</text>
+
+  <!-- 筐体 (平面, 幅1500 x 奥行600) -->
+  <g transform="translate(40, 75)">
+    <rect x="0" y="0" width="820" height="310" class="cabinet"/>
+
+    <!-- ピアニカ (左端下部) -->
+    <rect x="10" y="240" width="100" height="60" class="pianica"/>
+    <text x="60" y="275" text-anchor="middle" class="small">ピアニカ</text>
+    <text x="60" y="292" text-anchor="middle" class="tiny">37リード集約</text>
+
+    <!-- 楔形ホーン (水平面内で奥行方向に広がる) -->
+    <!-- 喉 (ピアニカ出口) -> 右端 (最大幅) -->
+    <!-- 上辺: ピアニカ上端(y=240)から右端(y=80)へ -->
+    <!-- 下辺: ピアニカ下端(y=290)から右端(y=275)へ (ほぼ水平) -->
+    <path d="M 110 240 L 680 80 L 680 275 L 110 290 Z" class="wedge"/>
+
+    <!-- 音響軸 (楔形の中心線) -->
+    <line x1="110" y1="265" x2="680" y2="177" class="axis"/>
+
+    <!-- 気流矢印 -->
+    <line x1="150" y1="260" x2="230" y2="240" class="flow"/>
+    <line x1="300" y1="225" x2="400" y2="200" class="flow"/>
+    <line x1="480" y1="180" x2="580" y2="160" class="flow"/>
+
+    <!-- 平面波フロント (徐々に拡大) -->
+    <line x1="200" y1="252" x2="200" y2="290" stroke="#37c" stroke-width="1.5"/>
+    <line x1="350" y1="217" x2="355" y2="282" stroke="#37c" stroke-width="1.5"/>
+    <line x1="500" y1="180" x2="510" y2="273" stroke="#37c" stroke-width="1.5"/>
+
+    <!-- Creature型エンクロージャ (右端) -->
+    <path d="M 680 80
+             C 740 70, 790 95, 805 140
+             C 810 170, 805 210, 790 240
+             C 770 270, 740 280, 700 275
+             L 680 275 Z" class="creature"/>
+    <!-- 最終放射開口 (筐体右側面) -->
+    <line x1="805" y1="140" x2="805" y2="240" stroke="#5a1a7a" stroke-width="3"/>
+    <text x="800" y="100" text-anchor="end" class="tiny" fill="#5a1a7a">Creature型</text>
+    <text x="800" y="115" text-anchor="end" class="tiny" fill="#5a1a7a">(合流整合段)</text>
+
+    <!-- 一次放射 (右方向へ) -->
+    <line x1="810" y1="160" x2="820" y2="155" class="primary"/>
+    <line x1="810" y1="190" x2="820" y2="190" class="primary"/>
+    <line x1="810" y1="220" x2="820" y2="225" class="primary"/>
+
+    <!-- 寸法線 -->
+    <line x1="0" y1="325" x2="820" y2="325" class="dim"/>
+    <text x="410" y="341" text-anchor="middle" class="tiny">筐体幅 1500 mm</text>
+
+    <line x1="-15" y1="0" x2="-15" y2="310" class="dim"/>
+    <text x="-30" y="155" text-anchor="middle" class="tiny" transform="rotate(-90 -30 155)">筐体奥行 600 mm</text>
+
+    <!-- 楔形の寸法 -->
+    <line x1="110" y1="220" x2="680" y2="60" class="dim" stroke="#1a4a6a"/>
+    <text x="400" y="130" class="tiny" fill="#1a4a6a">楔形軸長 L_eff &#8776; 600 mm</text>
+
+    <!-- 楔形開き角 -->
+    <path d="M 130 265 L 130 250 A 30 30 0 0 1 140 253" fill="none" stroke="#c33" stroke-width="1.2"/>
+    <text x="160" y="258" class="tiny" fill="#c33">&#x03B8;_wedge &#8776; 18&#x00B0;</text>
+  </g>
+
+  <!-- === (B) 側面図 (右から見た図 - 最終放射開口側) === -->
+  <text x="40" y="430" class="sub">(B) 側面図 -- 右から見た図 (垂直方向の構造: 響板は上部にCreature型が被さる)</text>
+
+  <g transform="translate(40, 445)">
+    <rect x="0" y="0" width="820" height="260" class="cabinet"/>
+
+    <!-- 下段: 楔形の断面 (この面では一定の高さの矩形に見える) -->
+    <rect x="200" y="140" width="500" height="80" class="wedge"/>
+    <text x="450" y="185" text-anchor="middle" class="small">楔形ホーン (奥行方向に広がる)</text>
+    <text x="450" y="205" text-anchor="middle" class="tiny">高さ h = 200 mm 一定</text>
+
+    <!-- 上段: 響板 + Creature型 -->
+    <rect x="50" y="110" width="720" height="25" class="soundboard"/>
+    <text x="410" y="127" text-anchor="middle" class="tiny">パイン響板 (二次放射 + Creature底板)</text>
+
+    <!-- Creature型 (側面) -->
+    <path d="M 300 110
+             C 280 90, 290 60, 340 45
+             C 400 30, 500 30, 560 45
+             C 610 60, 620 90, 600 110 Z" class="creature"/>
+    <ellipse cx="450" cy="37" rx="25" ry="6" fill="#fff" stroke="#5a1a7a" stroke-width="1.2"/>
+
+    <!-- Creature内部の音響軸 -->
+    <path d="M 320 110 C 350 80, 420 50, 450 45" class="axis" stroke="#5a1a7a"/>
+    <path d="M 580 110 C 550 80, 480 50, 450 45" class="axis" stroke="#5a1a7a"/>
+
+    <!-- ピアニカ (左端) -->
+    <rect x="10" y="170" width="80" height="50" class="pianica"/>
+    <text x="50" y="200" text-anchor="middle" class="tiny">ピアニカ</text>
+
+    <!-- 接続矢印 (ピアニカから楔形へ) -->
+    <line x1="92" y1="195" x2="195" y2="180" class="flow"/>
+
+    <!-- 一次放射 (上方向) -->
+    <line x1="450" y1="37" x2="450" y2="10" class="primary"/>
+    <line x1="430" y1="37" x2="420" y2="10" class="primary"/>
+    <line x1="470" y1="37" x2="480" y2="10" class="primary"/>
+
+    <!-- 寸法 -->
+    <line x1="-15" y1="0" x2="-15" y2="260" class="dim"/>
+    <text x="-30" y="130" text-anchor="middle" class="tiny" transform="rotate(-90 -30 130)">筐体高さ 1200 mm</text>
+
+    <!-- 注記 -->
+    <text x="700" y="165" class="tiny" fill="#1a4a6a">楔形出口は</text>
+    <text x="700" y="178" class="tiny" fill="#1a4a6a">響板を通じて</text>
+    <text x="700" y="191" class="tiny" fill="#1a4a6a">Creature型へ</text>
+  </g>
+
+  <!-- === (C) 物理パラメータと設計結果 === -->
+  <text x="40" y="740" class="sub">(C) 2D Sectoral Horn -- 物理パラメータと設計値</text>
+
+  <rect x="40" y="755" width="400" height="110" rx="6" class="box"/>
+  <text x="55" y="775" class="sub" fill="#1a4a6a">楔形ホーン (2D sectoral horn)</text>
+  <text x="55" y="795" class="eq">S(x) = h &#x00B7; w(x),  w(x) = w&#x2080; + 2x &#x00B7; tan(&#x03B8;/2)</text>
+  <text x="55" y="815" class="label">喉 w&#x2080; = 40 mm, 開口 w_m &#8776; 390 mm</text>
+  <text x="55" y="832" class="label">軸長 L_eff &#8776; 600 mm, 開き角 &#x03B8; &#8776; 18&#x00B0;</text>
+  <text x="55" y="852" class="label" fill="#1a4a6a">カットオフ f_c &#8776; 90 Hz (線形拡大, 指数ではない)</text>
+
+  <rect x="460" y="755" width="400" height="110" rx="6" class="box"/>
+  <text x="475" y="775" class="sub" fill="#5a1a7a">Creature型 (右端合流段)</text>
+  <text x="475" y="795" class="label">楔形出口 (390 mm幅) を受けて整合</text>
+  <text x="475" y="812" class="label">指数ホーンとして最終 inch 分を整形</text>
+  <text x="475" y="829" class="label">この段で dS/dx の滑らかさを保証</text>
+  <text x="475" y="852" class="label" fill="#5a1a7a">&#8594; 2段階ホーン (sectoral + exp) で全帯域整合</text>
+</svg>

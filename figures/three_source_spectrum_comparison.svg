@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 720" width="680" height="720" font-family="sans-serif">
+  <title>リコーダー・フルート・フリーリードのスペクトル比較</title>
+  <desc>3つの発音体の倍音列とノイズ特性を縦に並べて比較</desc>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">発音体3方式のスペクトル・ノイズ・アタック比較</text>
+  <line x1="40" y1="54" x2="640" y2="54" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="82" font-size="14" font-weight="500" fill="#534AB7">リコーダー(エアリード、閉管近似)</text>
+  <text x="40" y="100" font-size="12" fill="#5F5E5A">整数倍音のみ、基音優勢、息ノイズ有</text>
+
+  <line x1="60" y1="200" x2="400" y2="200" stroke="#888780" stroke-width="0.5"/>
+  <line x1="60" y1="120" x2="60" y2="200" stroke="#888780" stroke-width="0.5"/>
+  <text x="56" y="124" font-size="12" text-anchor="end" fill="#5F5E5A">0dB</text>
+  <text x="56" y="200" font-size="12" text-anchor="end" fill="#5F5E5A">-40dB</text>
+
+  <rect x="80" y="122" width="16" height="78" fill="#7F77DD"/>
+  <rect x="120" y="148" width="16" height="52" fill="#7F77DD" opacity="0.7"/>
+  <rect x="160" y="160" width="16" height="40" fill="#7F77DD" opacity="0.5"/>
+  <rect x="200" y="172" width="16" height="28" fill="#7F77DD" opacity="0.4"/>
+  <rect x="240" y="180" width="16" height="20" fill="#7F77DD" opacity="0.3"/>
+  <rect x="280" y="190" width="16" height="10" fill="#7F77DD" opacity="0.25"/>
+
+  <text x="88" y="216" font-size="12" text-anchor="middle" fill="#5F5E5A">f0</text>
+  <text x="128" y="216" font-size="12" text-anchor="middle" fill="#5F5E5A">2f0</text>
+  <text x="168" y="216" font-size="12" text-anchor="middle" fill="#5F5E5A">3f0</text>
+  <text x="208" y="216" font-size="12" text-anchor="middle" fill="#5F5E5A">4f0</text>
+  <text x="248" y="216" font-size="12" text-anchor="middle" fill="#5F5E5A">5f0</text>
+  <text x="288" y="216" font-size="12" text-anchor="middle" fill="#5F5E5A">6f0</text>
+
+  <rect x="320" y="172" width="70" height="28" fill="#7F77DD" opacity="0.15"/>
+  <text x="355" y="190" font-size="12" text-anchor="middle" fill="#3C3489">息ノイズ</text>
+
+  <text x="430" y="140" font-size="12" fill="#5F5E5A">アタック: 20-50ms</text>
+  <text x="430" y="158" font-size="12" fill="#5F5E5A">S/N: -20〜-30dB</text>
+  <text x="430" y="176" font-size="12" fill="#5F5E5A">高次: 急減衰</text>
+  <text x="430" y="194" font-size="12" fill="#5F5E5A">音色: 純音的</text>
+
+  <line x1="40" y1="240" x2="640" y2="240" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="266" font-size="14" font-weight="500" fill="#0F6E56">フルート(エアリード、両端開管)</text>
+  <text x="40" y="284" font-size="12" fill="#5F5E5A">整数倍音、リコーダーよりやや豊富、吹き込みノイズ</text>
+
+  <line x1="60" y1="384" x2="400" y2="384" stroke="#888780" stroke-width="0.5"/>
+  <line x1="60" y1="304" x2="60" y2="384" stroke="#888780" stroke-width="0.5"/>
+  <text x="56" y="308" font-size="12" text-anchor="end" fill="#5F5E5A">0dB</text>
+  <text x="56" y="384" font-size="12" text-anchor="end" fill="#5F5E5A">-40dB</text>
+
+  <rect x="80" y="306" width="16" height="78" fill="#1D9E75"/>
+  <rect x="120" y="322" width="16" height="62" fill="#1D9E75" opacity="0.8"/>
+  <rect x="160" y="336" width="16" height="48" fill="#1D9E75" opacity="0.6"/>
+  <rect x="200" y="352" width="16" height="32" fill="#1D9E75" opacity="0.5"/>
+  <rect x="240" y="362" width="16" height="22" fill="#1D9E75" opacity="0.4"/>
+  <rect x="280" y="372" width="16" height="12" fill="#1D9E75" opacity="0.3"/>
+
+  <text x="88" y="400" font-size="12" text-anchor="middle" fill="#5F5E5A">f0</text>
+  <text x="128" y="400" font-size="12" text-anchor="middle" fill="#5F5E5A">2f0</text>
+  <text x="168" y="400" font-size="12" text-anchor="middle" fill="#5F5E5A">3f0</text>
+  <text x="208" y="400" font-size="12" text-anchor="middle" fill="#5F5E5A">4f0</text>
+  <text x="248" y="400" font-size="12" text-anchor="middle" fill="#5F5E5A">5f0</text>
+  <text x="288" y="400" font-size="12" text-anchor="middle" fill="#5F5E5A">6f0</text>
+
+  <rect x="320" y="356" width="70" height="28" fill="#1D9E75" opacity="0.2"/>
+  <text x="355" y="374" font-size="12" text-anchor="middle" fill="#04342C">吹込ノイズ</text>
+
+  <text x="430" y="324" font-size="12" fill="#5F5E5A">アタック: 30-80ms</text>
+  <text x="430" y="342" font-size="12" fill="#5F5E5A">S/N: -15〜-25dB</text>
+  <text x="430" y="360" font-size="12" fill="#5F5E5A">高次: 漸減</text>
+  <text x="430" y="378" font-size="12" fill="#5F5E5A">音色: 明るく純音</text>
+
+  <line x1="40" y1="424" x2="640" y2="424" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="450" font-size="14" font-weight="500" fill="#D85A30">フリーリード(金属板、オルガン/ハーモニカ)</text>
+  <text x="40" y="468" font-size="12" fill="#5F5E5A">整数倍音(流量変調) + 非整数倍音(梁モード) + 高次残留</text>
+
+  <line x1="60" y1="568" x2="400" y2="568" stroke="#888780" stroke-width="0.5"/>
+  <line x1="60" y1="488" x2="60" y2="568" stroke="#888780" stroke-width="0.5"/>
+  <text x="56" y="492" font-size="12" text-anchor="end" fill="#5F5E5A">0dB</text>
+  <text x="56" y="568" font-size="12" text-anchor="end" fill="#5F5E5A">-40dB</text>
+
+  <rect x="80" y="490" width="16" height="78" fill="#D85A30"/>
+  <rect x="120" y="500" width="16" height="68" fill="#D85A30" opacity="0.9"/>
+  <rect x="160" y="510" width="16" height="58" fill="#D85A30" opacity="0.8"/>
+  <rect x="200" y="522" width="16" height="46" fill="#D85A30" opacity="0.7"/>
+  <rect x="240" y="536" width="16" height="32" fill="#D85A30" opacity="0.6"/>
+  <rect x="280" y="548" width="16" height="20" fill="#D85A30" opacity="0.5"/>
+
+  <rect x="226" y="548" width="10" height="20" fill="#993C1D" opacity="0.9"/>
+  <text x="231" y="548" font-size="12" text-anchor="middle" fill="#993C1D">*</text>
+
+  <text x="88" y="584" font-size="12" text-anchor="middle" fill="#5F5E5A">f0</text>
+  <text x="128" y="584" font-size="12" text-anchor="middle" fill="#5F5E5A">2f0</text>
+  <text x="168" y="584" font-size="12" text-anchor="middle" fill="#5F5E5A">3f0</text>
+  <text x="208" y="584" font-size="12" text-anchor="middle" fill="#5F5E5A">4f0</text>
+  <text x="248" y="584" font-size="12" text-anchor="middle" fill="#5F5E5A">5f0</text>
+  <text x="288" y="584" font-size="12" text-anchor="middle" fill="#5F5E5A">6f0</text>
+
+  <text x="231" y="604" font-size="12" text-anchor="middle" fill="#993C1D">6.27f0</text>
+  <text x="231" y="618" font-size="12" text-anchor="middle" fill="#993C1D">梁2次</text>
+
+  <rect x="320" y="548" width="70" height="20" fill="#D85A30" opacity="0.1"/>
+  <text x="355" y="562" font-size="12" text-anchor="middle" fill="#712B13">小</text>
+
+  <text x="430" y="508" font-size="12" fill="#5F5E5A">アタック: 吸引20-100ms</text>
+  <text x="430" y="526" font-size="12" fill="#5F5E5A">       : 加圧 数ms</text>
+  <text x="430" y="544" font-size="12" fill="#5F5E5A">S/N: -25〜-35dB</text>
+  <text x="430" y="562" font-size="12" fill="#5F5E5A">高次: 18〜20倍音残留</text>
+  <text x="430" y="580" font-size="12" fill="#5F5E5A">音色: 金属的、豊か</text>
+
+  <line x1="40" y1="638" x2="640" y2="638" stroke="#888780" stroke-width="0.8"/>
+
+  <text x="40" y="662" font-size="12" fill="#5F5E5A">* 非整数倍音(6.27f0)がフリーリード特有の金属的色合いの正体</text>
+  <text x="40" y="680" font-size="12" fill="#5F5E5A">エアリードは整数倍音のみで純音寄り、フリーリードは整数+非整数+高次残留で豊か</text>
+  <text x="40" y="698" font-size="12" fill="#5F5E5A">リコーダー志向ならフリーリードを吸引型にして高次・非整数倍音を抑制する方向</text>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .box1 { fill: #fce8d0; stroke: #b25a1a; stroke-width: 1.8; }
+    .box2 { fill: #d8e8c8; stroke: #4a7a1a; stroke-width: 1.8; }
+    .box3 { fill: #c8d8e8; stroke: #1a4a7a; stroke-width: 1.8; }
+    .box4 { fill: #e8d8f0; stroke: #5a1a7a; stroke-width: 1.8; }
+    .box5 { fill: #f0e8c8; stroke: #7a5a1a; stroke-width: 1.8; }
+    .signal { stroke: #222; stroke-width: 1.8; fill: none; marker-end: url(#ar); }
+    .feedback { stroke: #c33; stroke-width: 1.8; fill: none; stroke-dasharray: 5 3; marker-end: url(#ar2); }
+    .radiate { stroke: #37a; stroke-width: 1.5; fill: none; marker-end: url(#ar3); }
+    .head { font-weight: bold; font-size: 13px; }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222"/>
+    </marker>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c33"/>
+    </marker>
+    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#37a"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="28" text-anchor="middle" class="title">ピアニカ・オルガンの3段結合系 -- 発振器・制御器・放射器の分離</text>
+
+  <!-- Stage 0: 加圧源 (足踏みベローズ) -->
+  <rect x="30" y="80" width="130" height="80" rx="8" class="box5"/>
+  <text x="95" y="108" text-anchor="middle" class="head">足踏み</text>
+  <text x="95" y="126" text-anchor="middle" class="head">ベローズ</text>
+  <text x="95" y="148" text-anchor="middle" class="small">圧力源 p0(t)</text>
+
+  <!-- Stage 1: リード (発振器) -->
+  <rect x="200" y="80" width="150" height="140" rx="8" class="box1"/>
+  <text x="275" y="108" text-anchor="middle" class="head">フリーリード</text>
+  <text x="275" y="128" text-anchor="middle" class="small">自己発振 (非線形)</text>
+  <text x="275" y="148" text-anchor="middle" class="small">基本周波数 f0 を決定</text>
+  <text x="275" y="168" text-anchor="middle" class="small">スロット丸め R で</text>
+  <text x="275" y="184" text-anchor="middle" class="small">高調波スペクトルを制御</text>
+  <text x="275" y="208" text-anchor="middle" class="label" fill="#b25a1a">= OSCILLATOR</text>
+
+  <!-- Stage 2: 咽頭 (インピーダンス整合器) -->
+  <rect x="395" y="80" width="150" height="140" rx="8" class="box2"/>
+  <text x="470" y="108" text-anchor="middle" class="head">咽頭</text>
+  <text x="470" y="128" text-anchor="middle" class="small">(リード直後の短管)</text>
+  <text x="470" y="148" text-anchor="middle" class="small">リード機械系 &#8596;</text>
+  <text x="470" y="164" text-anchor="middle" class="small">ベル音響系の</text>
+  <text x="470" y="180" text-anchor="middle" class="small">インピーダンス変換</text>
+  <text x="470" y="208" text-anchor="middle" class="label" fill="#4a7a1a">= MATCHING</text>
+
+  <!-- Stage 3: ベル (指数ホーン = 放射器 + 選択フィルタ) -->
+  <rect x="590" y="80" width="150" height="140" rx="8" class="box3"/>
+  <text x="665" y="108" text-anchor="middle" class="head">指数ベル</text>
+  <text x="665" y="128" text-anchor="middle" class="small">(37個/鍵盤毎)</text>
+  <text x="665" y="148" text-anchor="middle" class="small">f_c 以上で整合放射</text>
+  <text x="665" y="164" text-anchor="middle" class="small">倍音選別フィルタ</text>
+  <text x="665" y="180" text-anchor="middle" class="small">一次放射経路</text>
+  <text x="665" y="208" text-anchor="middle" class="label" fill="#1a4a7a">= RADIATOR</text>
+
+  <!-- Stage 4: パイン響板 (二次放射) -->
+  <rect x="590" y="260" width="150" height="110" rx="8" class="box4"/>
+  <text x="665" y="286" text-anchor="middle" class="head">パイン響板</text>
+  <text x="665" y="306" text-anchor="middle" class="small">二次放射面</text>
+  <text x="665" y="322" text-anchor="middle" class="small">ベル本体振動を拾い</text>
+  <text x="665" y="338" text-anchor="middle" class="small">低域を補完</text>
+  <text x="665" y="360" text-anchor="middle" class="label" fill="#5a1a7a">= SECONDARY</text>
+
+  <!-- 信号フロー矢印 -->
+  <line x1="160" y1="120" x2="200" y2="120" class="signal"/>
+  <text x="180" y="112" text-anchor="middle" class="small">p0</text>
+
+  <line x1="350" y1="140" x2="395" y2="140" class="signal"/>
+  <text x="372" y="132" text-anchor="middle" class="small">u(t), F_r</text>
+
+  <line x1="545" y1="140" x2="590" y2="140" class="signal"/>
+  <text x="567" y="132" text-anchor="middle" class="small">p_throat</text>
+
+  <!-- フィードバック (ホーンからリードへの音響負荷) -->
+  <path d="M 590 180 Q 470 270 350 180" class="feedback"/>
+  <text x="470" y="265" text-anchor="middle" class="small" fill="#c33">音響負荷 Z_load が基本周波数を微調整</text>
+
+  <!-- ベル本体 -> 響板 (機械振動結合) -->
+  <line x1="665" y1="220" x2="665" y2="260" class="signal"/>
+  <text x="680" y="245" class="small">ベル壁振動</text>
+
+  <!-- 放射 -->
+  <line x1="740" y1="130" x2="820" y2="110" class="radiate"/>
+  <line x1="740" y1="150" x2="820" y2="150" class="radiate"/>
+  <line x1="740" y1="170" x2="820" y2="190" class="radiate"/>
+  <text x="830" y="155" class="label" fill="#37a">一次音</text>
+
+  <line x1="740" y1="310" x2="820" y2="290" class="radiate"/>
+  <line x1="740" y1="330" x2="820" y2="330" class="radiate"/>
+  <line x1="740" y1="350" x2="820" y2="370" class="radiate"/>
+  <text x="830" y="335" class="label" fill="#37a">二次音</text>
+
+  <!-- 設計原則パネル -->
+  <rect x="30" y="400" width="840" height="140" rx="6" fill="#f8f4ec" stroke="#444"/>
+  <text x="50" y="425" class="head">設計原則 (V=F/C の適用)</text>
+
+  <text x="50" y="450" class="label">[1] フリーリードはそれ自体が OSCILLATOR。ホーンは OSCILLATOR ではなく CONTROLLER + RADIATOR。</text>
+  <text x="50" y="470" class="label">    &#8594; パイプオルガンの模倣 (エッジトーン発振 + 管共鳴) とは発振機構が根本的に異なる。真似る意味がない。</text>
+  <text x="50" y="490" class="label">[2] 指数ホーンでのみ dS/dx が連続 &#8594; 反射損失なく f_c 以上を整合放射。円筒・円錐では 70-90% が反射で失われる。</text>
+  <text x="50" y="510" class="label">[3] 咽頭 (throat) の断面積と長さが、リード機械系の質量・剛性に対する「音響負荷」を決める &#8594; 発振安定性を左右。</text>
+  <text x="50" y="530" class="label">[4] スロット丸め半径 R は気流遮断の立ち上がり急峻度を制御 &#8594; 整数倍音スペクトルを設計変数として扱える。</text>
+</svg>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="sans-serif">
+<style>
+  .title { font-size: 18px; font-weight: bold; }
+  .lbl { font-size: 11px; }
+  .small { font-size: 9px; fill: #555; }
+  .src { fill: #c89b6b; stroke: #5a3a1a; stroke-width: 1.5; }
+  .a-cat { fill: #cfe5f5; stroke: #28a; stroke-width: 1.2; }
+  .b-cat { fill: #f5d4cf; stroke: #c33; stroke-width: 1.2; }
+  .c-cat { fill: #fae9c9; stroke: #d80; stroke-width: 1.2; }
+  .d-cat { fill: #d8eecd; stroke: #393; stroke-width: 1.2; }
+  .ext { fill: #eee; stroke: #333; stroke-width: 1.5; }
+  .fb { stroke: #393; stroke-width: 1.2; fill: none; stroke-dasharray: 4 3; marker-end: url(#g);}
+  .arrow-thin { stroke: #888; stroke-width: 0.8; fill: none; marker-end: url(#thin);}
+  .arrow-mid { stroke: #555; stroke-width: 1.5; fill: none; marker-end: url(#mid);}
+  .arrow-thick { stroke: #c33; stroke-width: 3; fill: none; marker-end: url(#thick);}
+</style>
+<defs>
+  <marker id="thin" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#888"/>
+  </marker>
+  <marker id="mid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+  </marker>
+  <marker id="thick" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#c33"/>
+  </marker>
+  <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#393"/>
+  </marker>
+</defs>
+
+<text x="500" y="28" text-anchor="middle" class="title">ピアニカP-32D 22経路 パワーフロー有向グラフ</text>
+<text x="500" y="48" text-anchor="middle" class="small">線の太さがパワー量に対応 (細: 微小 / 中: 数百μW / 太: 数千μW以上)</text>
+
+<!-- 音源: リード -->
+<rect x="60" y="320" width="80" height="60" rx="6" class="src"/>
+<text x="100" y="345" text-anchor="middle" class="lbl">リード</text>
+<text x="100" y="360" text-anchor="middle" class="small">440Hz自励振動</text>
+<text x="100" y="373" text-anchor="middle" class="small">~ 48 mW</text>
+
+<!-- 第1分岐: 経路①と経路② -->
+<text x="160" y="290" class="small">経路① 168μW</text>
+<text x="160" y="420" class="small">経路② 48,000μW</text>
+
+<!-- A1: 鍵盤穴 -->
+<rect x="200" y="100" width="60" height="36" class="a-cat"/>
+<text x="230" y="118" text-anchor="middle" class="lbl">A1</text>
+<text x="230" y="131" text-anchor="middle" class="small">穴->外</text>
+<path class="arrow-thin" d="M140 340 Q 170 250 200 130"/>
+
+<!-- A2-A5: 箱内空気経路 -->
+<rect x="200" y="170" width="60" height="36" class="a-cat"/>
+<text x="230" y="188" text-anchor="middle" class="lbl">A2</text>
+<text x="230" y="201" text-anchor="middle" class="small">壁駆動</text>
+<path class="arrow-thin" d="M140 340 Q 175 270 200 195"/>
+
+<rect x="200" y="220" width="60" height="30" class="a-cat"/>
+<text x="230" y="240" text-anchor="middle" class="lbl">A3 A5</text>
+<path class="arrow-thin" d="M140 340 Q 170 290 200 240"/>
+
+<rect x="200" y="265" width="60" height="30" class="a-cat"/>
+<text x="230" y="285" text-anchor="middle" class="lbl">A4</text>
+<path class="arrow-thin" d="M140 340 Q 175 310 200 285"/>
+
+<!-- B1a/B1b: リードプレート駆動 -->
+<rect x="200" y="380" width="60" height="36" class="b-cat"/>
+<text x="230" y="398" text-anchor="middle" class="lbl">B1a</text>
+<text x="230" y="411" text-anchor="middle" class="small">30,000</text>
+<path class="arrow-thick" d="M140 365 Q 170 380 200 395"/>
+
+<rect x="200" y="430" width="60" height="36" class="b-cat"/>
+<text x="230" y="448" text-anchor="middle" class="lbl">B1b</text>
+<text x="230" y="461" text-anchor="middle" class="small">18,000</text>
+<path class="arrow-thick" d="M140 365 Q 170 410 200 445"/>
+
+<!-- リードプレート集約 -->
+<rect x="320" y="395" width="100" height="60" rx="3" class="b-cat"/>
+<text x="370" y="418" text-anchor="middle" class="lbl">リードプレート</text>
+<text x="370" y="432" text-anchor="middle" class="small">(金属, 振動)</text>
+<text x="370" y="446" text-anchor="middle" class="small">~ 48,000μW</text>
+<path class="arrow-thick" d="M260 398 L 320 415"/>
+<path class="arrow-thick" d="M260 448 L 320 440"/>
+
+<!-- B2,B3: ABS上面 -->
+<rect x="480" y="370" width="80" height="36" class="b-cat"/>
+<text x="520" y="388" text-anchor="middle" class="lbl">B2 (ネジ)</text>
+<text x="520" y="401" text-anchor="middle" class="small">15,000μW</text>
+<path class="arrow-thick" d="M420 415 Q 450 405 480 388"/>
+
+<rect x="480" y="420" width="80" height="36" class="b-cat"/>
+<text x="520" y="438" text-anchor="middle" class="lbl">B3 (パッキン)</text>
+<text x="520" y="451" text-anchor="middle" class="small">10,500μW</text>
+<path class="arrow-mid" d="M420 435 Q 450 440 480 438"/>
+
+<!-- B4: ABS全体振動 -->
+<rect x="600" y="395" width="100" height="60" rx="3" class="b-cat"/>
+<text x="650" y="418" text-anchor="middle" class="lbl">B4 ABS壁全体</text>
+<text x="650" y="432" text-anchor="middle" class="small">(底面323Hz主)</text>
+<text x="650" y="446" text-anchor="middle" class="small">25,000μW</text>
+<path class="arrow-thick" d="M560 388 L 600 415"/>
+<path class="arrow-mid" d="M560 438 L 600 440"/>
+
+<!-- B5,B6,B7 -->
+<rect x="600" y="280" width="100" height="30" class="b-cat"/>
+<text x="650" y="300" text-anchor="middle" class="lbl">B6 ABS->外装</text>
+<path class="arrow-mid" d="M650 395 L 650 312"/>
+
+<rect x="730" y="280" width="80" height="30" class="b-cat"/>
+<text x="770" y="300" text-anchor="middle" class="lbl">B5 鍵盤</text>
+<path class="arrow-thin" d="M700 415 Q 740 350 770 312"/>
+
+<rect x="730" y="320" width="80" height="30" class="b-cat"/>
+<text x="770" y="340" text-anchor="middle" class="lbl">B7 テーブル</text>
+<path class="arrow-thin" d="M700 410 Q 720 380 730 340"/>
+
+<!-- C1: 外部放射 (主) -->
+<rect x="780" y="395" width="100" height="60" rx="3" class="c-cat"/>
+<text x="830" y="418" text-anchor="middle" class="lbl">C1 外部放射</text>
+<text x="830" y="432" text-anchor="middle" class="small">(壁面 -> 外気)</text>
+<text x="830" y="446" text-anchor="middle" class="small">15,000μW (主)</text>
+<path class="arrow-thick" d="M700 415 L 780 415"/>
+
+<!-- C2: 箱内再放射 -> 穴 -->
+<rect x="780" y="470" width="100" height="36" class="c-cat"/>
+<text x="830" y="488" text-anchor="middle" class="lbl">C2 穴再放射</text>
+<text x="830" y="501" text-anchor="middle" class="small">5,000μW</text>
+<path class="arrow-mid" d="M700 445 L 780 488"/>
+
+<!-- C4: 外装放射 -->
+<rect x="780" y="270" width="100" height="36" class="c-cat"/>
+<text x="830" y="288" text-anchor="middle" class="lbl">C4 外装放射</text>
+<text x="830" y="301" text-anchor="middle" class="small">800μW</text>
+<path class="arrow-mid" d="M700 295 L 780 295"/>
+
+<!-- 外部 (聴取者) -->
+<rect x="900" y="180" width="80" height="350" rx="6" class="ext"/>
+<text x="940" y="350" text-anchor="middle" class="lbl" font-weight="bold">外部空気</text>
+<text x="940" y="368" text-anchor="middle" class="small">(聴取者)</text>
+<text x="940" y="386" text-anchor="middle" class="small" fill="#c33" font-weight="bold">~21,000μW</text>
+<text x="940" y="404" text-anchor="middle" class="small">合計外部放射</text>
+<path class="arrow-thin" d="M260 118 L 900 200"/>
+<path class="arrow-thin" d="M260 285 L 900 250"/>
+<path class="arrow-mid" d="M880 290 L 900 290"/>
+<path class="arrow-thick" d="M880 415 L 900 415"/>
+<path class="arrow-mid" d="M880 488 L 900 470"/>
+
+<!-- D系列: フィードバックループ -->
+<text x="50" y="530" class="lbl" fill="#393" font-weight="bold">D系列 (FBループ)</text>
+<text x="50" y="548" class="small" fill="#393">D1: 箱内圧 -> リード (自励本体)</text>
+<text x="50" y="563" class="small" fill="#393">D2: ABS壁 -> 箱内 -> リード (二次)</text>
+<text x="50" y="578" class="small" fill="#393">D3: リードプレート曲げ -> 隣リード (機械連成)</text>
+
+<!-- D1 FB矢印 (簡略) -->
+<path class="fb" d="M250 200 Q 150 260 100 320"/>
+<path class="fb" d="M650 460 Q 400 540 130 400"/>
+<path class="fb" d="M380 380 Q 200 420 130 360"/>
+
+<!-- 凡例 -->
+<rect x="50" y="610" width="900" height="80" fill="#fafafa" stroke="#999"/>
+<text x="60" y="630" class="lbl" font-weight="bold">凡例:</text>
+<rect x="100" y="618" width="20" height="12" class="a-cat"/>
+<text x="125" y="628" class="small">A系列(空気)</text>
+<rect x="200" y="618" width="20" height="12" class="b-cat"/>
+<text x="225" y="628" class="small">B系列(固体)</text>
+<rect x="295" y="618" width="20" height="12" class="c-cat"/>
+<text x="320" y="628" class="small">C系列(再放射)</text>
+<rect x="395" y="618" width="20" height="12" class="d-cat"/>
+<text x="420" y="628" class="small">D系列(FB)</text>
+
+<line x1="500" y1="624" x2="540" y2="624" class="arrow-thin"/>
+<text x="550" y="628" class="small">微小(&lt;100μW)</text>
+<line x1="640" y1="624" x2="680" y2="624" class="arrow-mid"/>
+<text x="690" y="628" class="small">中(100-5000μW)</text>
+<line x1="780" y1="624" x2="820" y2="624" class="arrow-thick"/>
+<text x="830" y="628" class="small">大(&gt;5000μW)</text>
+
+<text x="60" y="660" class="small">主要発見: 経路②(B系列)が音源パワーの99.65%を占有, ABS壁面放射(C1) が外部放射の71.4%を占める</text>
+<text x="60" y="678" class="small">A1(鍵盤穴経由楽音)は外部放射全体の0.8%に過ぎない. ピアニカは「ABS箱が振動板として鳴るスピーカー」と等価.</text>
+</svg>

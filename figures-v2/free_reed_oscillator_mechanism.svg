@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .reed { fill: #c89b6b; stroke: #5a3a1a; stroke-width: 1.5; }
+    .frame { fill: #999; stroke: #333; stroke-width: 1.5; }
+    .flow { fill: none; stroke: #2a7; stroke-width: 2; marker-end: url(#arrow); }
+    .flowback { fill: none; stroke: #c33; stroke-width: 2; marker-end: url(#arrow); }
+    .axis { stroke: #333; stroke-width: 1; }
+    .wave { fill: none; stroke: #137; stroke-width: 1.8; }
+    .wave2 { fill: none; stroke: #a62; stroke-width: 1.8; stroke-dasharray: 4 3; }
+    .box { fill: #f5f1e8; stroke: #444; stroke-width: 1; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" class="title">フリーリード自己発振 -- 負性抵抗発振器としての力学</text>
+
+  <!-- 左: リード物理モデル -->
+  <text x="180" y="60" text-anchor="middle" class="sub">(1) 片持ち梁 + スロット流 (断面図)</text>
+
+  <!-- フレーム上側 -->
+  <rect x="50" y="90" width="260" height="30" class="frame"/>
+  <!-- フレーム下側 -->
+  <rect x="50" y="250" width="260" height="30" class="frame"/>
+  <!-- スロット開口 -->
+  <rect x="140" y="120" width="80" height="130" fill="#fff" stroke="#333" stroke-width="1"/>
+  <!-- リード (上向きに少したわんだ状態) -->
+  <path d="M 55 190 Q 180 150 305 190" class="reed" stroke-width="3" fill="none"/>
+  <text x="310" y="195" class="label">リード</text>
+  <text x="180" y="135" text-anchor="middle" class="label">スロット</text>
+
+  <!-- 加圧気流 (下から上) -->
+  <line x1="100" y1="330" x2="100" y2="200" class="flow"/>
+  <line x1="180" y1="330" x2="180" y2="200" class="flow"/>
+  <line x1="260" y1="330" x2="260" y2="200" class="flow"/>
+  <text x="180" y="350" text-anchor="middle" class="label">加圧気流 p0</text>
+
+  <!-- リードが開いた瞬間の漏れ流 -->
+  <line x1="160" y1="170" x2="160" y2="100" class="flow"/>
+  <line x1="200" y1="170" x2="200" y2="100" class="flow"/>
+  <text x="180" y="85" text-anchor="middle" class="small">スロット通過流 u(t)</text>
+
+  <!-- 復元力 -->
+  <line x1="180" y1="155" x2="180" y2="130" stroke="#c33" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="240" y="145" class="small" fill="#c33">復元力 -kx</text>
+
+  <text x="180" y="420" text-anchor="middle" class="label">運動方程式:</text>
+  <text x="180" y="445" text-anchor="middle" class="label" font-family="serif" font-style="italic">m x&#776; + c x&#775; + k x = F_aero(x, x&#775;, p0)</text>
+  <text x="180" y="470" text-anchor="middle" class="small">F_aero が x&#775; と同位相 &#8594; 負性減衰 &#8594; 発振</text>
+
+  <!-- 右: 位相図 -->
+  <text x="620" y="60" text-anchor="middle" class="sub">(2) 流量-変位の位相関係 (自己発振条件)</text>
+
+  <rect x="420" y="80" width="400" height="280" class="box"/>
+
+  <!-- 軸 -->
+  <line x1="440" y1="220" x2="800" y2="220" class="axis" marker-end="url(#arrow)"/>
+  <line x1="620" y1="340" x2="620" y2="90" class="axis" marker-end="url(#arrow)"/>
+  <text x="810" y="225" class="label">t</text>
+  <text x="625" y="85" class="label">振幅</text>
+
+  <!-- 変位 x(t) -->
+  <path d="M 440 220
+           C 470 170, 500 170, 530 220
+           S 590 270, 620 220
+           S 680 170, 710 220
+           S 770 270, 800 220" class="wave"/>
+  <text x="455" y="165" class="label" fill="#137">x(t)</text>
+
+  <!-- 流量 u(t) - 変位に対して約90度進むのが発振条件 (ボルト-ブッキンガム) -->
+  <path d="M 440 195
+           C 470 245, 500 245, 530 195
+           S 590 145, 620 195
+           S 680 245, 710 195
+           S 770 145, 800 195" class="wave2"/>
+  <text x="470" y="260" class="label" fill="#a62">u(t) (x&#775; と同位相)</text>
+
+  <text x="620" y="390" text-anchor="middle" class="label">u(t) &#8733; x&#775;(t) なら F_aero &#x00B7; x&#775; &gt; 0 &#8594; 正の仕事 &#8594; 発振持続</text>
+  <text x="620" y="412" text-anchor="middle" class="small">これが woodwind リード (valve mode) との決定的差異。</text>
+  <text x="620" y="430" text-anchor="middle" class="small">フリーリードは気流が「リードに仕事を」し、ホーンは負荷として共振を選別するだけ。</text>
+  <text x="620" y="448" text-anchor="middle" class="small">発振器本体はリード。ホーンは controller であって oscillator ではない。</text>
+
+  <text x="450" y="490" class="small">参考: Fletcher &amp; Rossing, The Physics of Musical Instruments, Ch.14 (free reeds);</text>
+  <text x="450" y="505" class="small">Cottingham, Acoust. Sci. Tech. 32, 2011 -- asymmetric free reed self-oscillation.</text>
+</svg>

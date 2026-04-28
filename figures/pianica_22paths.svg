@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="900" height="1100">
+<style>
+.title{font:bold 17px sans-serif;fill:#222}
+.sub{font:13px sans-serif;fill:#444}
+.lab{font:11px sans-serif;fill:#333}
+.lab-b{font:bold 12px sans-serif}
+.lab-s{font:10px sans-serif}
+/* 構造 */
+.abs-wall{fill:#d4c8a8;stroke:#8b7d5b;stroke-width:2}
+.reedplate{fill:#bbb;stroke:#666;stroke-width:1.5}
+.reed{fill:#cc3333;stroke:#991111;stroke-width:1}
+.valve{fill:#aaddaa;stroke:#558855;stroke-width:1}
+.pipe{fill:#e0e0e0;stroke:#888;stroke-width:1.5}
+.air-inside{fill:#e8f4fd;opacity:0.5}
+.gasket{fill:#ff9;stroke:#cc9;stroke-width:1}
+/* 経路矢印 */
+.a-path{stroke:#2266cc;stroke-width:2;fill:none;marker-end:url(#arw-a)}
+.b-path{stroke:#cc3333;stroke-width:2;fill:none;marker-end:url(#arw-b)}
+.c-path{stroke:#22aa44;stroke-width:2;fill:none;marker-end:url(#arw-c)}
+.d-path{stroke:#9933cc;stroke-width:2;fill:none;marker-end:url(#arw-d);stroke-dasharray:4,3}
+.new-path{stroke:#ee8800;stroke-width:2.5;fill:none;marker-end:url(#arw-n)}
+</style>
+<defs>
+<marker id="arw-a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6z" fill="#2266cc"/></marker>
+<marker id="arw-b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6z" fill="#cc3333"/></marker>
+<marker id="arw-c" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6z" fill="#22aa44"/></marker>
+<marker id="arw-d" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6z" fill="#9933cc"/></marker>
+<marker id="arw-n" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#ee8800"/></marker>
+</defs>
+<rect width="900" height="1100" fill="#fafafa"/>
+<text x="450.0" y="25" text-anchor="middle" class="title">ピアニカP-32D 全振動伝達経路（22経路）</text>
+<text x="450.0" y="44" text-anchor="middle" class="sub">A:空気伝搬(青) B:固体伝搬(赤) C:再放射(緑) D:フィードバック(紫) NEW:新発見(橙)</text>
+
+<!-- ============ 断面構造図 ============ -->
+<g transform="translate(100, 70)">
+
+  <!-- 外部空間 -->
+  <text x="300" y="0" text-anchor="middle" class="lab-b">外部（聴取側）</text>
+
+  <!-- 鍵盤バルブ群 -->
+  <rect x="130" y="15" width="30" height="12" class="valve"/>
+  <rect x="200" y="15" width="30" height="12" class="valve"/>
+  <rect x="270" y="8" width="30" height="19" class="valve" fill="#88cc88" stroke="#558855"/>
+  <rect x="340" y="15" width="30" height="12" class="valve"/>
+  <rect x="410" y="15" width="30" height="12" class="valve"/>
+  <text x="270" y="5" text-anchor="middle" class="lab-s" fill="#558855">押されたキー</text>
+  <text x="500" y="22" class="lab-s">鍵盤バルブ</text>
+
+  <!-- ABS上面（穴あり） -->
+  <rect x="80" y="30" width="50" height="8" class="abs-wall"/>
+  <rect x="160" y="30" width="40" height="8" class="abs-wall"/>
+  <rect x="230" y="30" width="40" height="8" class="abs-wall"/>
+  <!-- 開いた穴 -->
+  <rect x="270" y="30" width="30" height="8" fill="#e8f4fd" stroke="#5588aa" stroke-width="1"/>
+  <rect x="300" y="30" width="40" height="8" class="abs-wall"/>
+  <rect x="370" y="30" width="40" height="8" class="abs-wall"/>
+  <rect x="440" y="30" width="80" height="8" class="abs-wall"/>
+  <text x="560" y="38" class="lab-s">ABS上面(穴あり)</text>
+
+  <!-- パッキン -->
+  <rect x="80" y="38" width="440" height="3" class="gasket"/>
+  <text x="560" y="42" class="lab-s">プレートパッキン</text>
+
+  <!-- リードプレート -->
+  <rect x="80" y="41" width="440" height="10" class="reedplate"/>
+  <!-- リードスロット+リード -->
+  <rect x="275" y="41" width="20" height="10" fill="#e8f4fd" stroke="#888"/>
+  <rect x="276" y="41" width="18" height="3" class="reed"/>
+  <text x="560" y="50" class="lab-s">リードプレート(金属)</text>
+  <text x="285" y="65" text-anchor="middle" class="lab-b" fill="#cc3333">リード</text>
+
+  <!-- 箱内空気 -->
+  <rect x="80" y="51" width="440" height="140" class="air-inside"/>
+  <text x="300" y="130" text-anchor="middle" class="lab" fill="#5588aa">箱内空気（加圧 1-2 kPa）</text>
+
+  <!-- ABS側面 -->
+  <rect x="70" y="30" width="10" height="170" class="abs-wall"/>
+  <rect x="520" y="30" width="10" height="170" class="abs-wall"/>
+  <text x="50" y="115" text-anchor="end" class="lab-s">ABS</text>
+  <text x="50" y="127" text-anchor="end" class="lab-s">側面</text>
+
+  <!-- ABS底面 -->
+  <rect x="70" y="191" width="470" height="10" class="abs-wall"/>
+  <text x="560" y="200" class="lab-s">ABS底面(密閉)</text>
+
+  <!-- パイプ -->
+  <rect x="30" y="100" width="40" height="15" class="pipe" rx="3"/>
+  <text x="10" y="112" text-anchor="end" class="lab-s">パイプ</text>
+
+  <!-- ネジ(B6) -->
+  <circle cx="90" cy="25" r="4" fill="#888" stroke="#444"/>
+  <circle cx="510" cy="25" r="4" fill="#888" stroke="#444"/>
+  <text x="90" y="15" text-anchor="middle" class="lab-s" fill="#888">ネジ</text>
+
+  <!-- ======== A系列: 空気伝搬経路（青）======== -->
+
+  <!-- A1: リード→箱内空気→穴→外部（主経路） -->
+  <path class="a-path" d="M 285,52 L 285,80 L 285,35 L 285,15" stroke-width="3"/>
+  <text x="245" y="78" class="lab-b" fill="#2266cc">A1</text>
+
+  <!-- A2: 箱内空気→ABS壁面振動 -->
+  <path class="a-path" d="M 200,120 L 85,120"/>
+  <text x="130" y="115" class="lab-s" fill="#2266cc">A2(壁駆動)</text>
+  <path class="a-path" d="M 400,140 L 400,186"/>
+  <text x="410" y="170" class="lab-s" fill="#2266cc">A2(底面)</text>
+
+  <!-- A3: 箱内空気→閉じたバルブ振動 -->
+  <path class="a-path" d="M 200,80 L 200,32"/>
+  <text x="172" y="78" class="lab-s" fill="#2266cc">A3</text>
+
+  <!-- A4: 箱内空気→パイプ→奏者 -->
+  <path class="a-path" d="M 150,108 L 70,108"/>
+  <text x="110" y="103" class="lab-s" fill="#2266cc">A4</text>
+
+  <!-- A5: 箱内空気→隣リード連成 -->
+  <path class="a-path" d="M 295,55 C 330,70 350,70 370,55" stroke-dasharray="3,2"/>
+  <text x="340" y="72" class="lab-s" fill="#2266cc">A5</text>
+
+  <!-- ======== B系列: 固体伝搬経路（赤）======== -->
+
+  <!-- B1a: リード→リベット→リードプレート（固体伝導）-->
+  <path class="new-path" d="M 276,44 L 250,47"/>
+  <text x="230" y="44" text-anchor="end" class="lab-b" fill="#ee8800">B1a</text>
+
+  <!-- B1b: リード→スロット隙間空気→リードプレート -->
+  <path class="new-path" d="M 290,44 Q 300,47 310,47"/>
+  <text x="315" y="44" class="lab-b" fill="#ee8800">B1b</text>
+
+  <!-- B2: リードプレート→ネジ→ABS上面 -->
+  <path class="b-path" d="M 130,41 L 130,38 L 130,35"/>
+  <text x="115" y="35" class="lab-s" fill="#cc3333">B2</text>
+
+  <!-- B3: リードプレート→パッキン→ABS上面 -->
+  <path class="b-path" d="M 180,41 L 180,35"/>
+  <text x="165" y="35" class="lab-s" fill="#cc3333">B3</text>
+
+  <!-- B4: ABS上面→側面→底面（一体成型） -->
+  <path class="b-path" d="M 85,38 L 78,38 L 78,191"/>
+  <text x="60" y="160" class="lab-s" fill="#cc3333">B4</text>
+
+  <!-- B5: ABS→フレームパッキン→フレーム→鍵盤 -->
+  <path class="b-path" d="M 520,60 L 540,60 L 540,20"/>
+  <text x="545" y="45" class="lab-s" fill="#cc3333">B5</text>
+
+  <!-- B6: ABS→ネジ→外装カバー -->
+  <path class="b-path" d="M 510,25 L 530,10"/>
+  <text x="535" y="10" class="lab-s" fill="#cc3333">B6</text>
+
+  <!-- B7: 外装→テーブル/手 -->
+  <path class="b-path" d="M 540,5 L 560,0"/>
+  <text x="565" y="0" class="lab-s" fill="#cc3333">B7</text>
+
+  <!-- ======== C系列: 再放射経路（緑）======== -->
+
+  <!-- C1: ABS底面→外部放射 -->
+  <path class="c-path" d="M 300,201 L 300,220"/>
+  <text x="310" y="218" class="lab-s" fill="#22aa44">C1(底面放射)</text>
+
+  <!-- C2: ABS壁振動→箱内再放射→穴 -->
+  <path class="c-path" d="M 85,150 L 120,150 L 120,80 L 200,80 L 200,35"/>
+  <text x="105" y="148" class="lab-s" fill="#22aa44">C2</text>
+
+  <!-- C3: バルブ振動→外部 -->
+  <path class="c-path" d="M 145,15 L 145,5"/>
+  <text x="150" y="3" class="lab-s" fill="#22aa44">C3</text>
+
+  <!-- C4: 外装カバー→外部 -->
+  <path class="c-path" d="M 550,15 L 570,5"/>
+  <text x="575" y="8" class="lab-s" fill="#22aa44">C4</text>
+
+  <!-- C5: パイプ振動→外部 -->
+  <path class="c-path" d="M 40,100 L 25,90"/>
+  <text x="5" y="88" class="lab-s" fill="#22aa44">C5</text>
+
+  <!-- ======== D系列: フィードバック（紫破線）======== -->
+
+  <!-- D1: 箱内圧力→リード自身 -->
+  <path class="d-path" d="M 260,90 C 250,70 260,60 275,52"/>
+  <text x="230" y="90" class="lab-s" fill="#9933cc">D1</text>
+
+  <!-- D2: 壁振動→箱内→リード -->
+  <path class="d-path" d="M 85,170 L 150,170 L 250,100 L 280,55"/>
+  <text x="130" y="175" class="lab-s" fill="#9933cc">D2</text>
+
+  <!-- D3: リードプレート曲げ→隣リード -->
+  <path class="d-path" d="M 270,47 L 210,47"/>
+  <text x="220" y="57" class="lab-s" fill="#9933cc">D3</text>
+
+</g>
+
+<!-- ============ 経路リスト ============ -->
+<g transform="translate(30, 340)">
+  <rect width="840" height="340" fill="white" stroke="#888" stroke-width="1" rx="4"/>
+
+  <text x="15" y="22" class="lab-b" fill="#2266cc">A: 空気伝搬（5経路）</text>
+  <text x="25" y="40" class="lab-s">A1: リード→箱内空気→開いた穴→外部（楽音の主経路）</text>
+  <text x="25" y="55" class="lab-s">A2: 箱内空気→ABS壁面を振動させる（音圧が壁を叩く）</text>
+  <text x="25" y="70" class="lab-s">A3: 箱内空気→閉じたバルブを振動させる（隣のキー）</text>
+  <text x="25" y="85" class="lab-s">A4: 箱内空気→パイプ→奏者の口に戻る</text>
+  <text x="25" y="100" class="lab-s">A5: 箱内定在波→隣のリードとの空気的連成</text>
+
+  <text x="15" y="125" class="lab-b" fill="#cc3333">B: 固体伝搬（7経路）+ NEW 2経路</text>
+  <text x="25" y="143" class="lab-b" fill="#ee8800">B1a: リード→リベット→リードプレート（固体伝導）★ユーザー指摘</text>
+  <text x="25" y="158" class="lab-b" fill="#ee8800">B1b: リード→スロット隙間空気→リードプレート面（空気経由）★ユーザー指摘</text>
+  <text x="25" y="173" class="lab-s">B2: リードプレート→ネジ→ABS上面</text>
+  <text x="25" y="188" class="lab-s">B3: リードプレート→プレートパッキン→ABS上面</text>
+  <text x="25" y="203" class="lab-s">B4: ABS上面→側面→底面（一体成型で連結）</text>
+  <text x="25" y="218" class="lab-s">B5: ABS箱→フレームパッキン→フレーム→鍵盤・バネ</text>
+  <text x="25" y="233" class="lab-s">B6: ABS箱→ネジ→外装カバー</text>
+  <text x="25" y="248" class="lab-s">B7: 外装カバー→テーブル面/奏者の手</text>
+
+  <text x="430" y="125" class="lab-b" fill="#22aa44">C: 再放射（5経路）</text>
+  <text x="440" y="143" class="lab-s">C1: ABS底面/側面の振動→外部空気へ放射</text>
+  <text x="440" y="158" class="lab-s">C2: ABS壁振動→箱内へ再放射→穴から外部</text>
+  <text x="440" y="173" class="lab-s">C3: 閉じたバルブの振動→外部へ放射</text>
+  <text x="440" y="188" class="lab-s">C4: 外装カバーの振動→外部へ放射</text>
+  <text x="440" y="203" class="lab-s">C5: パイプの振動→外部へ放射</text>
+
+  <text x="430" y="228" class="lab-b" fill="#9933cc">D: フィードバック（3経路）</text>
+  <text x="440" y="246" class="lab-s">D1: 箱内圧力変動→リード自身（自励振動ループ）</text>
+  <text x="440" y="261" class="lab-s">D2: ABS壁振動→箱内→リードに戻る</text>
+  <text x="440" y="276" class="lab-s">D3: リードプレート曲げ→隣リードのクランプ条件変化</text>
+
+  <text x="15" y="318" class="lab-b">合計: A5 + B9(7+2new) + C5 + D3 = 22経路</text>
+</g>
+
+<!-- ============ 指向性と壁面駆動 ============ -->
+<g transform="translate(30, 700)">
+  <rect width="840" height="380" fill="white" stroke="#888" stroke-width="1" rx="4"/>
+  <text x="15" y="22" class="lab-b">フリーリードの指向性と箱内壁面の駆動強度</text>
+
+  <!-- 指向性パターン（左側） -->
+  <g transform="translate(130, 200)">
+    <!-- 座標軸 -->
+    <line x1="0" y1="-130" x2="0" y2="130" stroke="#ddd" stroke-width="1"/>
+    <line x1="-130" y1="0" x2="130" y2="0" stroke="#ddd" stroke-width="1"/>
+
+    <!-- ダイポールパターン cos(θ) -->
+    <path d="M 0,-100 C 40,-95 80,-60 90,0 C 80,60 40,95 0,100" fill="rgba(204,51,51,0.15)" stroke="#cc3333" stroke-width="2"/>
+    <path d="M 0,-100 C -40,-95 -80,-60 -90,0 C -80,60 -40,95 0,100" fill="rgba(204,51,51,0.15)" stroke="#cc3333" stroke-width="2"/>
+    <path d="M 0,100 C 30,95 50,60 55,0 C 50,-60 30,-95 0,-100" fill="rgba(51,51,204,0.1)" stroke="#3333cc" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <path d="M 0,100 C -30,95 -50,60 -55,0 C -50,-60 -30,-95 0,-100" fill="rgba(51,51,204,0.1)" stroke="#3333cc" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+    <!-- リード -->
+    <rect x="-25" y="-3" width="50" height="6" fill="#cc3333" stroke="#991111" stroke-width="1"/>
+    <text x="0" y="3" text-anchor="middle" font-size="8" fill="white" font-weight="bold">REED</text>
+
+    <!-- ラベル -->
+    <text x="0" y="-110" text-anchor="middle" class="lab-b" fill="#cc3333">上（穴方向）最大</text>
+    <text x="0" y="125" text-anchor="middle" class="lab-b" fill="#3333cc">下（底面方向）逆位相</text>
+    <text x="105" y="5" class="lab-s" fill="#888">横: 最小</text>
+    <text x="-105" y="5" text-anchor="end" class="lab-s" fill="#888">横: 最小</text>
+  </g>
+
+  <!-- 箱内での駆動強度（右側） -->
+  <g transform="translate(380, 60)">
+    <text x="200" y="0" text-anchor="middle" class="lab-b">箱内での壁面駆動強度</text>
+
+    <!-- 箱の断面図 -->
+    <rect x="80" y="20" width="240" height="160" fill="none" stroke="#8b7d5b" stroke-width="3"/>
+
+    <!-- リード位置 -->
+    <rect x="185" y="22" width="30" height="5" fill="#cc3333"/>
+    <text x="200" y="18" text-anchor="middle" class="lab-s" fill="#cc3333">リード</text>
+
+    <!-- 駆動強度を色で表示 -->
+    <!-- 上面 (穴方向): 最大 -->
+    <rect x="82" y="21" width="236" height="8" fill="rgba(255,0,0,0.35)"/>
+    <text x="330" y="30" class="lab-b" fill="#cc0000">上面: 最大 ★★★★★</text>
+
+    <!-- 底面: 大（逆位相） -->
+    <rect x="82" y="170" width="236" height="8" fill="rgba(0,0,255,0.25)"/>
+    <text x="330" y="178" class="lab-b" fill="#3333cc">底面: 大(逆位相) ★★★★</text>
+
+    <!-- 側面: 小 -->
+    <rect x="80" y="30" width="8" height="140" fill="rgba(128,128,128,0.15)"/>
+    <rect x="312" y="30" width="8" height="140" fill="rgba(128,128,128,0.15)"/>
+    <text x="60" y="100" text-anchor="end" class="lab-s" fill="#888">側面: 小</text>
+    <text x="330" y="100" class="lab-s" fill="#888">★★</text>
+
+    <!-- 圧力表示 -->
+    <text x="200" y="55" text-anchor="middle" class="lab-s" fill="#cc0000">正圧 +</text>
+    <text x="200" y="155" text-anchor="middle" class="lab-s" fill="#3333cc">負圧 -</text>
+
+    <!-- 定在波も描く -->
+    <text x="200" y="85" text-anchor="middle" class="lab-s" fill="#5588aa">+ 定在波(536Hz等)</text>
+    <text x="200" y="100" text-anchor="middle" class="lab-s" fill="#5588aa">位置依存の増幅</text>
+
+    <!-- 注釈 -->
+    <text x="80" y="210" class="lab-b">テープの効果:</text>
+    <text x="80" y="228" class="lab-s">底面・側面の壁振動を制振 → 壁由来の不快な共鳴が減る</text>
+    <text x="80" y="243" class="lab-s">上面は穴だらけ → テープの効果は小さい</text>
+    <text x="80" y="258" class="lab-s">底面が最大面積かつダイポールの強駆動方向 → テープ効果が最も大きい面</text>
+
+    <text x="80" y="285" class="lab-b" fill="#cc3333">結論: 底面こそがテープ処置の最重要ターゲット</text>
+  </g>
+</g>
+</svg>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 540" width="680" height="540" font-family="sans-serif">
+  <title>Phase A 観測マップ</title>
+  <desc>音源から放射までの物理構造と、Phase Aで扱う変数・境界条件・結合関係</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">Phase A 観測マップ: 音源から放射までの物理構造</text>
+
+  <path d="M 60,370 L 60,260 L 100,260 L 100,370 Z" fill="#F1EFE8" stroke="#888780" stroke-width="0.8"/>
+  <text x="80" y="385" font-size="12" text-anchor="middle" fill="#5F5E5A">真空室</text>
+  <text x="80" y="402" font-size="12" text-anchor="middle" fill="#5F5E5A">(吸気源)</text>
+
+  <rect x="108" y="300" width="28" height="30" fill="#D4A76A" opacity="0.5" stroke="#888780" stroke-width="0.6"/>
+  <text x="122" y="350" font-size="12" text-anchor="middle" fill="#5F5E5A">リード</text>
+
+  <path d="M 138,298 C 200,295 320,270 440,252" stroke="#888780" stroke-width="1" fill="none"/>
+  <path d="M 138,332 C 200,335 320,360 440,378" stroke="#888780" stroke-width="1" fill="none"/>
+  <line x1="138" y1="298" x2="138" y2="332" stroke="#888780" stroke-width="0.8"/>
+  <line x1="440" y1="252" x2="440" y2="378" stroke="#888780" stroke-width="0.8" stroke-dasharray="2 2"/>
+
+  <text x="290" y="270" font-size="12" text-anchor="middle" fill="#5F5E5A">ホーン m, L</text>
+  <text x="138" y="395" font-size="12" text-anchor="middle" fill="#5F5E5A">throat S0</text>
+  <text x="440" y="395" font-size="12" text-anchor="middle" fill="#5F5E5A">mouth S(L)</text>
+
+  <rect x="440" y="180" width="200" height="70" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" rx="4"/>
+  <text x="540" y="205" font-size="14" font-weight="500" text-anchor="middle" fill="#0F6E56">共鳴室 V_cav</text>
+  <text x="540" y="225" font-size="12" text-anchor="middle" fill="#0F6E56">C_ac = V/(rho0·c^2)</text>
+  <text x="540" y="242" font-size="12" text-anchor="middle" fill="#0F6E56">断熱コンプライアンス</text>
+
+  <rect x="440" y="150" width="200" height="14" fill="#D4A76A" opacity="0.6" stroke="#8B6914" stroke-width="0.6"/>
+  <text x="540" y="130" font-size="14" font-weight="500" text-anchor="middle" fill="#8B6914">松天板 h=6〜9mm</text>
+  <text x="540" y="112" font-size="12" text-anchor="middle" fill="#8B6914">Kirchhoff-Love板</text>
+
+  <line x1="440" y1="150" x2="432" y2="142" stroke="#5F5E5A" stroke-width="0.6"/>
+  <line x1="440" y1="164" x2="432" y2="172" stroke="#5F5E5A" stroke-width="0.6"/>
+  <line x1="640" y1="150" x2="648" y2="142" stroke="#5F5E5A" stroke-width="0.6"/>
+  <line x1="640" y1="164" x2="648" y2="172" stroke="#5F5E5A" stroke-width="0.6"/>
+  <text x="420" y="160" font-size="12" text-anchor="end" fill="#5F5E5A">支持</text>
+  <text x="660" y="160" font-size="12" text-anchor="start" fill="#5F5E5A">支持</text>
+
+  <path d="M 480,150 L 480,80" stroke="#D85A30" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 540,150 L 540,70" stroke="#D85A30" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 600,150 L 600,80" stroke="#D85A30" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <text x="540" y="60" font-size="12" text-anchor="middle" fill="#D85A30">外気へ放射</text>
+
+  <line x1="440" y1="215" x2="470" y2="185" stroke="#0F6E56" stroke-width="0.8" stroke-dasharray="3 3"/>
+  <text x="462" y="178" font-size="12" text-anchor="end" fill="#0F6E56">p_cav</text>
+
+  <line x1="40" y1="440" x2="640" y2="440" stroke="#888780" stroke-width="0.4" stroke-dasharray="3 3"/>
+
+  <text x="40" y="464" font-size="14" font-weight="500" fill="#2C2C2A">Phase Aで決める変数</text>
+  <text x="40" y="482" font-size="12" fill="#5F5E5A">- 天板厚 h (6〜9mm帯で最適)</text>
+  <text x="40" y="498" font-size="12" fill="#5F5E5A">- 共鳴室容積 V_cav (音域別)</text>
+  <text x="40" y="514" font-size="12" fill="#5F5E5A">- mouth面積 S(L) の下限</text>
+
+  <text x="360" y="464" font-size="14" font-weight="500" fill="#2C2C2A">確定している入力</text>
+  <text x="360" y="482" font-size="12" fill="#5F5E5A">- 松物性 E, rho, nu, Q^-1</text>
+  <text x="360" y="498" font-size="12" fill="#5F5E5A">- 天板寸法 600×400mm</text>
+  <text x="360" y="514" font-size="12" fill="#5F5E5A">- ホーン m, L (本セッションAまで)</text>
+</svg>

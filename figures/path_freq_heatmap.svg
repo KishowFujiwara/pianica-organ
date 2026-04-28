@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="sans-serif">
+<style>
+  .title { font-size: 16px; font-weight: bold; }
+  .lbl { font-size: 11px; }
+  .small { font-size: 9px; }
+  .grid { stroke: #999; stroke-width: 0.5; fill: none; }
+</style>
+<text x="450" y="25" text-anchor="middle" class="title">22経路 周波数応答 vs パワー寄与 ヒートマップ</text>
+
+<!-- 軸 -->
+<text x="50" y="50" class="small">経路ID</text>
+<text x="450" y="50" text-anchor="middle" class="small">特性周波数 (Hz)</text>
+<line x1="185" y1="60" x2="185" y2="540" stroke="#ddd" stroke-width="0.5"/>
+<text x="185" y="555" text-anchor="middle" class="small">50</text>
+<line x1="301" y1="60" x2="301" y2="540" stroke="#ddd" stroke-width="0.5"/>
+<text x="301" y="555" text-anchor="middle" class="small">100</text>
+<line x1="416" y1="60" x2="416" y2="540" stroke="#ddd" stroke-width="0.5"/>
+<text x="416" y="555" text-anchor="middle" class="small">200</text>
+<line x1="532" y1="60" x2="532" y2="540" stroke="#ddd" stroke-width="0.5"/>
+<text x="532" y="555" text-anchor="middle" class="small">400</text>
+<line x1="647" y1="60" x2="647" y2="540" stroke="#ddd" stroke-width="0.5"/>
+<text x="647" y="555" text-anchor="middle" class="small">800</text>
+<line x1="763" y1="60" x2="763" y2="540" stroke="#ddd" stroke-width="0.5"/>
+<text x="763" y="555" text-anchor="middle" class="small">1600</text>
+<text x="55" y="74" class="lbl">A1</text>
+<line x1="300" y1="74" x2="367" y2="74" stroke="#28a" stroke-width="1.5" opacity="0.4"/>
+<circle cx="337" cy="74" r="6.5" fill="#28a" opacity="0.7"/>
+<text x="337" y="78" text-anchor="middle" class="small" fill="white" font-weight="bold">168</text>
+<text x="55" y="96" class="lbl">A2</text>
+<line x1="491" y1="96" x2="501" y2="96" stroke="#28a" stroke-width="1.5" opacity="0.4"/>
+<circle cx="496" cy="96" r="3.0" fill="#28a" opacity="0.7"/>
+<text x="496" y="100" text-anchor="middle" class="small" fill="white" font-weight="bold">8</text>
+<text x="55" y="118" class="lbl">A3</text>
+<line x1="118" y1="118" x2="233" y2="118" stroke="#28a" stroke-width="1.5" opacity="0.4"/>
+<circle cx="185" cy="118" r="3.0" fill="#28a" opacity="0.7"/>
+<text x="55" y="140" class="lbl">A4</text>
+<line x1="394" y1="140" x2="436" y2="140" stroke="#28a" stroke-width="1.5" opacity="0.4"/>
+<circle cx="416" cy="140" r="3.0" fill="#28a" opacity="0.7"/>
+<text x="416" y="144" text-anchor="middle" class="small" fill="white" font-weight="bold">10</text>
+<text x="55" y="162" class="lbl">A5</text>
+<line x1="569" y1="162" x2="591" y2="162" stroke="#28a" stroke-width="1.5" opacity="0.4"/>
+<circle cx="581" cy="162" r="3.0" fill="#28a" opacity="0.7"/>
+<text x="581" y="166" text-anchor="middle" class="small" fill="white" font-weight="bold">3</text>
+<text x="55" y="184" class="lbl">B1a</text>
+<line x1="547" y1="184" x2="548" y2="184" stroke="#c33" stroke-width="1.5" opacity="0.4"/>
+<circle cx="548" cy="184" r="20.0" fill="#c33" opacity="0.7"/>
+<text x="548" y="188" text-anchor="middle" class="small" fill="white" font-weight="bold">30000</text>
+<text x="55" y="206" class="lbl">B1b</text>
+<line x1="658" y1="206" x2="669" y2="206" stroke="#c33" stroke-width="1.5" opacity="0.4"/>
+<circle cx="663" cy="206" r="20.0" fill="#c33" opacity="0.7"/>
+<text x="663" y="210" text-anchor="middle" class="small" fill="white" font-weight="bold">18000</text>
+<text x="55" y="228" class="lbl">B2</text>
+<line x1="544" y1="228" x2="551" y2="228" stroke="#c33" stroke-width="1.5" opacity="0.4"/>
+<circle cx="548" cy="228" r="20.0" fill="#c33" opacity="0.7"/>
+<text x="548" y="232" text-anchor="middle" class="small" fill="white" font-weight="bold">15000</text>
+<text x="55" y="250" class="lbl">B3</text>
+<line x1="539" y1="250" x2="556" y2="250" stroke="#c33" stroke-width="1.5" opacity="0.4"/>
+<circle cx="548" cy="250" r="20.0" fill="#c33" opacity="0.7"/>
+<text x="548" y="254" text-anchor="middle" class="small" fill="white" font-weight="bold">10500</text>
+<text x="55" y="272" class="lbl">B4</text>
+<line x1="491" y1="272" x2="501" y2="272" stroke="#c33" stroke-width="1.5" opacity="0.4"/>
+<circle cx="496" cy="272" r="20.0" fill="#c33" opacity="0.7"/>
+<text x="496" y="276" text-anchor="middle" class="small" fill="white" font-weight="bold">25000</text>
+<text x="55" y="294" class="lbl">B5</text>
+<line x1="263" y1="294" x2="331" y2="294" stroke="#c33" stroke-width="1.5" opacity="0.4"/>
+<circle cx="301" cy="294" r="7.1" fill="#c33" opacity="0.7"/>
+<text x="301" y="298" text-anchor="middle" class="small" fill="white" font-weight="bold">200</text>
+<text x="55" y="316" class="lbl">B6</text>
+<line x1="445" y1="316" x2="462" y2="316" stroke="#c33" stroke-width="1.5" opacity="0.4"/>
+<circle cx="453" cy="316" r="19.4" fill="#c33" opacity="0.7"/>
+<text x="453" y="320" text-anchor="middle" class="small" fill="white" font-weight="bold">1500</text>
+<text x="55" y="338" class="lbl">B7</text>
+<line x1="301" y1="338" x2="416" y2="338" stroke="#c33" stroke-width="1.5" opacity="0.4"/>
+<circle cx="368" cy="338" r="3.5" fill="#c33" opacity="0.7"/>
+<text x="368" y="342" text-anchor="middle" class="small" fill="white" font-weight="bold">50</text>
+<text x="55" y="360" class="lbl">C1</text>
+<line x1="491" y1="360" x2="501" y2="360" stroke="#d80" stroke-width="1.5" opacity="0.4"/>
+<circle cx="496" cy="360" r="20.0" fill="#d80" opacity="0.7"/>
+<text x="496" y="364" text-anchor="middle" class="small" fill="white" font-weight="bold">15000</text>
+<text x="55" y="382" class="lbl">C2</text>
+<line x1="491" y1="382" x2="501" y2="382" stroke="#d80" stroke-width="1.5" opacity="0.4"/>
+<circle cx="496" cy="382" r="20.0" fill="#d80" opacity="0.7"/>
+<text x="496" y="386" text-anchor="middle" class="small" fill="white" font-weight="bold">5000</text>
+<text x="55" y="404" class="lbl">C3</text>
+<line x1="118" y1="404" x2="233" y2="404" stroke="#d80" stroke-width="1.5" opacity="0.4"/>
+<circle cx="185" cy="404" r="3.0" fill="#d80" opacity="0.7"/>
+<text x="55" y="426" class="lbl">C4</text>
+<line x1="445" y1="426" x2="462" y2="426" stroke="#d80" stroke-width="1.5" opacity="0.4"/>
+<circle cx="453" cy="426" r="14.1" fill="#d80" opacity="0.7"/>
+<text x="453" y="430" text-anchor="middle" class="small" fill="white" font-weight="bold">800</text>
+<text x="55" y="448" class="lbl">C5</text>
+<line x1="399" y1="448" x2="432" y2="448" stroke="#d80" stroke-width="1.5" opacity="0.4"/>
+<circle cx="416" cy="448" r="3.0" fill="#d80" opacity="0.7"/>
+<text x="416" y="452" text-anchor="middle" class="small" fill="white" font-weight="bold">30</text>
+<text x="55" y="470" class="lbl">D1</text>
+<rect x="536" y="464" width="24" height="12" fill="#393" opacity="0.3" stroke="#393" stroke-dasharray="2 2"/>
+<text x="548" y="473" text-anchor="middle" class="small" fill="#393">FB</text>
+<text x="55" y="492" class="lbl">D2</text>
+<rect x="484" y="486" width="24" height="12" fill="#393" opacity="0.3" stroke="#393" stroke-dasharray="2 2"/>
+<text x="496" y="495" text-anchor="middle" class="small" fill="#393">FB</text>
+<text x="55" y="514" class="lbl">D3</text>
+<rect x="563" y="508" width="24" height="12" fill="#393" opacity="0.3" stroke="#393" stroke-dasharray="2 2"/>
+<text x="575" y="517" text-anchor="middle" class="small" fill="#393">FB</text>
+
+<text x="50" y="585" class="small">円のサイズ: パワー寄与 (μWの平方根) / 線の長さ: 帯域 (中心周波数 ± f/Q)</text>
+<text x="50" y="600" class="small">色: A=空気(青) B=固体(赤) C=再放射(橙) D=フィードバック(緑)</text>
+</svg>

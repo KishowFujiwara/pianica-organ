@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 720" width="680" height="720" font-family="sans-serif">
+  <title>ピアニカ+37本のラッパ小型パイプオルガン化</title>
+  <desc>音域別サイズのラッパ37本を共鳴管として使う設計</desc>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">ピアニカ改造: 37本のラッパで小型パイプオルガン化</text>
+  <line x1="40" y1="54" x2="640" y2="54" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="80" font-size="14" font-weight="500" fill="#534AB7">音域別サイズのラッパ配分</text>
+
+  <rect x="40" y="100" width="180" height="110" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="4"/>
+  <text x="130" y="124" font-size="14" font-weight="500" text-anchor="middle" fill="#3C3489">大ラッパ(12本)</text>
+  <text x="130" y="142" font-size="12" text-anchor="middle" fill="#3C3489">F3〜B3</text>
+  <text x="130" y="158" font-size="12" text-anchor="middle" fill="#3C3489">全長 約30 cm</text>
+  <text x="130" y="174" font-size="12" text-anchor="middle" fill="#3C3489">管長 60〜97 cm</text>
+  <text x="130" y="190" font-size="12" text-anchor="middle" fill="#3C3489">175〜247 Hz</text>
+
+  <rect x="240" y="100" width="180" height="110" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="4"/>
+  <text x="330" y="124" font-size="14" font-weight="500" text-anchor="middle" fill="#3C3489">中ラッパ(12本)</text>
+  <text x="330" y="142" font-size="12" text-anchor="middle" fill="#3C3489">C4〜B4</text>
+  <text x="330" y="158" font-size="12" text-anchor="middle" fill="#3C3489">全長 約20 cm</text>
+  <text x="330" y="174" font-size="12" text-anchor="middle" fill="#3C3489">管長 32〜65 cm</text>
+  <text x="330" y="190" font-size="12" text-anchor="middle" fill="#3C3489">262〜494 Hz</text>
+
+  <rect x="440" y="100" width="180" height="110" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="4"/>
+  <text x="530" y="124" font-size="14" font-weight="500" text-anchor="middle" fill="#3C3489">小ラッパ(13本)</text>
+  <text x="530" y="142" font-size="12" text-anchor="middle" fill="#3C3489">C5〜F6</text>
+  <text x="530" y="158" font-size="12" text-anchor="middle" fill="#3C3489">全長 約10〜15 cm</text>
+  <text x="530" y="174" font-size="12" text-anchor="middle" fill="#3C3489">管長 12〜32 cm</text>
+  <text x="530" y="190" font-size="12" text-anchor="middle" fill="#3C3489">523〜1397 Hz</text>
+
+  <line x1="40" y1="230" x2="640" y2="230" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="256" font-size="14" font-weight="500" fill="#BA7517">接続構造</text>
+
+  <rect x="80" y="280" width="520" height="60" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8" rx="4"/>
+  <text x="340" y="304" font-size="14" font-weight="500" text-anchor="middle" fill="#0C447C">ピアニカ本体(空気室 + 37リード)</text>
+  <text x="340" y="322" font-size="12" text-anchor="middle" fill="#0C447C">底板を外してリードプレート下面を露出</text>
+
+  <line x1="120" y1="340" x2="120" y2="370" stroke="#534AB7" stroke-width="0.8"/>
+  <line x1="180" y1="340" x2="180" y2="390" stroke="#534AB7" stroke-width="0.8"/>
+  <line x1="240" y1="340" x2="240" y2="410" stroke="#534AB7" stroke-width="0.8"/>
+  <line x1="300" y1="340" x2="300" y2="430" stroke="#534AB7" stroke-width="0.8"/>
+  <line x1="360" y1="340" x2="360" y2="450" stroke="#534AB7" stroke-width="0.8"/>
+  <line x1="420" y1="340" x2="420" y2="470" stroke="#534AB7" stroke-width="0.8"/>
+  <line x1="480" y1="340" x2="480" y2="490" stroke="#534AB7" stroke-width="0.8"/>
+  <line x1="540" y1="340" x2="540" y2="510" stroke="#534AB7" stroke-width="0.8"/>
+
+  <circle cx="540" cy="510" r="18" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+  <circle cx="480" cy="490" r="16" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+  <circle cx="420" cy="470" r="14" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+  <circle cx="360" cy="450" r="12" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+  <circle cx="300" cy="430" r="10" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+  <circle cx="240" cy="410" r="9" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+  <circle cx="180" cy="390" r="8" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+  <circle cx="120" cy="370" r="7" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+
+  <text x="340" y="550" font-size="12" text-anchor="middle" fill="#5F5E5A">37本のラッパが音域順に並ぶ(大 -> 小)</text>
+
+  <line x1="40" y1="580" x2="640" y2="580" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="606" font-size="14" font-weight="500" fill="#D85A30">段階的試作プラン</text>
+
+  <rect x="40" y="622" width="190" height="72" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="4"/>
+  <text x="135" y="644" font-size="14" font-weight="500" text-anchor="middle" fill="#4A1B0C">Phase 1</text>
+  <text x="135" y="662" font-size="12" text-anchor="middle" fill="#4A1B0C">F4の1鍵に中ラッパ1本</text>
+  <text x="135" y="678" font-size="12" text-anchor="middle" fill="#4A1B0C">音量・音色測定</text>
+
+  <rect x="245" y="622" width="190" height="72" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="4"/>
+  <text x="340" y="644" font-size="14" font-weight="500" text-anchor="middle" fill="#4A1B0C">Phase 2</text>
+  <text x="340" y="662" font-size="12" text-anchor="middle" fill="#4A1B0C">1オクターブ12鍵</text>
+  <text x="340" y="678" font-size="12" text-anchor="middle" fill="#4A1B0C">管長微調整</text>
+
+  <rect x="450" y="622" width="190" height="72" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="4"/>
+  <text x="545" y="644" font-size="14" font-weight="500" text-anchor="middle" fill="#4A1B0C">Phase 3</text>
+  <text x="545" y="662" font-size="12" text-anchor="middle" fill="#4A1B0C">37鍵本格実装</text>
+  <text x="545" y="678" font-size="12" text-anchor="middle" fill="#4A1B0C">小型パイプオルガン完成</text>
+</svg>

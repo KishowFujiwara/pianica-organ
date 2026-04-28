@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 580" width="680" height="580" font-family="sans-serif">
+  <title>リコーダー志向: 加圧型 vs 吸引型</title>
+  <desc>倍音スペクトル、アタック応答、総合判定の3項目で両方式を比較</desc>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">リコーダー志向の音 -> 吸引型が適切</text>
+  <line x1="40" y1="54" x2="640" y2="54" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="80" font-size="14" font-weight="500" fill="#534AB7">倍音スペクトル比較</text>
+
+  <text x="120" y="110" font-size="12" text-anchor="middle" fill="#5F5E5A">リコーダー(目標)</text>
+  <rect x="80" y="180" width="20" height="70" fill="#7F77DD"/>
+  <rect x="105" y="220" width="20" height="30" fill="#7F77DD" opacity="0.6"/>
+  <rect x="130" y="235" width="20" height="15" fill="#7F77DD" opacity="0.4"/>
+  <rect x="155" y="242" width="20" height="8" fill="#7F77DD" opacity="0.3"/>
+  <line x1="75" y1="250" x2="185" y2="250" stroke="#888780" stroke-width="0.5"/>
+  <text x="120" y="268" font-size="12" text-anchor="middle" fill="#5F5E5A">1 2 3 4</text>
+
+  <text x="340" y="110" font-size="12" text-anchor="middle" fill="#5F5E5A">吸引型リード</text>
+  <rect x="300" y="180" width="20" height="70" fill="#1D9E75"/>
+  <rect x="325" y="215" width="20" height="35" fill="#1D9E75" opacity="0.7"/>
+  <rect x="350" y="230" width="20" height="20" fill="#1D9E75" opacity="0.5"/>
+  <rect x="375" y="238" width="20" height="12" fill="#1D9E75" opacity="0.3"/>
+  <line x1="295" y1="250" x2="405" y2="250" stroke="#888780" stroke-width="0.5"/>
+  <text x="340" y="268" font-size="12" text-anchor="middle" fill="#5F5E5A">1 2 3 4</text>
+
+  <text x="560" y="110" font-size="12" text-anchor="middle" fill="#5F5E5A">加圧型リード</text>
+  <rect x="520" y="180" width="20" height="70" fill="#D85A30"/>
+  <rect x="545" y="190" width="20" height="60" fill="#D85A30" opacity="0.8"/>
+  <rect x="570" y="200" width="20" height="50" fill="#D85A30" opacity="0.7"/>
+  <rect x="595" y="210" width="20" height="40" fill="#D85A30" opacity="0.6"/>
+  <line x1="515" y1="250" x2="625" y2="250" stroke="#888780" stroke-width="0.5"/>
+  <text x="560" y="268" font-size="12" text-anchor="middle" fill="#5F5E5A">1 2 3 4</text>
+
+  <text x="340" y="290" font-size="12" text-anchor="middle" fill="#5F5E5A">吸引型は倍音構造がリコーダーに近い。加圧型は高次まで豊富</text>
+
+  <line x1="40" y1="308" x2="640" y2="308" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="334" font-size="14" font-weight="500" fill="#BA7517">アタック応答比較</text>
+
+  <line x1="80" y1="420" x2="300" y2="420" stroke="#888780" stroke-width="0.5"/>
+  <line x1="80" y1="360" x2="80" y2="420" stroke="#888780" stroke-width="0.5"/>
+  <path d="M 80,420 Q 110,370 180,360 L 300,360" stroke="#1D9E75" stroke-width="2" fill="none"/>
+  <text x="190" y="395" font-size="12" text-anchor="middle" fill="#0F6E56">吸引型: 20-50ms</text>
+  <text x="190" y="435" font-size="12" text-anchor="middle" fill="#5F5E5A">リコーダー的</text>
+
+  <line x1="380" y1="420" x2="600" y2="420" stroke="#888780" stroke-width="0.5"/>
+  <line x1="380" y1="360" x2="380" y2="420" stroke="#888780" stroke-width="0.5"/>
+  <path d="M 380,420 L 385,360 L 600,360" stroke="#D85A30" stroke-width="2" fill="none"/>
+  <text x="490" y="395" font-size="12" text-anchor="middle" fill="#993C1D">加圧型: 数ms</text>
+  <text x="490" y="435" font-size="12" text-anchor="middle" fill="#5F5E5A">アクセント的</text>
+
+  <line x1="40" y1="450" x2="640" y2="450" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="476" font-size="14" font-weight="500" fill="#0F6E56">結論</text>
+
+  <rect x="40" y="490" width="600" height="76" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" rx="4"/>
+  <text x="340" y="514" font-size="14" font-weight="500" text-anchor="middle" fill="#04342C">吸引型(アメリカン・オルガン方式)が適切</text>
+  <text x="340" y="534" font-size="12" text-anchor="middle" fill="#04342C">純音寄りスペクトル + 緩やかなアタック + 歴史的にorgan-like/mellow と評価</text>
+  <text x="340" y="554" font-size="12" text-anchor="middle" fill="#04342C">共鳴箱は低Q広帯域、mouth大、松天板厚めで高域軽く落とす設計</text>
+</svg>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 620" width="680" height="620" font-family="sans-serif">
+  <title>ピアニカへのホーン追加設計</title>
+  <desc>横方向ホーン案、寸法、段階的試作</desc>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">ピアニカ + ホーンの設計</text>
+  <line x1="40" y1="54" x2="640" y2="54" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="80" font-size="14" font-weight="500" fill="#0F6E56">推奨案: 横方向ホーン(L字接続)</text>
+
+  <rect x="80" y="120" width="180" height="80" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8" rx="4"/>
+  <text x="170" y="148" font-size="14" font-weight="500" text-anchor="middle" fill="#0C447C">ピアニカ本体</text>
+  <text x="170" y="168" font-size="12" text-anchor="middle" fill="#0C447C">空気室 + リード</text>
+  <text x="170" y="186" font-size="12" text-anchor="middle" fill="#0C447C">37鍵 F3-F6</text>
+
+  <path d="M 260,150 L 280,130 L 300,130 L 300,190 L 280,190 L 260,170 Z" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="280" y="213" font-size="12" text-anchor="middle" fill="#412402">L字ダクト</text>
+
+  <path d="M 300,130 L 600,100 L 600,220 L 300,190 Z" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="450" y="164" font-size="12" text-anchor="middle" fill="#712B13">指数カーブホーン</text>
+  <text x="315" y="210" font-size="12" text-anchor="start" fill="#712B13">S0 = 25cm^2</text>
+  <text x="580" y="240" font-size="12" text-anchor="end" fill="#712B13">S(L) = 100cm^2</text>
+
+  <path d="M 610,95 L 640,85" stroke="#A32D2D" stroke-width="1.5"/>
+  <path d="M 610,225 L 640,235" stroke="#A32D2D" stroke-width="1.5"/>
+  <text x="660" y="165" font-size="12" text-anchor="middle" fill="#A32D2D">放射</text>
+
+  <line x1="300" y1="260" x2="600" y2="260" stroke="#888780" stroke-width="0.5"/>
+  <line x1="300" y1="255" x2="300" y2="265" stroke="#888780" stroke-width="0.5"/>
+  <line x1="600" y1="255" x2="600" y2="265" stroke="#888780" stroke-width="0.5"/>
+  <text x="450" y="280" font-size="12" text-anchor="middle" fill="#5F5E5A">L = 200mm(F3基準)</text>
+
+  <line x1="40" y1="300" x2="640" y2="300" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="326" font-size="14" font-weight="500" fill="#534AB7">ホーン寸法仕様(F3基準)</text>
+
+  <rect x="40" y="344" width="300" height="24" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="3"/>
+  <text x="190" y="360" font-size="12" text-anchor="middle" fill="#3C3489">カットオフ fc = 123 Hz</text>
+
+  <rect x="340" y="344" width="300" height="24" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="3"/>
+  <text x="490" y="360" font-size="12" text-anchor="middle" fill="#3C3489">広がり率 m = 4.57/m</text>
+
+  <rect x="40" y="374" width="300" height="24" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="3"/>
+  <text x="190" y="390" font-size="12" text-anchor="middle" fill="#3C3489">スロート 5×5 cm</text>
+
+  <rect x="340" y="374" width="300" height="24" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="3"/>
+  <text x="490" y="390" font-size="12" text-anchor="middle" fill="#3C3489">マウス 10×10 cm</text>
+
+  <rect x="40" y="404" width="300" height="24" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="3"/>
+  <text x="190" y="420" font-size="12" text-anchor="middle" fill="#3C3489">全長 200mm</text>
+
+  <rect x="340" y="404" width="300" height="24" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5" rx="3"/>
+  <text x="490" y="420" font-size="12" text-anchor="middle" fill="#3C3489">材質 ラワン合板 9mm</text>
+
+  <line x1="40" y1="450" x2="640" y2="450" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="476" font-size="14" font-weight="500" fill="#D85A30">段階的試作</text>
+
+  <rect x="40" y="494" width="190" height="76" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="4"/>
+  <text x="135" y="516" font-size="14" font-weight="500" text-anchor="middle" fill="#4A1B0C">段階1: 段ボール</text>
+  <text x="135" y="534" font-size="12" text-anchor="middle" fill="#4A1B0C">1日で試作</text>
+  <text x="135" y="550" font-size="12" text-anchor="middle" fill="#4A1B0C">ガムテープ接続</text>
+  <text x="135" y="566" font-size="12" text-anchor="middle" fill="#4A1B0C">効果の有無確認</text>
+
+  <rect x="245" y="494" width="190" height="76" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="4"/>
+  <text x="340" y="516" font-size="14" font-weight="500" text-anchor="middle" fill="#4A1B0C">段階2: 木製プロト</text>
+  <text x="340" y="534" font-size="12" text-anchor="middle" fill="#4A1B0C">1週間</text>
+  <text x="340" y="550" font-size="12" text-anchor="middle" fill="#4A1B0C">ラワン合板9mm</text>
+  <text x="340" y="566" font-size="12" text-anchor="middle" fill="#4A1B0C">革ガスケット接続</text>
+
+  <rect x="450" y="494" width="190" height="76" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="4"/>
+  <text x="545" y="516" font-size="14" font-weight="500" text-anchor="middle" fill="#4A1B0C">段階3: 本格版</text>
+  <text x="545" y="534" font-size="12" text-anchor="middle" fill="#4A1B0C">1ヶ月</text>
+  <text x="545" y="550" font-size="12" text-anchor="middle" fill="#4A1B0C">ラワン+松の2層</text>
+  <text x="545" y="566" font-size="12" text-anchor="middle" fill="#4A1B0C">仕上げ・塗装</text>
+
+  <text x="40" y="598" font-size="12" fill="#888780">注: ピアニカは加圧型のため、リコーダー的音色ではなく「ピアニカ + 共鳴」の独自音色</text>
+</svg>

@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 980" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .tiny { font-size: 10px; fill: #666; }
+    .eq { font-size: 12px; font-family: serif; font-style: italic; }
+    .cabinet { fill: #f8f0dc; stroke: #5a3a1a; stroke-width: 2.5; }
+    .wedge1 { fill: #b8d8e8; stroke: #1a4a6a; stroke-width: 1.5; opacity: 0.85; }
+    .wedge2 { fill: #c8e0d8; stroke: #1a6a4a; stroke-width: 1.5; opacity: 0.85; }
+    .uturn { fill: #d8e0c8; stroke: #4a6a1a; stroke-width: 1.5; opacity: 0.9; }
+    .creature { fill: #e8dcf0; stroke: #5a1a7a; stroke-width: 1.8; opacity: 0.9; }
+    .soundboard { fill: #dcc8a0; stroke: #6a4a1a; stroke-width: 1.5; }
+    .pianica { fill: #c89b6b; stroke: #5a3a1a; stroke-width: 1.5; }
+    .reeds { fill: #8a5a3a; stroke: #3a1a0a; stroke-width: 0.8; }
+    .axis { stroke: #333; stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+    .flow { fill: none; stroke: #c85a1a; stroke-width: 2.5; marker-end: url(#arF); }
+    .vertflow { fill: none; stroke: #c85a1a; stroke-width: 2.5; stroke-dasharray: 4 3; marker-end: url(#arF); }
+    .primary { fill: none; stroke: #5a1a7a; stroke-width: 2; marker-end: url(#arp); }
+    .box { fill: #f8f4ec; stroke: #555; stroke-width: 1; }
+    .good { fill: #ecf4ec; stroke: #2a7; stroke-width: 1.2; }
+    .dim { stroke: #666; stroke-width: 1; fill: none; marker-end: url(#dA); marker-start: url(#dA); }
+  </style>
+  <defs>
+    <marker id="arF" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c85a1a"/>
+    </marker>
+    <marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a1a7a"/>
+    </marker>
+    <marker id="dA" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2,2 L8,5 L2,8 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" class="title">統合構造図 -- S字2回折り返し楔形 + 上階 Creature型</text>
+  <text x="450" y="48" text-anchor="middle" class="small">ユーザーのスケッチを物理的に詳細化 (下段平面図 + 上段平面図 + 側面図)</text>
+
+  <!-- === (A) 下段 平面図 (楔形ホーンのS字折り返し) === -->
+  <text x="40" y="80" class="sub">(A) 下段 平面図 -- 楔形ホーン (水平面内 S字2回折り返し)</text>
+
+  <g transform="translate(40, 95)">
+    <rect x="0" y="0" width="820" height="300" class="cabinet"/>
+
+    <!-- ピアニカ (左端下部) -->
+    <rect x="10" y="245" width="100" height="50" class="pianica"/>
+    <text x="60" y="275" text-anchor="middle" class="tiny">ピアニカ</text>
+    <rect x="100" y="252" width="12" height="35" class="reeds"/>
+    <line x1="102" y1="254" x2="102" y2="285" stroke="#3a1a0a" stroke-width="0.5"/>
+    <line x1="105" y1="254" x2="105" y2="285" stroke="#3a1a0a" stroke-width="0.5"/>
+    <line x1="108" y1="254" x2="108" y2="285" stroke="#3a1a0a" stroke-width="0.5"/>
+
+    <!-- 往路 楔形1 (左下から右へ、徐々に広がる) -->
+    <!-- 喉(112,270) -> 出口(680, 220-295) -->
+    <path d="M 112 265 L 680 220 L 680 295 L 112 275 Z" class="wedge1"/>
+    <text x="400" y="260" class="small" fill="#1a4a6a">往路1 楔形 (L1)</text>
+
+    <!-- 右端U字 (下部U字ターン) -->
+    <path d="M 680 220 C 740 215, 775 175, 770 140 C 765 105, 730 85, 680 90 L 680 155
+             C 710 150, 725 125, 725 110 C 725 95, 710 90, 695 95 L 695 145
+             C 710 140, 715 125, 715 115 Z" class="uturn"/>
+    <!-- 簡略化されたU字 -->
+    <path d="M 680 220 C 720 215, 755 180, 760 140 C 760 100, 720 85, 680 100 L 680 90 C 740 85, 790 120, 790 155 C 790 195, 740 225, 680 225 Z" class="uturn"/>
+    <text x="760" y="130" class="tiny" fill="#4a6a1a">U字 #1</text>
+    <text x="760" y="145" class="tiny" fill="#4a6a1a">(右端)</text>
+
+    <!-- 復路 楔形2 (右から左へ、さらに広がる) -->
+    <!-- 入口(680,100) -> 出口(120, 30-155) -->
+    <path d="M 680 100 L 120 30 L 120 160 L 680 160 Z" class="wedge2"/>
+    <text x="390" y="100" class="small" fill="#1a6a4a">復路2 楔形 (L2)</text>
+
+    <!-- 左端U字 (上部へ折り返し) -->
+    <path d="M 120 30 C 70 25, 40 55, 40 95 C 40 135, 70 155, 120 160 L 120 100 C 95 95, 90 80, 90 70 C 90 55, 100 50, 120 55 Z" class="uturn"/>
+    <text x="65" y="100" class="tiny" fill="#4a6a1a">U字 #2</text>
+    <text x="65" y="115" class="tiny" fill="#4a6a1a">(左端)</text>
+
+    <!-- 音響軸 -->
+    <line x1="112" y1="272" x2="680" y2="250" class="axis"/>
+    <path d="M 680 250 C 735 245, 770 215, 775 180 C 775 135, 735 110, 680 120" class="axis"/>
+    <line x1="680" y1="120" x2="120" y2="80" class="axis"/>
+
+    <!-- 気流矢印 (スケッチの赤矢印に対応) -->
+    <path d="M 640 250 Q 720 240 760 200 Q 770 160 720 125" class="flow"/>
+    <path d="M 180 115 Q 100 120 70 90 Q 60 60 100 50" class="flow"/>
+
+    <!-- 上昇矢印 (左端から上階へ) -->
+    <line x1="90" y1="80" x2="90" y2="15" class="vertflow"/>
+    <text x="50" y="30" class="tiny" fill="#c85a1a">上階へ</text>
+
+    <!-- 寸法 -->
+    <line x1="0" y1="320" x2="820" y2="320" class="dim"/>
+    <text x="410" y="336" text-anchor="middle" class="tiny">筐体幅 1500 mm</text>
+
+    <line x1="-15" y1="0" x2="-15" y2="295" class="dim"/>
+    <text x="-30" y="150" text-anchor="middle" class="tiny" transform="rotate(-90 -30 150)">筐体奥行 600 mm</text>
+  </g>
+
+  <!-- 区切り -->
+  <line x1="40" y1="445" x2="860" y2="445" stroke="#888" stroke-width="1"/>
+
+  <!-- === (B) 上段 平面図 (Creature型 + 響板) === -->
+  <text x="40" y="470" class="sub">(B) 上段 平面図 -- 響板 + Creature型 (下段左端から上昇した音が入る)</text>
+
+  <g transform="translate(40, 485)">
+    <rect x="0" y="0" width="820" height="220" class="cabinet"/>
+
+    <!-- 響板 (筐体全面を覆う) -->
+    <rect x="20" y="20" width="780" height="180" class="soundboard"/>
+    <text x="400" y="60" text-anchor="middle" class="small">パイン響板 (下段楔形の天板 + Creature底板)</text>
+
+    <!-- Creature型 (左端上部、下から楔形の音が上昇してくる位置) -->
+    <path d="M 80 105
+             C 75 85, 90 50, 140 35
+             C 200 20, 280 20, 340 35
+             C 390 50, 400 85, 390 105
+             C 385 130, 360 155, 300 170
+             C 230 185, 150 180, 110 160
+             C 80 140, 70 125, 80 105 Z" class="creature"/>
+
+    <!-- Creature喉 (下から上がってくる) -->
+    <circle cx="120" cy="140" r="8" fill="#5a1a7a"/>
+    <text x="120" y="195" text-anchor="middle" class="tiny" fill="#5a1a7a">Creature喉</text>
+    <text x="120" y="207" text-anchor="middle" class="tiny" fill="#5a1a7a">(下段から上昇)</text>
+
+    <!-- Creature最終開口 -->
+    <ellipse cx="370" cy="75" rx="15" ry="8" fill="#fff" stroke="#5a1a7a" stroke-width="1.5"/>
+    <text x="395" y="78" class="tiny" fill="#5a1a7a">最終開口</text>
+
+    <!-- Creature内部の音響軸 -->
+    <path d="M 125 135 C 200 110, 300 85, 365 75" class="axis" stroke="#5a1a7a"/>
+
+    <!-- 気流の入口 -->
+    <line x1="120" y1="155" x2="120" y2="175" class="vertflow"/>
+    <text x="70" y="175" class="tiny" fill="#c85a1a">下段から</text>
+
+    <!-- 一次放射 -->
+    <line x1="380" y1="70" x2="410" y2="45" class="primary"/>
+    <line x1="385" y1="75" x2="420" y2="75" class="primary"/>
+
+    <!-- 残りの筐体上段は空間 (楽器機構、鍵盤アクションなど) -->
+    <text x="600" y="130" class="small" fill="#666">残りの上段空間:</text>
+    <text x="600" y="148" class="tiny" fill="#666">鍵盤メカニズム</text>
+    <text x="600" y="162" class="tiny" fill="#666">足踏みベローズ接続</text>
+    <text x="600" y="176" class="tiny" fill="#666">響板共鳴空洞</text>
+  </g>
+
+  <!-- 区切り -->
+  <line x1="40" y1="725" x2="860" y2="725" stroke="#888" stroke-width="1"/>
+
+  <!-- === (C) 側面図 (下段から上段への流れ) === -->
+  <text x="40" y="750" class="sub">(C) 側面図 (筐体を正面から見る) -- 空気の3次元経路</text>
+
+  <g transform="translate(40, 765)">
+    <rect x="0" y="0" width="820" height="185" class="cabinet"/>
+
+    <!-- 下段 (楔形ホーン領域) -->
+    <rect x="10" y="105" width="800" height="75" fill="#e8f0f8" stroke="#1a4a6a" stroke-width="1"/>
+    <text x="410" y="150" text-anchor="middle" class="small" fill="#1a4a6a">下段: 楔形ホーン (S字2回折り返し、水平面内で総軸長 &#8776; 3200 mm 確保)</text>
+
+    <!-- 響板 -->
+    <rect x="10" y="95" width="800" height="10" class="soundboard"/>
+
+    <!-- 上段 (Creature型領域) -->
+    <rect x="10" y="10" width="800" height="85" fill="#f4ecf8" stroke="#5a1a7a" stroke-width="1"/>
+    <path d="M 50 95 C 45 75, 60 40, 130 25 C 220 15, 300 20, 340 40 C 360 60, 355 85, 330 95 Z" class="creature"/>
+    <text x="500" y="60" class="small" fill="#5a1a7a">上段: Creature型 + 共鳴空間</text>
+
+    <!-- ピアニカ (下段左端) -->
+    <rect x="20" y="140" width="70" height="35" class="pianica"/>
+    <text x="55" y="160" text-anchor="middle" class="tiny">ピアニカ</text>
+
+    <!-- 空気の流れ (下段を水平に進行) -->
+    <line x1="90" y1="150" x2="780" y2="140" class="flow"/>
+    <line x1="780" y1="140" x2="780" y2="115" class="flow"/>
+    <line x1="780" y1="115" x2="100" y2="115" class="flow"/>
+
+    <!-- 左端で上昇 (下段->上段) -->
+    <line x1="100" y1="115" x2="100" y2="95" class="vertflow"/>
+    <line x1="100" y1="95" x2="80" y2="80" class="vertflow"/>
+
+    <!-- Creature内部で合成 -->
+    <line x1="110" y1="70" x2="300" y2="45" class="primary"/>
+
+    <!-- 最終放射 -->
+    <line x1="320" y1="40" x2="350" y2="25" class="primary"/>
+  </g>
+
+  <!-- 結論 -->
+  <rect x="40" y="955" width="820" height="20" rx="4" class="good"/>
+  <text x="450" y="970" text-anchor="middle" class="label" fill="#1a6a3a">S字2回折り返しで総軸長 3200mm 確保 &#8594; f_min &#8776; 200 Hz (G3) までカバー可能</text>
+</svg>

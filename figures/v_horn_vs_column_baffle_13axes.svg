@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 690" width="680" height="690" font-family="sans-serif">
+  <title>V字ホーン型 vs 柱バッフル型 13軸定性比較</title>
+  <desc>音響性能・製造性・運用性の3分類13軸で両方式の優劣を並列表示</desc>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">V字ホーン型 vs 柱バッフル型 -- 13軸定性比較</text>
+  <text x="340" y="64" font-size="12" text-anchor="middle" fill="#5F5E5A">V字型(内部伝搬) / 柱型(空間放射) / 予想優位</text>
+  <line x1="40" y1="80" x2="640" y2="80" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="60" y="104" font-size="14" font-weight="500" fill="#534AB7">音響性能</text>
+
+  <text x="60" y="130" font-size="12" fill="#5F5E5A">1. 音量</text>
+  <rect x="220" y="118" width="60" height="16" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5" rx="3"/>
+  <text x="250" y="130" font-size="12" text-anchor="middle" fill="#712B13">大</text>
+  <rect x="300" y="118" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="330" y="130" font-size="12" text-anchor="middle" fill="#444441">小</text>
+  <text x="390" y="130" font-size="12" fill="#D85A30">V字 +5〜10dB</text>
+
+  <text x="60" y="156" font-size="12" fill="#5F5E5A">2. 音色整形</text>
+  <rect x="220" y="144" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="250" y="156" font-size="12" text-anchor="middle" fill="#04342C">fc遮断</text>
+  <rect x="300" y="144" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="156" font-size="12" text-anchor="middle" fill="#04342C">柱干渉</text>
+  <text x="390" y="156" font-size="12" fill="#5F5E5A">特性が異なる</text>
+
+  <text x="60" y="182" font-size="12" fill="#5F5E5A">3. 指向性</text>
+  <rect x="220" y="170" width="60" height="16" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5" rx="3"/>
+  <text x="250" y="182" font-size="12" text-anchor="middle" fill="#712B13">鋭い</text>
+  <rect x="300" y="170" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="182" font-size="12" text-anchor="middle" fill="#04342C">拡散</text>
+  <text x="390" y="182" font-size="12" fill="#5F5E5A">用途依存</text>
+
+  <text x="60" y="208" font-size="12" fill="#5F5E5A">4. 周波数平坦性</text>
+  <rect x="220" y="196" width="60" height="16" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5" rx="3"/>
+  <text x="250" y="208" font-size="12" text-anchor="middle" fill="#712B13">平坦</text>
+  <rect x="300" y="196" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="330" y="208" font-size="12" text-anchor="middle" fill="#444441">干渉</text>
+  <text x="390" y="208" font-size="12" fill="#D85A30">V字優位</text>
+
+  <text x="60" y="234" font-size="12" fill="#5F5E5A">5. 時間応答</text>
+  <rect x="220" y="222" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="234" font-size="12" text-anchor="middle" fill="#444441">L遅延</text>
+  <rect x="300" y="222" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="234" font-size="12" text-anchor="middle" fill="#04342C">速い</text>
+  <text x="390" y="234" font-size="12" fill="#0F6E56">柱型優位</text>
+
+  <line x1="40" y1="252" x2="640" y2="252" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="60" y="276" font-size="14" font-weight="500" fill="#BA7517">製造性</text>
+
+  <text x="60" y="302" font-size="12" fill="#5F5E5A">6. 加工難度</text>
+  <rect x="220" y="290" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="302" font-size="12" text-anchor="middle" fill="#444441">角度精度</text>
+  <rect x="300" y="290" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="302" font-size="12" text-anchor="middle" fill="#04342C">単純</text>
+  <text x="390" y="302" font-size="12" fill="#0F6E56">柱型 圧倒</text>
+
+  <text x="60" y="328" font-size="12" fill="#5F5E5A">7. 材料コスト</text>
+  <rect x="220" y="316" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="328" font-size="12" text-anchor="middle" fill="#444441">4.2万円</text>
+  <rect x="300" y="316" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="328" font-size="12" text-anchor="middle" fill="#04342C">2万円?</text>
+  <text x="390" y="328" font-size="12" fill="#0F6E56">柱型 半額</text>
+
+  <text x="60" y="354" font-size="12" fill="#5F5E5A">8. 組立工数</text>
+  <rect x="220" y="342" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="354" font-size="12" text-anchor="middle" fill="#444441">37個別</text>
+  <rect x="300" y="342" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="354" font-size="12" text-anchor="middle" fill="#04342C">柱のみ</text>
+  <text x="390" y="354" font-size="12" fill="#0F6E56">柱型優位</text>
+
+  <text x="60" y="380" font-size="12" fill="#5F5E5A">9. 音域スケール</text>
+  <rect x="220" y="368" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="380" font-size="12" text-anchor="middle" fill="#444441">寸法激変</text>
+  <rect x="300" y="368" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="380" font-size="12" text-anchor="middle" fill="#04342C">柱高さ</text>
+  <text x="390" y="380" font-size="12" fill="#0F6E56">柱型優位</text>
+
+  <line x1="40" y1="398" x2="640" y2="398" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="60" y="422" font-size="14" font-weight="500" fill="#0F6E56">運用性</text>
+
+  <text x="60" y="448" font-size="12" fill="#5F5E5A">10. 筐体サイズ</text>
+  <rect x="220" y="436" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="448" font-size="12" text-anchor="middle" fill="#444441">大</text>
+  <rect x="300" y="436" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="448" font-size="12" text-anchor="middle" fill="#04342C">小</text>
+  <text x="390" y="448" font-size="12" fill="#0F6E56">柱型優位</text>
+
+  <text x="60" y="474" font-size="12" fill="#5F5E5A">11. 重量</text>
+  <rect x="220" y="462" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="474" font-size="12" text-anchor="middle" fill="#444441">大</text>
+  <rect x="300" y="462" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="474" font-size="12" text-anchor="middle" fill="#04342C">小</text>
+  <text x="390" y="474" font-size="12" fill="#0F6E56">柱型優位</text>
+
+  <text x="60" y="500" font-size="12" fill="#5F5E5A">12. メンテ性</text>
+  <rect x="220" y="488" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="500" font-size="12" text-anchor="middle" fill="#444441">密閉</text>
+  <rect x="300" y="488" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="500" font-size="12" text-anchor="middle" fill="#04342C">露出</text>
+  <text x="390" y="500" font-size="12" fill="#0F6E56">柱型優位</text>
+
+  <text x="60" y="526" font-size="12" fill="#5F5E5A">13. 変更柔軟性</text>
+  <rect x="220" y="514" width="60" height="16" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5" rx="3"/>
+  <text x="250" y="526" font-size="12" text-anchor="middle" fill="#444441">固定</text>
+  <rect x="300" y="514" width="60" height="16" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5" rx="3"/>
+  <text x="330" y="526" font-size="12" text-anchor="middle" fill="#04342C">可変</text>
+  <text x="390" y="526" font-size="12" fill="#0F6E56">柱型優位</text>
+
+  <line x1="40" y1="548" x2="640" y2="548" stroke="#888780" stroke-width="0.8"/>
+
+  <text x="60" y="574" font-size="14" font-weight="500" fill="#2C2C2A">総合予想</text>
+  <text x="60" y="594" font-size="12" fill="#5F5E5A">V字型 優位: 軸1(音量), 軸4(平坦性)</text>
+  <text x="60" y="612" font-size="12" fill="#5F5E5A">柱型 優位: 軸5〜13 の9項目</text>
+  <text x="60" y="630" font-size="12" fill="#5F5E5A">引き分け/特性差: 軸2(音色), 軸3(指向性)</text>
+
+  <text x="60" y="660" font-size="14" font-weight="500" fill="#534AB7">第三候補: 柱内側テーパー型ハイブリッド</text>
+  <text x="60" y="678" font-size="12" fill="#5F5E5A">柱の内側面を指数カーブで広げ、V字と柱の両性質を持つ</text>
+</svg>

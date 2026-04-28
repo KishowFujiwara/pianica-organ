@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .eq { font-size: 14px; font-family: serif; font-style: italic; }
+    .cyl { fill: #e8d8b8; stroke: #6a4a1a; stroke-width: 1.5; }
+    .con { fill: #d8e8b8; stroke: #4a6a1a; stroke-width: 1.5; }
+    .exp { fill: #b8d8e8; stroke: #1a4a6a; stroke-width: 1.5; }
+    .axis { stroke: #333; stroke-width: 1.2; }
+    .curve1 { fill: none; stroke: #c33; stroke-width: 2.2; }
+    .curve2 { fill: none; stroke: #3a7; stroke-width: 2.2; }
+    .curve3 { fill: none; stroke: #37c; stroke-width: 2.2; }
+    .dash { stroke-dasharray: 4 3; }
+    .box { fill: #f8f4ec; stroke: #555; stroke-width: 1; }
+  </style>
+
+  <text x="450" y="26" text-anchor="middle" class="title">ホーン幾何の比較 -- Webster方程式とインピーダンス整合</text>
+
+  <!-- Webster equation box -->
+  <rect x="50" y="50" width="800" height="90" class="box"/>
+  <text x="450" y="78" text-anchor="middle" class="eq">&#8706;&#178;p/&#8706;t&#178; = (c&#178;/S(x)) &#x00B7; &#8706;/&#8706;x [ S(x) &#x00B7; &#8706;p/&#8706;x ]</text>
+  <text x="450" y="102" text-anchor="middle" class="small">Webster horn equation -- S(x) は断面積、c は音速</text>
+  <text x="450" y="122" text-anchor="middle" class="small">指数ホーン S(x) = S0 &#x00B7; exp(mx) の場合、カットオフ周波数 f_c = mc/(4&#x03C0;)</text>
+
+  <!-- 3つのホーン形状 -->
+  <text x="150" y="170" text-anchor="middle" class="sub">(a) 円筒 S(x)=const</text>
+  <text x="450" y="170" text-anchor="middle" class="sub">(b) 円錐 S(x) &#8733; x&#178;</text>
+  <text x="750" y="170" text-anchor="middle" class="sub">(c) 指数 S(x)=S0 exp(mx)</text>
+
+  <!-- 円筒 -->
+  <polygon points="70,200 230,200 230,260 70,260" class="cyl"/>
+  <text x="150" y="285" text-anchor="middle" class="small">断面積一定</text>
+  <text x="150" y="300" text-anchor="middle" class="small" fill="#c33">70-90% のエネルギーが口で反射</text>
+
+  <!-- 円錐 -->
+  <polygon points="370,225 530,195 530,265 370,235" class="con"/>
+  <text x="450" y="285" text-anchor="middle" class="small">線形広がり</text>
+  <text x="450" y="300" text-anchor="middle" class="small" fill="#a62">dS/dx が不連続 &#8594; 部分反射残存</text>
+
+  <!-- 指数 -->
+  <path d="M 670 235 Q 710 232 740 220 Q 780 200 830 180 L 830 280 Q 780 260 740 250 Q 710 238 670 235 Z" class="exp"/>
+  <text x="750" y="295" text-anchor="middle" class="small">dS/dx 連続</text>
+  <text x="750" y="310" text-anchor="middle" class="small" fill="#37c">真のインピーダンス整合</text>
+
+  <!-- インピーダンス vs 周波数グラフ -->
+  <text x="450" y="345" text-anchor="middle" class="sub">放射インピーダンス Re(Z_rad) / (&#x03C1;c/S_mouth) の周波数依存</text>
+
+  <rect x="100" y="360" width="700" height="220" fill="#fff" stroke="#333"/>
+  <!-- 軸 -->
+  <line x1="130" y1="560" x2="780" y2="560" class="axis"/>
+  <line x1="130" y1="560" x2="130" y2="380" class="axis"/>
+  <text x="785" y="565" class="label">f</text>
+  <text x="135" y="378" class="label">Re(Z)</text>
+
+  <!-- 閾値 1.0 -->
+  <line x1="130" y1="420" x2="780" y2="420" class="axis dash" stroke="#888"/>
+  <text x="100" y="424" class="small">1.0</text>
+  <text x="130" y="568" class="small">0</text>
+  <text x="780" y="575" class="small" text-anchor="end">高域</text>
+
+  <!-- カットオフ周波数マーカー -->
+  <line x1="280" y1="560" x2="280" y2="380" class="axis dash" stroke="#37c"/>
+  <text x="280" y="578" text-anchor="middle" class="small" fill="#37c">f_c</text>
+
+  <!-- 円筒 (c): 激しい共振ピークが櫛状に出る -->
+  <path d="M 130 555
+           Q 155 555, 165 405
+           Q 175 555, 195 555
+           Q 215 555, 225 400
+           Q 235 555, 255 555
+           Q 275 555, 285 405
+           Q 295 555, 315 555
+           Q 335 555, 345 400
+           Q 355 555, 375 555
+           Q 395 555, 405 405
+           Q 415 555, 435 555
+           Q 455 555, 465 400
+           Q 475 555, 495 555
+           Q 515 555, 525 405
+           Q 535 555, 555 555
+           Q 575 555, 585 400
+           Q 595 555, 615 555
+           Q 635 555, 645 405
+           Q 655 555, 675 555
+           Q 695 555, 705 400
+           Q 715 555, 735 555" class="curve1"/>
+  <text x="620" y="400" class="small" fill="#c33">円筒: 強い定在波ピーク (&#8730; 1.0 超)</text>
+
+  <!-- 円錐: やや滑らか -->
+  <path d="M 130 555
+           Q 200 520, 260 470
+           Q 330 440, 400 435
+           Q 500 435, 600 438
+           Q 700 440, 780 442" class="curve2"/>
+  <text x="620" y="430" class="small" fill="#3a7">円錐: 中域で部分整合</text>
+
+  <!-- 指数: カットオフ以下で急峻、以上で滑らかに 1.0 へ -->
+  <path d="M 130 560
+           Q 180 560, 230 555
+           Q 260 545, 280 500
+           Q 305 440, 340 428
+           Q 450 420, 600 420
+           Q 720 420, 780 420" class="curve3"/>
+  <text x="620" y="415" class="small" fill="#37c">指数: f_c 以上でほぼ 1.0 に整合</text>
+
+  <text x="450" y="605" text-anchor="middle" class="small">結論: 指数ホーンのみが f_c 以上の全域で「リードが見る負荷」を整合させ、反射によるエネルギー損失を最小化する。</text>
+</svg>

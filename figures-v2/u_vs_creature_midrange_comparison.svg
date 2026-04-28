@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .tiny { font-size: 10px; fill: #666; }
+    .eq { font-size: 12px; font-family: serif; font-style: italic; }
+    .ushape { fill: #b8d8e8; stroke: #1a4a6a; stroke-width: 1.5; }
+    .creature { fill: #e8dcf0; stroke: #5a1a7a; stroke-width: 1.8; }
+    .axis { stroke: #333; stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+    .hotspot { fill: #f0c8c8; stroke: #c33; stroke-width: 1; }
+    .coldspot { fill: #c8e8d8; stroke: #2a7; stroke-width: 1; }
+    .box { fill: #f8f4ec; stroke: #555; stroke-width: 1; }
+    .wave { stroke: #37c; stroke-width: 1.5; }
+    .cwave { stroke: #5a1a7a; stroke-width: 1.5; }
+    .dim { stroke: #666; stroke-width: 1; fill: none; marker-end: url(#dA); marker-start: url(#dA); }
+  </style>
+  <defs>
+    <marker id="dA" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2,2 L8,5 L2,8 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" class="title">中音域C4 (262 Hz) -- U字 vs Creature型 詳細比較</text>
+  <text x="450" y="48" text-anchor="middle" class="small">同じ f_c = 157 Hz、同じ軸長 L_eff &#8776; 620 mm の条件で比較</text>
+
+  <!-- 左: U字折り返し -->
+  <text x="225" y="80" text-anchor="middle" class="sub" fill="#1a4a6a">(A) U字折り返し -- 曲げを1ヶ所に集中</text>
+
+  <g transform="translate(60, 100)">
+    <!-- 直管部 下 (喉から出発, 細く) -->
+    <path d="M 10 180 L 210 175 L 210 195 L 10 190 Z" class="ushape"/>
+    <!-- U字湾曲部 -->
+    <path d="M 210 175 C 270 170, 280 100, 240 85
+             C 220 78, 200 82, 190 90
+             L 190 100 C 200 95, 215 94, 225 100
+             C 245 115, 240 150, 210 155
+             L 210 195 C 250 198, 280 185, 290 160
+             C 305 125, 295 75, 240 62
+             C 190 50, 150 70, 145 105 Z" class="ushape"/>
+    <!-- 直管部 上 -->
+    <path d="M 145 105 L 10 85 L 10 60 L 170 45 L 170 70 L 145 100 Z" class="ushape"/>
+
+    <!-- 音響軸 -->
+    <line x1="20" y1="185" x2="210" y2="183" class="axis"/>
+    <path d="M 210 183 C 285 170, 280 75, 170 60" class="axis"/>
+    <line x1="170" y1="60" x2="20" y2="75" class="axis"/>
+
+    <!-- 曲げ部のホットスポット (歪みが集中する区域) -->
+    <ellipse cx="265" cy="115" rx="40" ry="55" class="hotspot" opacity="0.35"/>
+    <text x="335" y="105" class="small" fill="#c33">歪み集中</text>
+    <text x="335" y="120" class="small" fill="#c33">ホットスポット</text>
+    <text x="335" y="135" class="tiny" fill="#c33">(半波長 λ/2 の区間に</text>
+    <text x="335" y="148" class="tiny" fill="#c33">すべての曲率が集中)</text>
+
+    <!-- 平面波フロント -->
+    <line x1="70" y1="178" x2="70" y2="192" class="wave"/>
+    <line x1="130" y1="176" x2="130" y2="191" class="wave"/>
+    <line x1="190" y1="174" x2="190" y2="190" class="wave"/>
+    <!-- 湾曲部で歪んだ波 -->
+    <path d="M 230 160 Q 250 130 245 95" class="wave" stroke-dasharray="3 3" fill="none"/>
+    <!-- 出口側 -->
+    <line x1="150" y1="55" x2="155" y2="72" class="wave"/>
+    <line x1="90" y1="60" x2="95" y2="78" class="wave"/>
+    <line x1="40" y1="65" x2="45" y2="82" class="wave"/>
+
+    <!-- 寸法 -->
+    <line x1="10" y1="220" x2="305" y2="220" class="dim"/>
+    <text x="157" y="235" text-anchor="middle" class="tiny">全長 295 mm</text>
+
+    <line x1="325" y1="45" x2="325" y2="200" class="dim"/>
+    <text x="345" y="125" class="tiny" transform="rotate(-90 345 125)">幅 155 mm</text>
+  </g>
+
+  <!-- 占有体積 -->
+  <rect x="60" y="360" width="360" height="85" rx="5" class="box"/>
+  <text x="75" y="383" class="sub" fill="#1a4a6a">占有体積 (目安)</text>
+  <text x="75" y="403" class="label">295 &#x00D7; 155 &#x00D7; 30 (奥行) &#8776; 1.37 &#x00D7; 10&#x2076; mm&#179;</text>
+  <text x="75" y="423" class="label" fill="#2a7">[OK] コンパクト -- 筐体内で12本を詰めやすい</text>
+  <text x="75" y="440" class="label" fill="#c33">[NG] 曲げ部で高域 (>600Hz) スペクトル汚染</text>
+
+  <!-- 右: Creature型 -->
+  <text x="675" y="80" text-anchor="middle" class="sub" fill="#5a1a7a">(B) Creature型 -- 曲げを全長に分散</text>
+
+  <g transform="translate(480, 100)">
+    <!-- 涙滴型外形 - 喉から開口まで緩やかに曲がり広がる -->
+    <path d="M 20 180
+             C 40 175, 70 170, 110 162
+             C 160 150, 220 130, 280 95
+             C 320 70, 350 55, 370 50
+             C 385 48, 395 55, 390 70
+             C 380 90, 350 115, 310 138
+             C 260 165, 210 185, 150 195
+             C 100 200, 50 200, 25 198
+             C 15 196, 15 188, 20 180 Z" class="creature"/>
+
+    <!-- 緩やかな音響軸 -->
+    <path d="M 22 188
+             C 70 182, 140 165, 220 130
+             C 290 100, 340 75, 380 62" class="axis" stroke="#5a1a7a"/>
+
+    <!-- 等間隔に分散した平面波フロント (曲率に応じて向きが徐々に変化) -->
+    <line x1="50" y1="180" x2="50" y2="196" class="cwave"/>
+    <line x1="100" y1="170" x2="102" y2="196" class="cwave"/>
+    <line x1="155" y1="155" x2="163" y2="193" class="cwave"/>
+    <line x1="215" y1="130" x2="230" y2="183" class="cwave"/>
+    <line x1="275" y1="100" x2="300" y2="155" class="cwave"/>
+    <line x1="340" y1="72" x2="370" y2="115" class="cwave"/>
+
+    <!-- 分散したコールドスポット (歪みが分散している様子) -->
+    <ellipse cx="180" cy="150" rx="160" ry="45" class="coldspot" opacity="0.2"/>
+    <text x="400" y="140" class="small" fill="#2a7">曲率が</text>
+    <text x="400" y="154" class="small" fill="#2a7">全長に分散</text>
+
+    <!-- 寸法 -->
+    <line x1="20" y1="220" x2="395" y2="220" class="dim"/>
+    <text x="207" y="235" text-anchor="middle" class="tiny">全長 375 mm</text>
+
+    <line x1="412" y1="50" x2="412" y2="200" class="dim"/>
+    <text x="430" y="125" class="tiny" transform="rotate(-90 430 125)">幅 150 mm</text>
+  </g>
+
+  <!-- 占有体積 -->
+  <rect x="480" y="360" width="360" height="85" rx="5" class="box"/>
+  <text x="495" y="383" class="sub" fill="#5a1a7a">占有体積 (目安)</text>
+  <text x="495" y="403" class="label">375 &#x00D7; 150 &#x00D7; 80 (奥行) &#8776; 4.5 &#x00D7; 10&#x2076; mm&#179;</text>
+  <text x="495" y="423" class="label" fill="#c33">[NG] U字の約 3.3 倍の体積 -- 12本は筐体内で厳しい</text>
+  <text x="495" y="440" class="label" fill="#2a7">[OK] 全帯域で歪みなし -- 最高の音色品質</text>
+
+  <!-- 下部: 物理的な核心 -->
+  <rect x="40" y="465" width="820" height="140" rx="6" fill="#f0f0f8" stroke="#555" stroke-width="1.2"/>
+  <text x="450" y="490" text-anchor="middle" class="sub">物理的核心: 曲率をどこに置くか = 音響的な応力集中の回避</text>
+
+  <text x="55" y="515" class="label">U字は「直線 + 急な曲げ + 直線」-- 曲率 &#x03BA;(s) がデルタ関数的、半波長の区間に全集中</text>
+  <text x="55" y="535" class="label">Creature型は「緩やかに変化する曲率」-- &#x03BA;(s) が滑らかに分布、最大値が 1/3 〜 1/5 に低減</text>
+
+  <text x="55" y="565" class="label eq">U字: max |&#x03BA;(s)| = 1/R_c = 1/90 &#8776; 0.011 /mm (一点に集中)</text>
+  <text x="55" y="585" class="label eq">Creature型: max |&#x03BA;(s)| &#8776; 0.004 /mm (全長に分散) -- 波動摂動項が約 3 倍小さい</text>
+
+  <text x="450" y="613" text-anchor="middle" class="small">&#8594; 「U字 vs Creature型」は単純な置換ではなく、体積と音質のトレードオフ選択</text>
+</svg>

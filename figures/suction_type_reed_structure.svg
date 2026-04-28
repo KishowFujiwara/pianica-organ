@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 560" width="680" height="560" font-family="sans-serif">
+  <title>吸引型リード構造: アメリカン・オルガン方式</title>
+  <desc>上から下への気流、受けの下側にリード、柱は気流通路</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">吸引型リード構造: アメリカン・オルガン方式</text>
+  <text x="340" y="64" font-size="12" text-anchor="middle" fill="#5F5E5A">空気: 大気 -> 柱間 -> リード -> 真空室</text>
+
+  <text x="340" y="96" font-size="12" text-anchor="middle" fill="#378ADD">大気圧(上面)</text>
+  <line x1="200" y1="110" x2="480" y2="110" stroke="#378ADD" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+  <rect x="220" y="130" width="20" height="240" fill="#0F6E56" opacity="0.7" stroke="#04342C" stroke-width="0.5"/>
+  <rect x="440" y="130" width="20" height="240" fill="#0F6E56" opacity="0.7" stroke="#04342C" stroke-width="0.5"/>
+
+  <line x1="340" y1="160" x2="340" y2="310" stroke="#A32D2D" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="365" y="240" font-size="12" fill="#A32D2D">空気流</text>
+  <text x="365" y="256" font-size="12" fill="#A32D2D">下向き</text>
+
+  <rect x="200" y="370" width="60" height="24" fill="#185FA5" opacity="0.7" stroke="#042C53" stroke-width="0.5"/>
+  <rect x="420" y="370" width="60" height="24" fill="#185FA5" opacity="0.7" stroke="#042C53" stroke-width="0.5"/>
+
+  <text x="230" y="412" font-size="12" text-anchor="middle" fill="#0C447C">受け</text>
+  <text x="450" y="412" font-size="12" text-anchor="middle" fill="#0C447C">受け</text>
+
+  <rect x="260" y="400" width="160" height="10" fill="#D85A30" opacity="0.85" stroke="#4A1B0C" stroke-width="0.5"/>
+  <text x="340" y="432" font-size="12" text-anchor="middle" fill="#4A1B0C">リード(受けの下側)</text>
+
+  <rect x="140" y="460" width="400" height="80" fill="#F1EFE8" stroke="#888780" stroke-width="0.8" stroke-dasharray="4 3"/>
+  <text x="340" y="488" font-size="14" font-weight="500" text-anchor="middle" fill="#5F5E5A">真空室(exhauster)</text>
+  <text x="340" y="508" font-size="12" text-anchor="middle" fill="#5F5E5A">負圧、気流を吸引</text>
+  <text x="340" y="526" font-size="12" text-anchor="middle" fill="#5F5E5A">足踏みペダル or ブロワ吸引</text>
+
+  <line x1="340" y1="400" x2="340" y2="455" stroke="#A32D2D" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="60" y="160" font-size="14" font-weight="500" fill="#0F6E56">柱(緑)</text>
+  <text x="60" y="178" font-size="12" fill="#0F6E56">役割は未確定</text>
+  <text x="60" y="194" font-size="12" fill="#0F6E56">X: 気流整流</text>
+  <text x="60" y="210" font-size="12" fill="#0F6E56">Y: Helmholtz</text>
+  <text x="60" y="226" font-size="12" fill="#0F6E56">Z: 放射は下から</text>
+
+  <text x="595" y="160" font-size="14" font-weight="500" text-anchor="middle" fill="#D85A30">前の図との</text>
+  <text x="595" y="178" font-size="12" text-anchor="middle" fill="#D85A30">反転点</text>
+  <text x="595" y="194" font-size="12" text-anchor="middle" fill="#D85A30">気流: 逆</text>
+  <text x="595" y="210" font-size="12" text-anchor="middle" fill="#D85A30">リード: 下へ</text>
+  <text x="595" y="226" font-size="12" text-anchor="middle" fill="#D85A30">真空室: 下</text>
+</svg>

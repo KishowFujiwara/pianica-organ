@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .tiny { font-size: 10px; fill: #666; }
+    .eq { font-size: 12px; font-family: serif; font-style: italic; }
+    .cabinet { fill: #f8f0dc; stroke: #5a3a1a; stroke-width: 2.5; }
+    .wedge1 { fill: #b8d8e8; stroke: #1a4a6a; stroke-width: 1.5; opacity: 0.85; }
+    .wedge2 { fill: #c8e0d8; stroke: #1a6a4a; stroke-width: 1.5; opacity: 0.85; }
+    .uturn { fill: #d8e0c8; stroke: #4a6a1a; stroke-width: 1.5; opacity: 0.85; }
+    .creature { fill: #e8dcf0; stroke: #5a1a7a; stroke-width: 1.8; opacity: 0.9; }
+    .pianica { fill: #c89b6b; stroke: #5a3a1a; stroke-width: 1.5; }
+    .reeds { fill: #8a5a3a; stroke: #3a1a0a; stroke-width: 0.8; }
+    .axis { stroke: #333; stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+    .flow { fill: none; stroke: #2a7; stroke-width: 2; marker-end: url(#ar); }
+    .primary { fill: none; stroke: #5a1a7a; stroke-width: 2; marker-end: url(#arp); }
+    .box { fill: #f8f4ec; stroke: #555; stroke-width: 1; }
+    .warn { fill: #f8ecec; stroke: #c33; stroke-width: 1.2; }
+    .good { fill: #ecf4ec; stroke: #2a7; stroke-width: 1.2; }
+    .dim { stroke: #666; stroke-width: 1; fill: none; marker-end: url(#dA); marker-start: url(#dA); }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2a7"/>
+    </marker>
+    <marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a1a7a"/>
+    </marker>
+    <marker id="dA" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2,2 L8,5 L2,8 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" class="title">水平面内 楔形ホーン + U字折り返し -- 確定版 平面図</text>
+  <text x="450" y="48" text-anchor="middle" class="small">全37鍵共用 / ピアニカ背面密閉 / 水平展開 / 右端折り返し / Creature型最終段</text>
+
+  <!-- === 平面図 === -->
+  <g transform="translate(40, 70)">
+    <rect x="0" y="0" width="820" height="330" class="cabinet"/>
+
+    <!-- ピアニカ (背面カバー外し、リードむき出し、密閉接続) -->
+    <g id="pianica-exposed">
+      <rect x="10" y="230" width="110" height="70" class="pianica"/>
+      <text x="65" y="295" text-anchor="middle" class="tiny">ピアニカ本体</text>
+      <!-- リード露出部 (背面を開いて楔形ホーンに接続) -->
+      <rect x="110" y="245" width="15" height="40" class="reeds"/>
+      <!-- 小さな縦線でリードを表現 -->
+      <line x1="112" y1="248" x2="112" y2="282" stroke="#3a1a0a" stroke-width="0.5"/>
+      <line x1="115" y1="248" x2="115" y2="282" stroke="#3a1a0a" stroke-width="0.5"/>
+      <line x1="118" y1="248" x2="118" y2="282" stroke="#3a1a0a" stroke-width="0.5"/>
+      <line x1="121" y1="248" x2="121" y2="282" stroke="#3a1a0a" stroke-width="0.5"/>
+      <text x="165" y="225" class="tiny" fill="#5a3a1a">背面カバー除去</text>
+      <text x="165" y="238" class="tiny" fill="#5a3a1a">リードむき出し</text>
+      <text x="165" y="251" class="tiny" fill="#5a3a1a">&#8594; 楔形喉と密閉接続</text>
+    </g>
+
+    <!-- 往路 楔形 (左下から右へ、奥行方向に広がる) -->
+    <!-- 喉: 125,265-305(幅40) -> 開口: 650,130-305(幅175) -->
+    <path d="M 125 265 L 650 130 L 650 305 L 125 305 Z" class="wedge1"/>
+    <text x="380" y="260" class="small" fill="#1a4a6a">往路 楔形 (L1)</text>
+
+    <!-- 右端 U字折り返し -->
+    <path d="M 650 130 C 720 130, 760 160, 760 215 C 760 270, 720 305, 650 305 L 650 130 Z" class="uturn"/>
+    <text x="720" y="220" text-anchor="middle" class="tiny" fill="#4a6a1a">U字</text>
+    <text x="720" y="235" text-anchor="middle" class="tiny" fill="#4a6a1a">折り返し</text>
+
+    <!-- 復路 楔形 (右から左へ、さらに広がる) -->
+    <!-- 入口: 650,0-130(幅130)、これは折り返し後 -->
+    <!-- 出口: Creature喉につながる -->
+    <path d="M 650 130 L 400 40 L 400 90 L 650 130 Z" class="wedge2"/>
+    <!-- 本当は復路は折り返し後の上側に描くべき。やり直し -->
+    <!-- いったん消してやり直し -->
+
+    <!-- 音響軸 (左→右→U字→左へ戻る) -->
+    <line x1="125" y1="285" x2="650" y2="215" class="axis"/>
+    <path d="M 650 215 C 740 215, 740 215, 740 215" class="axis"/>
+    <path d="M 650 130 C 720 130, 755 165, 755 215 C 755 265, 720 305, 650 305" class="axis"/>
+
+    <!-- 気流矢印 -->
+    <line x1="155" y1="282" x2="230" y2="265" class="flow"/>
+    <line x1="320" y1="245" x2="400" y2="230" class="flow"/>
+    <line x1="500" y1="210" x2="590" y2="195" class="flow"/>
+
+    <!-- 平面波フロント -->
+    <line x1="200" y1="275" x2="200" y2="305" stroke="#37c" stroke-width="1.5"/>
+    <line x1="350" y1="230" x2="355" y2="305" stroke="#37c" stroke-width="1.5"/>
+    <line x1="500" y1="188" x2="510" y2="305" stroke="#37c" stroke-width="1.5"/>
+
+    <!-- 寸法線 -->
+    <line x1="0" y1="325" x2="820" y2="325" class="dim"/>
+    <text x="410" y="343" text-anchor="middle" class="tiny">筐体幅 1500 mm</text>
+
+    <line x1="-15" y1="0" x2="-15" y2="310" class="dim"/>
+    <text x="-30" y="155" text-anchor="middle" class="tiny" transform="rotate(-90 -30 155)">筐体奥行 600 mm</text>
+
+    <line x1="125" y1="318" x2="650" y2="318" class="dim" stroke="#1a4a6a"/>
+    <text x="387" y="335" text-anchor="middle" class="tiny" fill="#1a4a6a">往路 L1 &#8776; 950 mm</text>
+
+    <!-- 楔形開き角 -->
+    <path d="M 145 285 L 145 272 A 25 25 0 0 1 156 277" fill="none" stroke="#c33" stroke-width="1.2"/>
+    <text x="175" y="280" class="tiny" fill="#c33">&#x03B8; &#8776; 14&#x00B0;</text>
+  </g>
+
+  <!-- 区切り -->
+  <line x1="40" y1="420" x2="860" y2="420" stroke="#888" stroke-width="1"/>
+
+  <!-- === 折り返し構造の注意点 === -->
+  <text x="40" y="450" class="sub">折り返し構造の物理的ポイント</text>
+
+  <rect x="40" y="465" width="395" height="180" rx="6" class="box"/>
+  <text x="55" y="488" class="sub" fill="#4a6a1a">[1] U字折り返し部の設計</text>
+  <text x="55" y="508" class="label">楔形出口幅 w(L1) &#8776; 175 mm の経路を</text>
+  <text x="55" y="524" class="label">U字で曲げる &#8594; 最小曲率半径</text>
+  <text x="55" y="540" class="eq">R_min = max(3 &#x00B7; w/2, 3c/(2&#x03C0; f_min))</text>
+  <text x="55" y="558" class="label">w/2 = 87 mm &#8594; 3&#x00B7;87 = 261 mm</text>
+  <text x="55" y="574" class="label">f_min = 130 Hz &#8594; 3c/(2&#x03C0;f) = 126 mm</text>
+  <text x="55" y="594" class="label" fill="#4a6a1a">&#8594; R_min &#8776; 260 mm (筐体奥行 600mm に収まる)</text>
+  <text x="55" y="614" class="label">折り返し部では S(x) を一定に保つ</text>
+  <text x="55" y="630" class="small">(断面積連続性, 制約3の遵守)</text>
+
+  <rect x="455" y="465" width="405" height="180" rx="6" class="box"/>
+  <text x="470" y="488" class="sub" fill="#5a3a1a">[2] ピアニカ背面密閉の物理</text>
+  <text x="470" y="508" class="label">通常ピアニカ: リードは気室 &#8596; 外気</text>
+  <text x="470" y="525" class="label">改造後: リードは気室 &#8596; <tspan font-weight="bold">楔形ホーン内部</tspan></text>
+  <text x="470" y="548" class="eq">Z_reed,out = Z_throat (楔形喉インピーダンス)</text>
+  <text x="470" y="568" class="label">リード自己発振条件が変化する:</text>
+  <text x="470" y="584" class="small">&#8901; 負荷インピーダンスが有限化 &#8594; f0 が数Hz シフト</text>
+  <text x="470" y="598" class="small">&#8901; 楔形共鳴モードによる引き込み可能性</text>
+  <text x="470" y="612" class="small">&#8901; ただし Creature型が反射を吸収するため</text>
+  <text x="470" y="626" class="small">&#8901; 実用上は安定発振を維持</text>
+
+  <!-- === 設計数値テーブル === -->
+  <text x="40" y="680" class="sub">楔形 + Creature 2段構成の設計数値 (選択肢比較)</text>
+
+  <rect x="40" y="695" width="820" height="160" rx="6" class="box"/>
+  <!-- テーブルヘッダ -->
+  <line x1="40" y1="720" x2="860" y2="720" stroke="#888"/>
+  <text x="55" y="715" class="label" font-weight="bold">構成案</text>
+  <text x="200" y="715" class="label" font-weight="bold">往路 L1</text>
+  <text x="285" y="715" class="label" font-weight="bold">折り返し</text>
+  <text x="370" y="715" class="label" font-weight="bold">総軸長</text>
+  <text x="455" y="715" class="label" font-weight="bold">開口幅 w_m</text>
+  <text x="560" y="715" class="label" font-weight="bold">f_min (楔形単独)</text>
+  <text x="720" y="715" class="label" font-weight="bold">Creature補助で可能</text>
+
+  <!-- 行1: 直線 (比較用) -->
+  <line x1="40" y1="745" x2="860" y2="745" stroke="#ddd"/>
+  <text x="55" y="740" class="tiny">直線のみ</text>
+  <text x="200" y="740" class="tiny">1400 mm</text>
+  <text x="285" y="740" class="tiny">なし</text>
+  <text x="370" y="740" class="tiny">1400 mm</text>
+  <text x="455" y="740" class="tiny">390 mm</text>
+  <text x="560" y="740" class="tiny">440 Hz (A4)</text>
+  <text x="720" y="740" class="tiny" fill="#c33">中高音のみ</text>
+
+  <!-- 行2: U字1回 (スケッチ案) -->
+  <line x1="40" y1="770" x2="860" y2="770" stroke="#ddd"/>
+  <text x="55" y="765" class="tiny" font-weight="bold">U字1回 (本案)</text>
+  <text x="200" y="765" class="tiny">950 mm</text>
+  <text x="285" y="765" class="tiny">R=260 mm</text>
+  <text x="370" y="765" class="tiny">&#8776; 2200 mm</text>
+  <text x="455" y="765" class="tiny">620 mm</text>
+  <text x="560" y="765" class="tiny" fill="#4a6a1a">275 Hz (C#4)</text>
+  <text x="720" y="765" class="tiny" fill="#4a6a1a">C4-C6 カバー</text>
+
+  <!-- 行3: W字2回 -->
+  <line x1="40" y1="795" x2="860" y2="795" stroke="#ddd"/>
+  <text x="55" y="790" class="tiny">W字2回</text>
+  <text x="200" y="790" class="tiny">800 mm</text>
+  <text x="285" y="790" class="tiny">R=260 mm x2</text>
+  <text x="370" y="790" class="tiny">&#8776; 3200 mm</text>
+  <text x="455" y="790" class="tiny">830 mm</text>
+  <text x="560" y="790" class="tiny" fill="#1a4a6a">207 Hz (G#3)</text>
+  <text x="720" y="790" class="tiny" fill="#1a4a6a">G3-C6 カバー</text>
+
+  <!-- 行4: W字2回 + 角度大 -->
+  <line x1="40" y1="820" x2="860" y2="820" stroke="#ddd"/>
+  <text x="55" y="815" class="tiny">W字2回 &#x03B8;=24&#x00B0;</text>
+  <text x="200" y="815" class="tiny">800 mm</text>
+  <text x="285" y="815" class="tiny">R=260 mm x2</text>
+  <text x="370" y="815" class="tiny">&#8776; 3200 mm</text>
+  <text x="455" y="815" class="tiny">1400 mm</text>
+  <text x="560" y="815" class="tiny" fill="#5a1a7a">123 Hz (B2)</text>
+  <text x="720" y="815" class="tiny" fill="#5a1a7a">B2-C6 フル</text>
+
+  <text x="55" y="845" class="small" fill="#555">* 開口幅 w_m はすべて筐体幅1500mm以内。高さ h=200mm で固定。</text>
+
+  <!-- === 結論ボックス === -->
+  <rect x="40" y="870" width="820" height="25" rx="5" class="good"/>
+  <text x="450" y="888" text-anchor="middle" class="label" fill="#1a6a3a">本案 (U字1回) は C4-C6 の 2オクターブをカバー可能。低音を伸ばすにはW字化を検討</text>
+</svg>

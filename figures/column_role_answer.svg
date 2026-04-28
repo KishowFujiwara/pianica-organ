@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 620" width="680" height="620" font-family="sans-serif">
+  <title>柱の役割: 気流制御と構造支持、音響寄与はほぼゼロ</title>
+  <desc>波長と柱寸法の比較、柱の実機能、アメリカン・オルガンの共鳴箱配置</desc>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">柱の役割: 答え</text>
+  <text x="40" y="58" font-size="12" fill="#5F5E5A">気流制御と構造支持が主目的。音響的な貢献はほぼゼロ。</text>
+
+  <line x1="40" y1="76" x2="640" y2="76" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="100" font-size="14" font-weight="500" fill="#534AB7">根拠1: 波長との比較</text>
+  <text x="40" y="126" font-size="12" fill="#5F5E5A">F4音の波長 λ = 974mm、柱幅 ≈ 25mm</text>
+  <text x="40" y="144" font-size="12" fill="#5F5E5A">λ/柱幅 = 40倍。音波から見て柱はほぼ存在しない</text>
+
+  <rect x="40" y="160" width="560" height="28" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5" rx="3"/>
+  <text x="320" y="178" font-size="12" text-anchor="middle" fill="#0C447C">F4音波 λ = 974mm</text>
+
+  <rect x="310" y="165" width="14" height="18" fill="#0F6E56" opacity="0.8"/>
+  <text x="317" y="200" font-size="12" text-anchor="middle" fill="#5F5E5A">柱</text>
+
+  <line x1="40" y1="220" x2="640" y2="220" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="244" font-size="14" font-weight="500" fill="#BA7517">根拠2: ヘルムホルツ共鳴器の条件を満たさない</text>
+  <text x="40" y="266" font-size="12" fill="#5F5E5A">ネックとキャビティの区別がない直方体 -> ヘルムホルツではなく開放管</text>
+  <text x="40" y="284" font-size="12" fill="#5F5E5A">柱2本だけでは開放管共鳴も弱い(横に音が逃げる)</text>
+
+  <line x1="40" y1="302" x2="640" y2="302" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="326" font-size="14" font-weight="500" fill="#0F6E56">根拠3: 真空室が下方放射を吸音</text>
+  <text x="40" y="348" font-size="12" fill="#5F5E5A">リード下面の音は真空室で消失(フェルト吸音壁 + 排気流)</text>
+
+  <line x1="40" y1="366" x2="640" y2="366" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="390" font-size="14" font-weight="500" fill="#2C2C2A">柱の実際の役割(音響以外)</text>
+
+  <rect x="40" y="406" width="140" height="56" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" rx="4"/>
+  <text x="110" y="428" font-size="14" font-weight="500" text-anchor="middle" fill="#04342C">気流絞り</text>
+  <text x="110" y="446" font-size="12" text-anchor="middle" fill="#04342C">流速を上げ</text>
+  <text x="110" y="460" font-size="12" text-anchor="middle" fill="#04342C">リード励振</text>
+
+  <rect x="190" y="406" width="140" height="56" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" rx="4"/>
+  <text x="260" y="428" font-size="14" font-weight="500" text-anchor="middle" fill="#04342C">乱流抑制</text>
+  <text x="260" y="446" font-size="12" text-anchor="middle" fill="#04342C">層流化で</text>
+  <text x="260" y="460" font-size="12" text-anchor="middle" fill="#04342C">ノイズ減</text>
+
+  <rect x="340" y="406" width="140" height="56" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" rx="4"/>
+  <text x="410" y="428" font-size="14" font-weight="500" text-anchor="middle" fill="#04342C">構造支持</text>
+  <text x="410" y="446" font-size="12" text-anchor="middle" fill="#04342C">リード台座</text>
+  <text x="410" y="460" font-size="12" text-anchor="middle" fill="#04342C">を押さえる</text>
+
+  <rect x="490" y="406" width="140" height="56" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" rx="4"/>
+  <text x="560" y="428" font-size="14" font-weight="500" text-anchor="middle" fill="#04342C">異物防止</text>
+  <text x="560" y="446" font-size="12" text-anchor="middle" fill="#04342C">ホコリ侵入</text>
+  <text x="560" y="460" font-size="12" text-anchor="middle" fill="#04342C">を防ぐ</text>
+
+  <line x1="40" y1="490" x2="640" y2="490" stroke="#888780" stroke-width="0.8"/>
+
+  <text x="40" y="514" font-size="14" font-weight="500" fill="#D85A30">含意: この構造だけでは音量不足</text>
+  <text x="40" y="536" font-size="12" fill="#5F5E5A">リード上方は柱の間を素通り(ホーン効果なし)</text>
+  <text x="40" y="554" font-size="12" fill="#5F5E5A">アメリカン・オルガンはこの上にさらに共鳴箱を載せる</text>
+  <text x="40" y="572" font-size="12" fill="#5F5E5A">過去議論のV字ホーン + 松天板が、この柱の先に必要</text>
+  <text x="40" y="596" font-size="12" fill="#888780">柱は楽器の「骨格」、共鳴箱は「ホーン(肉)」。2段階の設計</text>
+</svg>

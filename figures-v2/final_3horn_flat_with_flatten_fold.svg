@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 980" font-family="sans-serif">
+  <defs>
+    <pattern id="grid5" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#dde4ea" stroke-width="0.5"/>
+    </pattern>
+    <marker id="flArr5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2a7"/>
+    </marker>
+    <marker id="dArr5" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2,2 L8,5 L2,8 z" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="900" height="980" fill="url(#grid5)"/>
+
+  <text x="450" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#000">
+    確定版 -- 1階完結 3ホーン配置 + 折返2 縦潰し処理
+  </text>
+
+  <!-- ===== (A) 平面図 (上から見た図) ===== -->
+  <text x="30" y="60" font-size="14" font-weight="bold" fill="#000">
+    (A) 平面図 -- 3ホーンすべて1階 (水平面内) に収める
+  </text>
+
+  <g transform="translate(30, 75)">
+    <!-- 筐体外枠 (幅1500 x 奥行600) -->
+    <rect x="10" y="10" width="800" height="400" fill="none" stroke="#333" stroke-width="2"/>
+
+    <!-- ピアニカ -->
+    <rect x="20" y="350" width="140" height="50" fill="#f0e0c8" stroke="#333" stroke-width="1.2"/>
+    <text x="90" y="380" text-anchor="middle" font-size="13" fill="#000">ピアニカ</text>
+
+    <!-- 第1ホーン (下段、左下から右へ広がる) -->
+    <!-- 喉: x=160, 幅=50 (y=350-400)、開口: x=650, 幅=150 (y=250-400) -->
+    <path d="M 160 350 L 650 250 L 650 400 L 160 400 Z" 
+          fill="#d8e6f0" stroke="#1a4a6a" stroke-width="1.2"/>
+    <text x="380" y="385" font-size="12" font-weight="bold" fill="#1a4a6a">第1ホーン</text>
+
+    <!-- 折返1 (右端、通常のU字、縦潰し不要) -->
+    <path d="M 650 250 C 720 250, 750 215, 750 180 C 750 145, 720 115, 650 115 L 650 250 Z
+             M 650 115 L 650 400 L 650 400 C 650 400, 650 400, 650 400 Z" 
+          fill="none"/>
+    <path d="M 650 250 Q 760 220, 760 180 Q 760 130, 650 110 L 650 250 Z" 
+          fill="#e0e0e0" stroke="#555" stroke-width="1"/>
+    <path d="M 650 110 Q 720 115, 730 150 Q 730 180, 680 205 L 650 210 L 650 110 Z" 
+          fill="none" stroke="#555" stroke-width="0.5" stroke-dasharray="3 2"/>
+    <text x="760" y="170" font-size="10" fill="#555">折返1</text>
+    <text x="760" y="183" font-size="9" fill="#555">(通常U字)</text>
+
+    <!-- 第2ホーン (中段、右から左へさらに広がる) -->
+    <!-- 入口(右): x=650, y=110、幅=150 (y=110 から y=260)
+         出口(左): x=180, 幅=220 (y=90 から y=310) -->
+    <path d="M 650 110 L 180 90 L 180 310 L 650 260 Z" 
+          fill="#dfe8d8" stroke="#4a7a1a" stroke-width="1.2"/>
+    <text x="400" y="205" font-size="12" font-weight="bold" fill="#4a7a1a">第2ホーン</text>
+
+    <!-- 折返2 (左端、縦潰し) 濃い目のオレンジで強調 -->
+    <path d="M 180 90 Q 60 100, 60 180 Q 60 260, 180 270 L 180 310 Q 40 300, 40 180 Q 40 70, 180 70 Z" 
+          fill="#f8d8b0" stroke="#c85a1a" stroke-width="1.5"/>
+    <text x="95" y="150" font-size="10" fill="#c85a1a" font-weight="bold">折返2</text>
+    <text x="95" y="165" font-size="9" fill="#c85a1a">(縦潰し</text>
+    <text x="95" y="178" font-size="9" fill="#c85a1a"> 対処)</text>
+
+    <!-- 第3ホーン (上段、左から右へ広がる、筐体右端まで) -->
+    <!-- 喉(左): x=180, 幅=90 (y=20 から y=110)
+         開口(右): x=790, 幅=130 (y=20 から y=80) -->
+    <!-- あれ、第3は左喉右開口なので、左が狭く右が広い -->
+    <!-- 再調整: 喉 x=180, y=20-40 (幅20)、開口 x=790, y=20-90 (幅70) -->
+    <path d="M 180 40 L 790 90 L 790 20 L 180 20 Z" 
+          fill="#f0d8e4" stroke="#7a1a4a" stroke-width="1.2"/>
+    <text x="430" y="55" font-size="12" font-weight="bold" fill="#7a1a4a">第3ホーン</text>
+
+    <!-- 最終開口 (筐体右端) -->
+    <line x1="790" y1="20" x2="790" y2="90" stroke="#7a1a4a" stroke-width="4"/>
+    <text x="800" y="55" font-size="10" fill="#7a1a4a">最終開口</text>
+
+    <!-- 流れ矢印 -->
+    <line x1="220" y1="375" x2="330" y2="355" stroke="#2a7" stroke-width="2" marker-end="url(#flArr5)"/>
+    <line x1="430" y1="345" x2="550" y2="315" stroke="#2a7" stroke-width="2" marker-end="url(#flArr5)"/>
+    <line x1="580" y1="190" x2="450" y2="180" stroke="#2a7" stroke-width="2" marker-end="url(#flArr5)"/>
+    <line x1="360" y1="175" x2="230" y2="170" stroke="#2a7" stroke-width="2" marker-end="url(#flArr5)"/>
+    <line x1="230" y1="30" x2="400" y2="40" stroke="#2a7" stroke-width="2" marker-end="url(#flArr5)"/>
+    <line x1="490" y1="50" x2="720" y2="70" stroke="#2a7" stroke-width="2" marker-end="url(#flArr5)"/>
+
+    <!-- 寸法 -->
+    <line x1="10" y1="425" x2="810" y2="425" stroke="#666" stroke-width="1" marker-start="url(#dArr5)" marker-end="url(#dArr5)"/>
+    <text x="410" y="440" text-anchor="middle" font-size="10" fill="#666">筐体幅 1500 mm</text>
+
+    <line x1="-10" y1="10" x2="-10" y2="410" stroke="#666" stroke-width="1" marker-start="url(#dArr5)" marker-end="url(#dArr5)"/>
+    <text x="-25" y="210" text-anchor="middle" font-size="10" fill="#666" transform="rotate(-90 -25 210)">奥行 600 mm</text>
+  </g>
+
+  <!-- ===== (B) 側面図 - 折返2 の縦潰し処理 ===== -->
+  <text x="30" y="555" font-size="14" font-weight="bold" fill="#000">
+    (B) 折返2 縦潰し処理の側面断面図 -- 高さ h を下げて、幅 w を上げることで S 保存
+  </text>
+
+  <g transform="translate(30, 570)">
+    <!-- 第2ホーン末端 (縦潰し前) 側面図 -->
+    <g transform="translate(0, 0)">
+      <text x="80" y="10" text-anchor="middle" font-size="11" font-weight="bold" fill="#4a7a1a">[第2末端]</text>
+      <rect x="30" y="20" width="100" height="80" fill="#dfe8d8" stroke="#4a7a1a" stroke-width="1.5"/>
+      <text x="80" y="65" text-anchor="middle" font-size="10" fill="#000">h=200mm</text>
+      <text x="80" y="115" text-anchor="middle" font-size="10" fill="#000">w=430mm</text>
+      <text x="80" y="130" text-anchor="middle" font-size="10" fill="#555">S=86,000 mm&#178;</text>
+    </g>
+
+    <!-- 矢印 -->
+    <text x="175" y="75" font-size="18" fill="#c85a1a">&#8594;</text>
+
+    <!-- 縦潰し区間 (断面変形) 側面図 -->
+    <g transform="translate(210, 0)">
+      <text x="120" y="10" text-anchor="middle" font-size="11" font-weight="bold" fill="#c85a1a">[縦潰し曲げ区間]</text>
+      <rect x="10" y="50" width="220" height="30" fill="#f8d8b0" stroke="#c85a1a" stroke-width="1.5"/>
+      <text x="120" y="72" text-anchor="middle" font-size="10" fill="#000">h=60mm</text>
+      <text x="120" y="95" text-anchor="middle" font-size="10" fill="#000">w=1430mm</text>
+      <text x="120" y="110" text-anchor="middle" font-size="10" fill="#555">S=86,000 mm&#178; (連続)</text>
+      <text x="120" y="130" text-anchor="middle" font-size="10" fill="#c33">* w は幅方向に展開</text>
+    </g>
+
+    <!-- 矢印 -->
+    <text x="475" y="75" font-size="18" fill="#7a1a4a">&#8594;</text>
+
+    <!-- 第3ホーン始点 (縦潰し後) 側面図 -->
+    <g transform="translate(510, 0)">
+      <text x="80" y="10" text-anchor="middle" font-size="11" font-weight="bold" fill="#7a1a4a">[第3始点]</text>
+      <rect x="45" y="25" width="70" height="75" fill="#f0d8e4" stroke="#7a1a4a" stroke-width="1.5"/>
+      <text x="80" y="65" text-anchor="middle" font-size="10" fill="#000">h=200mm</text>
+      <text x="80" y="115" text-anchor="middle" font-size="10" fill="#000">w=430mm</text>
+      <text x="80" y="130" text-anchor="middle" font-size="10" fill="#555">S=86,000 mm&#178;</text>
+    </g>
+
+    <!-- 縦潰し部の曲げ半径説明 -->
+    <g transform="translate(0, 170)">
+      <text x="0" y="15" font-size="12" font-weight="bold" fill="#c85a1a">縦潰しの幾何的意味</text>
+      <text x="0" y="38" font-size="11" fill="#333">* 通常断面: 高さ h=200mm、曲げ R_min = 3h/2 = 300mm</text>
+      <text x="0" y="55" font-size="11" fill="#333">* 縦潰し後: 高さ h=60mm、曲げ R_min = 3h/2 = 90mm &#8594; 筐体奥行に十分収まる</text>
+      <text x="0" y="72" font-size="11" fill="#333">* 断面積 S = h&#x00D7;w を保つため、w を 430 から 1430mm に展開</text>
+      <text x="0" y="89" font-size="11" fill="#333">* 展開した w は、筐体奥行方向 (縦ではなく横に) 分散させる</text>
+      <text x="0" y="108" font-size="11" fill="#c33">* 制約: 縦潰し区間の軸長は短く (波長の1/4 以下 &#8776; 80mm @ 1kHz) に抑える</text>
+      <text x="0" y="125" font-size="11" fill="#c33">* アスペクト比が極端になると断面内横モードが励振 &#8594; 縦潰し区間長 &lt; 150mm 目安</text>
+    </g>
+  </g>
+
+  <!-- ===== (C) 断面積 S(x) の軸方向変化 ===== -->
+  <text x="30" y="830" font-size="14" font-weight="bold" fill="#000">
+    (C) 軸長 x に対する断面積 S(x) -- 折返し含めて単調増加
+  </text>
+
+  <g transform="translate(30, 845)">
+    <!-- グラフ枠 -->
+    <line x1="40" y1="110" x2="800" y2="110" stroke="#333" stroke-width="1"/>
+    <line x1="40" y1="110" x2="40" y2="10" stroke="#333" stroke-width="1"/>
+    <text x="810" y="115" font-size="10" fill="#000">x (軸長)</text>
+    <text x="30" y="10" font-size="10" fill="#000">S</text>
+
+    <!-- 目盛り -->
+    <text x="40" y="125" font-size="9" fill="#666" text-anchor="middle">0</text>
+    <text x="260" y="125" font-size="9" fill="#666" text-anchor="middle">810</text>
+    <text x="430" y="125" font-size="9" fill="#666" text-anchor="middle">折返1</text>
+    <text x="600" y="125" font-size="9" fill="#666" text-anchor="middle">1420</text>
+    <text x="700" y="125" font-size="9" fill="#666" text-anchor="middle">折返2</text>
+    <text x="800" y="125" font-size="9" fill="#666" text-anchor="middle">2260 mm</text>
+
+    <!-- S(x) の折れ線グラフ -->
+    <!-- 第1: (0, h0*w0) -> (810, h0*w1) = (0, 23400) -> (810, 61000) -->
+    <!-- 第2: (810, 61000) -> (1420, 86000) -->
+    <!-- 第3: (1420, 86000) -> (2260, 130000) or so -->
+    <!-- スケール: y軸 0-130000 を 100pxに収める -->
+    <polyline points="40,105 260,75 430,75 600,65 700,65 800,30" 
+              fill="none" stroke="#2a6d8a" stroke-width="2.5"/>
+
+    <!-- 折返1と折返2の縦線 -->
+    <line x1="390" y1="110" x2="390" y2="15" stroke="#c33" stroke-width="1" stroke-dasharray="3 2"/>
+    <line x1="470" y1="110" x2="470" y2="15" stroke="#c33" stroke-width="1" stroke-dasharray="3 2"/>
+    <line x1="660" y1="110" x2="660" y2="15" stroke="#c33" stroke-width="1" stroke-dasharray="3 2"/>
+    <line x1="740" y1="110" x2="740" y2="15" stroke="#c33" stroke-width="1" stroke-dasharray="3 2"/>
+
+    <!-- 各セグメント注記 -->
+    <text x="150" y="55" font-size="10" fill="#1a4a6a">第1 (拡大)</text>
+    <text x="425" y="50" font-size="10" fill="#555" text-anchor="middle">折返1 (S保存)</text>
+    <text x="520" y="55" font-size="10" fill="#4a7a1a">第2 (拡大)</text>
+    <text x="695" y="50" font-size="10" fill="#c85a1a" text-anchor="middle">折返2 (縦潰し S保存)</text>
+    <text x="770" y="55" font-size="10" fill="#7a1a4a" text-anchor="middle">第3 (拡大)</text>
+
+    <text x="400" y="155" font-size="11" fill="#333" text-anchor="middle">
+      S(x) は軸長に沿って単調増加。折り返し区間では S 一定 (縦潰し含む)。これが2D sectoral horn の本質。
+    </text>
+  </g>
+</svg>

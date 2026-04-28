@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" font-family="sans-serif">
+  <!-- グリッド背景 (方眼紙) -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#dde4ea" stroke-width="0.5"/>
+    </pattern>
+    <marker id="orangeArrow" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 L 3 6 Z" fill="#e07020"/>
+    </marker>
+  </defs>
+  <rect width="720" height="440" fill="url(#grid)"/>
+
+  <!-- タイトル -->
+  <text x="30" y="35" font-size="15" fill="#000">平面 (上から見た図)</text>
+
+  <!-- 筐体外枠 -->
+  <rect x="40" y="50" width="640" height="340" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- ピアニカ -->
+  <rect x="52" y="340" width="140" height="42" fill="none" stroke="#333" stroke-width="1.2"/>
+  <text x="122" y="367" text-anchor="middle" font-size="14" fill="#000">ピアニカ</text>
+
+  <!-- 下の斜線: ピアニカ右端付近から右へ、わずかに上向き -->
+  <line x1="195" y1="340" x2="540" y2="260" stroke="#2a6d8a" stroke-width="2"/>
+
+  <!-- 上の斜線: 中央上部から右端へ、下向きに傾斜 -->
+  <line x1="280" y1="135" x2="640" y2="225" stroke="#2a6d8a" stroke-width="2"/>
+
+  <!-- 左上のオレンジ折り返し矢印 (下→上→右) -->
+  <path d="M 200 230 L 200 170 Q 200 155 215 155 L 260 155"
+        fill="none" stroke="#e07020" stroke-width="18" stroke-linecap="butt"
+        marker-end="url(#orangeArrow)"/>
+  <!-- 左上の「空気の流れ」ラベル -->
+  <text x="155" y="270" font-size="13" fill="#000">空気の流れ</text>
+
+  <!-- 右下のオレンジ折り返し矢印 (右→左→上) -->
+  <path d="M 570 300 L 510 300 Q 495 300 495 285 L 495 240"
+        fill="none" stroke="#e07020" stroke-width="18" stroke-linecap="butt"
+        marker-end="url(#orangeArrow)"/>
+  <!-- 右下の「空気の流れ」ラベル -->
+  <text x="510" y="340" font-size="13" fill="#000">空気の流れ</text>
+</svg>

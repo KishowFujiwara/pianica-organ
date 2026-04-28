@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .eq { font-size: 13px; font-family: serif; font-style: italic; }
+    .horn { fill: #b8d8e8; stroke: #1a4a6a; stroke-width: 1.5; }
+    .hornbad { fill: #f0c8c8; stroke: #7a1a1a; stroke-width: 1.5; }
+    .hornmid { fill: #f0e0b8; stroke: #7a5a1a; stroke-width: 1.5; }
+    .axis { stroke: #333; stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+    .wave { fill: none; stroke: #37c; stroke-width: 1.8; }
+    .badwave { fill: none; stroke: #c33; stroke-width: 1.8; stroke-dasharray: 4 3; }
+    .box { fill: #f8f4ec; stroke: #555; stroke-width: 1; }
+    .ok { fill: #2a7; font-weight: bold; }
+    .bad { fill: #c33; font-weight: bold; }
+    .mid { fill: #a62; font-weight: bold; }
+    .creature { fill: #e8dcf0; stroke: #5a1a7a; stroke-width: 1.8; }
+    .creaturewave { fill: none; stroke: #5a1a7a; stroke-width: 1.8; }
+  </style>
+
+  <text x="450" y="26" text-anchor="middle" class="title">折りたたみホーン -- 幾何パターンと物理的制約の比較</text>
+
+  <!-- (1) 直管 -->
+  <text x="150" y="60" text-anchor="middle" class="sub">(1) 直管 (reference)</text>
+  <path d="M 70 100 L 230 80 L 230 130 L 70 120 Z" class="horn"/>
+  <!-- 軸線 -->
+  <line x1="70" y1="110" x2="230" y2="105" class="axis"/>
+  <!-- 平面波フロント -->
+  <line x1="110" y1="95" x2="110" y2="118" stroke="#37c" stroke-width="2"/>
+  <line x1="150" y1="90" x2="150" y2="115" stroke="#37c" stroke-width="2"/>
+  <line x1="190" y1="85" x2="190" y2="112" stroke="#37c" stroke-width="2"/>
+  <text x="150" y="160" text-anchor="middle" class="small">平面波フロント保持</text>
+  <text x="150" y="176" text-anchor="middle" class="ok">[OK] Webster成立</text>
+
+  <!-- (2) U字折り返し (緩いカーブ) -->
+  <text x="450" y="60" text-anchor="middle" class="sub">(2) U字 (緩いカーブ, R_c &gt;&gt; a)</text>
+  <path d="M 350 80 L 500 75
+           C 560 75, 560 135, 500 135
+           L 350 130 L 350 125 L 495 125
+           C 540 125, 540 85, 495 85
+           L 350 85 Z" class="horn"/>
+  <line x1="350" y1="82" x2="495" y2="80" class="axis"/>
+  <path d="M 495 80 C 540 80, 540 130, 495 130" class="axis"/>
+  <line x1="495" y1="130" x2="350" y2="128" class="axis"/>
+  <text x="450" y="160" text-anchor="middle" class="small">R_curv &gt; 3a, 軸長保存</text>
+  <text x="450" y="176" text-anchor="middle" class="ok">[OK] 実用上問題なし</text>
+
+  <!-- (3) 急峻折り曲げ -->
+  <text x="750" y="60" text-anchor="middle" class="sub">(3) 急峻折り (90度)</text>
+  <path d="M 670 80 L 780 80 L 780 160 L 820 160 L 820 170 L 770 170 L 770 90 L 670 90 Z" class="hornbad"/>
+  <!-- 波が歪む様子 -->
+  <line x1="700" y1="82" x2="700" y2="88" stroke="#37c" stroke-width="2"/>
+  <line x1="730" y1="82" x2="730" y2="88" stroke="#37c" stroke-width="2"/>
+  <path d="M 773 100 Q 790 120 805 160" class="badwave"/>
+  <path d="M 776 130 Q 800 145 815 165" class="badwave"/>
+  <text x="745" y="195" text-anchor="middle" class="small">内側/外側経路差 &#8594; 分散</text>
+  <text x="745" y="211" text-anchor="middle" class="bad">[NG] 高域で反射・散乱</text>
+
+  <!-- 区切り線 -->
+  <line x1="40" y1="240" x2="860" y2="240" stroke="#888" stroke-width="1"/>
+
+  <!-- 物理制約セクション -->
+  <text x="450" y="266" text-anchor="middle" class="title" font-size="16">4つの物理的制約</text>
+
+  <!-- 制約1: 平面波近似の維持 -->
+  <rect x="40" y="285" width="400" height="130" rx="6" class="box"/>
+  <text x="55" y="308" class="sub">制約 1: 平面波近似 (Webster の前提)</text>
+  <text x="55" y="332" class="eq">ka &lt; 3.83 (第一ベッセル零点)</text>
+  <text x="55" y="350" class="label">a = ホーン局所半径, k = &#x03C9;/c</text>
+  <text x="55" y="370" class="small">これを破ると断面内で横モードが励振され、</text>
+  <text x="55" y="385" class="small">Webster の 1次元方程式が無効になる。</text>
+  <text x="55" y="404" class="label" fill="#1a4a6a">&#8594; 開口径の上限: a_max = 3.83c/(2&#x03C0;f_max)</text>
+
+  <!-- 制約2: 曲率半径と波長の関係 -->
+  <rect x="460" y="285" width="400" height="130" rx="6" class="box"/>
+  <text x="475" y="308" class="sub">制約 2: 曲率半径 vs 波長</text>
+  <text x="475" y="332" class="eq">R_curv &#8805; (2 &#8594; 3) &#x00B7; a</text>
+  <text x="475" y="352" class="eq">かつ k &#x00B7; R_curv &#8811; 1</text>
+  <text x="475" y="372" class="small">曲げ部で内側/外側の経路長差が波長オーダーに</text>
+  <text x="475" y="387" class="small">なると、平面波フロントが傾き分散が発生。</text>
+  <text x="475" y="406" class="label" fill="#1a4a6a">&#8594; 最小曲率半径 R_min = max(3a, 3c/(2&#x03C0;f))</text>
+
+  <!-- 制約3: 断面積の連続性 -->
+  <rect x="40" y="430" width="400" height="130" rx="6" class="box"/>
+  <text x="55" y="453" class="sub">制約 3: dS/dx の連続性</text>
+  <text x="55" y="477" class="eq">S(x) は C&#x00B9; 級で指数的に増加</text>
+  <text x="55" y="497" class="label">折り曲げ部で断面が変わらないこと</text>
+  <text x="55" y="515" class="small">曲げ内外で断面が歪むのは許容だが、軸方向の</text>
+  <text x="55" y="530" class="small">S(x) 関数が指数則から外れると反射が生じる。</text>
+  <text x="55" y="549" class="label" fill="#1a4a6a">&#8594; 曲げ部では断面を一定に保つ (circular)</text>
+
+  <!-- 制約4: 直管換算長の保存 -->
+  <rect x="460" y="430" width="400" height="130" rx="6" class="box"/>
+  <text x="475" y="453" class="sub">制約 4: 音響軸長の保存</text>
+  <text x="475" y="477" class="eq">L_eff = &#x222B; dx_axis</text>
+  <text x="475" y="497" class="label">軸に沿った弧長で m と L を保持</text>
+  <text x="475" y="515" class="small">曲げ部の内周と外周の中間を音響軸とする。</text>
+  <text x="475" y="530" class="small">指数 m は軸長で定義されるので、曲げても</text>
+  <text x="475" y="545" class="small">軸長が保たれれば f_c は不変。</text>
+
+  <!-- 設計結論 -->
+  <rect x="40" y="580" width="820" height="85" rx="6" fill="#ecf4ec" stroke="#2a7" stroke-width="1.5"/>
+  <text x="55" y="604" class="sub" fill="#1a6a3a">設計結論: 曲げ許容マップ</text>
+  <text x="55" y="624" class="label">C3 (131 Hz, a &#8818; 50mm): R_min &#8776; 150 mm -- 緩やかなU字は可能</text>
+  <text x="55" y="642" class="label">C4 (262 Hz, a &#8818; 30mm): R_min &#8776; 90 mm -- 2回以上の折り返しも可能</text>
+  <text x="55" y="660" class="label">C5 (523 Hz, a &#8818; 15mm): R_min &#8776; 50 mm -- 螺旋状折りたたみも可能</text>
+
+  <!-- 区切り線 -->
+  <line x1="40" y1="695" x2="860" y2="695" stroke="#888" stroke-width="1"/>
+
+  <!-- (4) 代替案: JBL Creature型 曲面指数ホーン -->
+  <text x="450" y="720" text-anchor="middle" class="title" font-size="16">代替案: JBL Creature 型 -- 曲面指数ホーン (折りたたみ不要)</text>
+
+  <!-- 左: Creature型シルエット -->
+  <g transform="translate(60, 740)">
+    <!-- 涙滴型外形 (左から右へ指数的に広がり、頂点で滑らかに湾曲) -->
+    <path d="M 10 80
+             C 10 72, 30 68, 50 66
+             C 90 60, 130 52, 165 38
+             C 195 26, 215 18, 225 28
+             C 235 40, 220 58, 200 72
+             C 175 88, 145 96, 110 100
+             C 75 102, 40 100, 25 98
+             C 15 96, 10 90, 10 80 Z" class="creature"/>
+    <!-- 音響軸 (内部の滑らかな曲線) -->
+    <path d="M 20 82 C 60 78, 110 68, 160 48 C 195 32, 215 26, 220 32" class="axis" stroke="#5a1a7a"/>
+    <!-- 平面波フロント (軸に直交して描画、徐々に拡大) -->
+    <line x1="40" y1="76" x2="40" y2="92" stroke="#5a1a7a" stroke-width="1.5"/>
+    <line x1="90" y1="64" x2="90" y2="95" stroke="#5a1a7a" stroke-width="1.5"/>
+    <line x1="140" y1="48" x2="140" y2="95" stroke="#5a1a7a" stroke-width="1.5"/>
+    <line x1="190" y1="28" x2="195" y2="82" stroke="#5a1a7a" stroke-width="1.5"/>
+    <!-- 喉と開口のマーカー -->
+    <circle cx="15" cy="85" r="3" fill="#5a1a7a"/>
+    <text x="15" y="115" text-anchor="middle" class="small">喉 (throat)</text>
+    <text x="215" y="20" text-anchor="middle" class="small">開口 (mouth)</text>
+  </g>
+
+  <text x="170" y="865" text-anchor="middle" class="small">涙滴型 -- dS/dx が自然に C&#x00B9; 連続</text>
+  <text x="170" y="880" text-anchor="middle" class="ok" font-size="12">[OK] 折りたたみ不要で全制約を満たす</text>
+
+  <!-- 右: 物理的特徴の説明 -->
+  <rect x="340" y="735" width="520" height="155" rx="6" class="box"/>
+  <text x="355" y="758" class="sub" fill="#5a1a7a">物理的特徴 -- JBL Creature (2003, Ashcraft Design) に学ぶ</text>
+  <text x="355" y="780" class="label">[1] 外形そのものが指数ホーンの軸に沿って描かれている (等面積等高線が涙滴型)</text>
+  <text x="355" y="800" class="label">[2] 平行面がないため内部定在波が発生しない -- 制約1 (ka&lt;3.83) を幾何で回避</text>
+  <text x="355" y="820" class="label">[3] 全域で dS/dx が滑らか -- 制約3 (C&#x00B9; 連続) を自然に達成</text>
+  <text x="355" y="840" class="label">[4] 音響軸自体が緩やかに湾曲 -- 急峻折りの分散問題を最初から回避</text>
+  <text x="355" y="860" class="label" fill="#5a1a7a">&#8594; ピアニカ・オルガンの中高音ベルはこの形状を採用可能。低音は体積不足で不可。</text>
+  <text x="355" y="880" class="small">筐体前面を複数のCreature型シェルで構成すれば、扇状配置と一体化する。</text>
+</svg>

@@ -1,0 +1,40 @@
+{
+  "phase_a_paths": 21,
+  "phase_b": {
+    "external_paths": [
+      "A1",
+      "A3",
+      "A4",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ],
+    "total_tf_order_num": 22,
+    "total_tf_order_den": 24,
+    "dc_gain": 1.1127826648768933,
+    "n_poles": 24,
+    "n_zeros": 22
+  },
+  "phase_d": {
+    "state_dim": 24,
+    "rank_ctrb": 2,
+    "rank_obsv": 2,
+    "controllable": false,
+    "observable": false,
+    "state_dim_minreal": 24,
+    "major_poles_hz": [
+      49.999998158517386,
+      50.0000018414829,
+      123.99999999999874,
+      199.99999999983186,
+      200.0000000001694,
+      250.00000000000037,
+      322.99999141084754,
+      323.00000858915297,
+      1102.657790843587,
+      5513.288954217575
+    ]
+  }
+}

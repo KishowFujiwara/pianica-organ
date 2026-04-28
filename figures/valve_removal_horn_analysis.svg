@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 720" width="680" height="720" font-family="sans-serif">
+  <title>バルブ削除+ホーン追加の物理解析</title>
+  <desc>バルブの有無による音響結合の違いと、楽器としての性能変化</desc>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">バルブ削除 + ホーン追加の物理</text>
+  <line x1="40" y1="54" x2="640" y2="54" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="170" y="80" font-size="14" font-weight="500" text-anchor="middle" fill="#0F6E56">バルブあり(現状 + ホーン)</text>
+
+  <rect x="60" y="100" width="80" height="30" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="3"/>
+  <text x="100" y="120" font-size="12" text-anchor="middle" fill="#712B13">リード</text>
+
+  <rect x="150" y="100" width="60" height="30" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.8" rx="3"/>
+  <text x="180" y="120" font-size="12" text-anchor="middle" fill="#2C2C2A">バルブ</text>
+
+  <rect x="220" y="100" width="60" height="30" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5" rx="3"/>
+  <text x="250" y="120" font-size="12" text-anchor="middle" fill="#0C447C">通路</text>
+
+  <path d="M 280,100 L 290,100 L 290,130 L 280,130 Z" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+
+  <path d="M 290,100 L 330,100 L 330,130 L 290,130 Z" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="310" y="120" font-size="12" text-anchor="middle" fill="#712B13">ホーン</text>
+
+  <text x="60" y="160" font-size="12" fill="#5F5E5A">バルブが音響インピーダンス不整合面</text>
+  <text x="60" y="178" font-size="12" fill="#5F5E5A">-> リードとホーンは弱結合</text>
+  <text x="60" y="196" font-size="12" fill="#5F5E5A">-> 典型的なフリーリード動作</text>
+
+  <line x1="340" y1="100" x2="340" y2="220" stroke="#888780" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+  <text x="510" y="80" font-size="14" font-weight="500" text-anchor="middle" fill="#D85A30">バルブなし(削除 + ホーン)</text>
+
+  <rect x="380" y="100" width="80" height="30" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="3"/>
+  <text x="420" y="120" font-size="12" text-anchor="middle" fill="#712B13">リード</text>
+
+  <rect x="470" y="100" width="80" height="30" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5" rx="3"/>
+  <text x="510" y="120" font-size="12" text-anchor="middle" fill="#0C447C">通路</text>
+
+  <rect x="560" y="100" width="60" height="30" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5" rx="3"/>
+  <text x="590" y="120" font-size="12" text-anchor="middle" fill="#712B13">ホーン</text>
+
+  <text x="360" y="160" font-size="12" fill="#5F5E5A">仕切りなし、直接結合</text>
+  <text x="360" y="178" font-size="12" fill="#5F5E5A">-> リード管的な要素</text>
+  <text x="360" y="196" font-size="12" fill="#5F5E5A">-> ただし弱結合に留まる</text>
+
+  <line x1="40" y1="220" x2="640" y2="220" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="246" font-size="14" font-weight="500" fill="#534AB7">定量比較(F4 = 349 Hz)</text>
+
+  <text x="40" y="272" font-size="12" fill="#5F5E5A">項目</text>
+  <text x="280" y="272" font-size="12" text-anchor="middle" fill="#0F6E56">バルブあり</text>
+  <text x="480" y="272" font-size="12" text-anchor="middle" fill="#D85A30">バルブなし</text>
+
+  <line x1="40" y1="278" x2="640" y2="278" stroke="#888780" stroke-width="0.3"/>
+
+  <text x="40" y="296" font-size="12" fill="#5F5E5A">気密性</text>
+  <text x="280" y="296" font-size="12" text-anchor="middle" fill="#0F6E56">100%</text>
+  <text x="480" y="296" font-size="12" text-anchor="middle" fill="#D85A30">70-80%</text>
+
+  <text x="40" y="316" font-size="12" fill="#5F5E5A">音量(ホーン付き)</text>
+  <text x="280" y="316" font-size="12" text-anchor="middle" fill="#0F6E56">+10 dB</text>
+  <text x="480" y="316" font-size="12" text-anchor="middle" fill="#D85A30">+7〜10 dB</text>
+
+  <text x="40" y="336" font-size="12" fill="#5F5E5A">アタック</text>
+  <text x="280" y="336" font-size="12" text-anchor="middle" fill="#0F6E56">5 ms</text>
+  <text x="480" y="336" font-size="12" text-anchor="middle" fill="#D85A30">2 ms</text>
+
+  <text x="40" y="356" font-size="12" fill="#5F5E5A">リリース</text>
+  <text x="280" y="356" font-size="12" text-anchor="middle" fill="#0F6E56">20 ms</text>
+  <text x="480" y="356" font-size="12" text-anchor="middle" fill="#D85A30">100-300 ms</text>
+
+  <text x="40" y="376" font-size="12" fill="#5F5E5A">ノイズ</text>
+  <text x="280" y="376" font-size="12" text-anchor="middle" fill="#0F6E56">中</text>
+  <text x="480" y="376" font-size="12" text-anchor="middle" fill="#D85A30">小</text>
+
+  <text x="40" y="396" font-size="12" fill="#5F5E5A">音色均一性</text>
+  <text x="280" y="396" font-size="12" text-anchor="middle" fill="#0F6E56">高</text>
+  <text x="480" y="396" font-size="12" text-anchor="middle" fill="#D85A30">中</text>
+
+  <text x="40" y="416" font-size="12" fill="#5F5E5A">吸いで音が出る</text>
+  <text x="280" y="416" font-size="12" text-anchor="middle" fill="#0F6E56">出ない</text>
+  <text x="480" y="416" font-size="12" text-anchor="middle" fill="#D85A30">出る</text>
+
+  <line x1="40" y1="440" x2="640" y2="440" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="466" font-size="14" font-weight="500" fill="#BA7517">バルブ削除のメリット・デメリット</text>
+
+  <rect x="40" y="484" width="290" height="110" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5" rx="4"/>
+  <text x="185" y="506" font-size="14" font-weight="500" text-anchor="middle" fill="#04342C">メリット</text>
+  <text x="50" y="526" font-size="12" fill="#04342C">- インピーダンス不連続の解消</text>
+  <text x="50" y="544" font-size="12" fill="#04342C">- 気流ノイズ減少</text>
+  <text x="50" y="562" font-size="12" fill="#04342C">- アタック速化</text>
+  <text x="50" y="580" font-size="12" fill="#04342C">- リード管的な音色要素</text>
+
+  <rect x="350" y="484" width="290" height="110" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5" rx="4"/>
+  <text x="495" y="506" font-size="14" font-weight="500" text-anchor="middle" fill="#501313">デメリット</text>
+  <text x="360" y="526" font-size="12" fill="#501313">- 気密性低下で音量減</text>
+  <text x="360" y="544" font-size="12" fill="#501313">- リリースが長くなる</text>
+  <text x="360" y="562" font-size="12" fill="#501313">- 同時押しで音量変動</text>
+  <text x="360" y="580" font-size="12" fill="#501313">- 吸うと不要音</text>
+
+  <line x1="40" y1="614" x2="640" y2="614" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="640" font-size="14" font-weight="500" fill="#D85A30">推奨: 可逆実験でまず試す</text>
+
+  <text x="40" y="662" font-size="12" fill="#5F5E5A">バルブは削除せず、テープで固定して無効化する</text>
+  <text x="40" y="680" font-size="12" fill="#5F5E5A">効果が良ければ本格削除、悪ければテープを剥がして復元</text>
+  <text x="40" y="698" font-size="12" fill="#5F5E5A">実験は段階的に: バルブ有無とホーン有無の4条件を比較</text>
+</svg>

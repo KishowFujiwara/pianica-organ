@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 470" width="680" height="470" font-family="sans-serif">
+  <title>指数ホーンのカットオフ周波数と波動モード</title>
+  <desc>カットオフ以上(f>fc)では波動が伝搬し、以下(f<fc)ではエバネッセントとなり入口で反射する</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">指数ホーン S(x) = S0 exp(mx) のカットオフ</text>
+
+  <!-- Upper horn: f > fc (propagating wave) -->
+  <path d="M 120,113 C 280,110 460,90 580,75" stroke="#888780" stroke-width="1" fill="none"/>
+  <path d="M 120,137 C 280,140 460,160 580,175" stroke="#888780" stroke-width="1" fill="none"/>
+  <line x1="120" y1="113" x2="120" y2="137" stroke="#888780" stroke-width="1"/>
+
+  <path d="M 120,125
+           C 146,115 171,115 197,125
+           C 216,135 254,135 273,125
+           C 292,116 330,116 350,125
+           C 369,134 407,134 427,125
+           C 446,117 484,117 504,125
+           C 523,133 561,133 580,125"
+        stroke="#D85A30" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <line x1="588" y1="125" x2="624" y2="125" stroke="#D85A30" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="630" y="128" font-size="12" fill="#D85A30">放射</text>
+
+  <text x="40" y="84" font-size="14" font-weight="500" fill="#D85A30">f &gt; fc</text>
+  <text x="40" y="102" font-size="12" fill="#5F5E5A">伝搬波</text>
+  <text x="40" y="118" font-size="12" fill="#5F5E5A">包絡線 e^(-mx/2)</text>
+  <text x="40" y="134" font-size="12" fill="#5F5E5A">面積拡大と相殺</text>
+
+  <text x="120" y="200" font-size="12" text-anchor="middle" fill="#5F5E5A">スロート</text>
+  <text x="580" y="200" font-size="12" text-anchor="middle" fill="#5F5E5A">開口</text>
+
+  <line x1="40" y1="220" x2="640" y2="220" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
+
+  <!-- Lower horn: f < fc (evanescent) -->
+  <path d="M 120,313 C 280,310 460,290 580,275" stroke="#888780" stroke-width="1" fill="none"/>
+  <path d="M 120,337 C 280,340 460,360 580,375" stroke="#888780" stroke-width="1" fill="none"/>
+  <line x1="120" y1="313" x2="120" y2="337" stroke="#888780" stroke-width="1"/>
+
+  <path d="M 120,315 C 200,317 340,320 580,322.5 L 580,327.5 C 340,330 200,333 120,335 Z"
+        fill="#378ADD" fill-opacity="0.3" stroke="none"/>
+  <path d="M 120,315 C 200,317 340,320 580,322.5" stroke="#378ADD" stroke-width="1.5" fill="none"/>
+  <path d="M 120,335 C 200,333 340,330 580,327.5" stroke="#378ADD" stroke-width="1.5" fill="none"/>
+
+  <line x1="110" y1="305" x2="78" y2="305" stroke="#378ADD" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="74" y="300" font-size="12" text-anchor="end" fill="#378ADD">反射</text>
+
+  <text x="40" y="270" font-size="14" font-weight="500" fill="#378ADD">f &lt; fc</text>
+  <text x="40" y="288" font-size="12" fill="#5F5E5A">エバネッセント</text>
+  <text x="40" y="304" font-size="12" fill="#5F5E5A">振動せず減衰のみ</text>
+  <text x="40" y="320" font-size="12" fill="#5F5E5A">入口で反射</text>
+
+  <text x="120" y="400" font-size="12" text-anchor="middle" fill="#5F5E5A">スロート</text>
+  <text x="580" y="400" font-size="12" text-anchor="middle" fill="#5F5E5A">開口</text>
+
+  <text x="340" y="450" font-size="12" text-anchor="middle" fill="#5F5E5A">カットオフ fc = mc/(4π): m(広がり率)のみで決定、管長は無関係</text>
+</svg>

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 780" font-family="sans-serif">
+  <style>
+    .title { font-size: 18px; font-weight: bold; }
+    .sub { font-size: 13px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 11px; fill: #555; }
+    .tiny { font-size: 10px; fill: #666; }
+    .eq { font-size: 12px; font-family: serif; font-style: italic; }
+    .cabinet { fill: #f0e8d8; stroke: #5a3a1a; stroke-width: 2.5; }
+    .wedge { fill: #b8d8e8; stroke: #1a4a6a; stroke-width: 1.5; }
+    .creature { fill: #e8dcf0; stroke: #5a1a7a; stroke-width: 1.8; }
+    .soundboard { fill: #dcc8a0; stroke: #6a4a1a; stroke-width: 1.5; }
+    .reed { fill: #c89b6b; stroke: #5a3a1a; stroke-width: 1; }
+    .bellows { fill: #d0c0b0; stroke: #5a3a1a; stroke-width: 1.2; }
+    .axis { stroke: #333; stroke-width: 1; fill: none; stroke-dasharray: 3 3; }
+    .flow { fill: none; stroke: #2a7; stroke-width: 2; marker-end: url(#ar); }
+    .primary { fill: none; stroke: #5a1a7a; stroke-width: 2; marker-end: url(#arp); }
+    .secondary { fill: none; stroke: #6a4a1a; stroke-width: 1.5; marker-end: url(#ars); stroke-dasharray: 4 2; }
+    .box { fill: #f8f4ec; stroke: #555; stroke-width: 1; }
+    .dim { stroke: #666; stroke-width: 1; fill: none; marker-end: url(#dA); marker-start: url(#dA); }
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2a7"/>
+    </marker>
+    <marker id="arp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a1a7a"/>
+    </marker>
+    <marker id="ars" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6a4a1a"/>
+    </marker>
+    <marker id="dA" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2,2 L8,5 L2,8 z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="26" text-anchor="middle" class="title">楔形折り返し + 響板上部 Creature型 -- 2段階ハイブリッド構造</text>
+  <text x="450" y="48" text-anchor="middle" class="small">アップライトピアノ筐体 正面断面図 (左右対称、1鍵分を抜粋)</text>
+
+  <!-- 筐体外枠 -->
+  <rect x="80" y="75" width="740" height="600" class="cabinet" rx="6"/>
+
+  <!-- === 下段: ベローズと吸気 === -->
+  <g id="lower-bellows">
+    <path d="M 250 625 L 650 625 L 670 655 L 230 655 Z" class="bellows"/>
+    <text x="450" y="646" text-anchor="middle" class="label">足踏みベローズ (圧力源 p0)</text>
+  </g>
+
+  <!-- === 中下段: 楔形折り返しホーン (V字直管 + 下部U字) === -->
+  <g id="wedge-section">
+    <!-- 左脚 (垂直にわずか外へ傾く) -->
+    <path d="M 240 400 L 260 400 L 340 610 L 320 610 Z" class="wedge"/>
+    <!-- 右脚 -->
+    <path d="M 660 400 L 640 400 L 560 610 L 580 610 Z" class="wedge"/>
+    <!-- 下部折り返し (U字) -->
+    <path d="M 320 610 L 340 610 C 360 615, 440 618, 450 618 C 460 618, 540 615, 560 610 L 580 610
+             C 540 625, 460 628, 450 628 C 440 628, 360 625, 320 610 Z" class="wedge"/>
+
+    <!-- 喉 (中央下にリードを配置) -->
+    <rect x="440" y="615" width="20" height="10" class="reed"/>
+    <text x="450" y="640" text-anchor="middle" class="tiny">フリーリード</text>
+
+    <!-- 音響軸 (左右) -->
+    <line x1="250" y1="400" x2="330" y2="610" class="axis"/>
+    <path d="M 330 615 C 380 620, 520 620, 570 615" class="axis"/>
+    <line x1="570" y1="610" x2="650" y2="400" class="axis"/>
+
+    <!-- 気流 -->
+    <line x1="450" y1="625" x2="450" y2="600" class="flow"/>
+    <line x1="360" y1="595" x2="310" y2="480" class="flow"/>
+    <line x1="540" y1="595" x2="590" y2="480" class="flow"/>
+
+    <!-- 注記 -->
+    <text x="180" y="470" class="small" fill="#1a4a6a">楔形</text>
+    <text x="180" y="485" class="small" fill="#1a4a6a">直管部</text>
+    <text x="180" y="500" class="tiny" fill="#1a4a6a">(V字に</text>
+    <text x="180" y="513" class="tiny" fill="#1a4a6a">開く)</text>
+
+    <text x="720" y="470" class="small" fill="#1a4a6a">楔形</text>
+    <text x="720" y="485" class="small" fill="#1a4a6a">直管部</text>
+
+    <text x="180" y="615" class="small" fill="#1a4a6a">下部U字</text>
+    <text x="180" y="628" class="tiny" fill="#1a4a6a">(曲げ部)</text>
+  </g>
+
+  <!-- === 中段: 響板 === -->
+  <g id="soundboard">
+    <path d="M 100 380 L 800 380 L 800 405 L 100 405 Z" class="soundboard"/>
+    <text x="450" y="398" text-anchor="middle" class="small">パイン響板 (soundboard) -- 楔形出口が接続、二次放射源を兼ねる</text>
+
+    <!-- 開口から響板への接続 (楔形上端) -->
+    <line x1="240" y1="400" x2="260" y2="400" stroke="#1a4a6a" stroke-width="2"/>
+    <line x1="640" y1="400" x2="660" y2="400" stroke="#1a4a6a" stroke-width="2"/>
+  </g>
+
+  <!-- === 上段: Creature型エンクロージャ === -->
+  <g id="creature-section">
+    <!-- 響板上に被さる大きな涙滴型 -->
+    <path d="M 150 380
+             C 140 340, 150 280, 220 220
+             C 280 170, 380 140, 450 135
+             C 520 140, 620 170, 680 220
+             C 750 280, 760 340, 750 380
+             Z" class="creature"/>
+
+    <!-- 内部の音響軸 (左右のホーン出口から頂部へ集まる) -->
+    <path d="M 250 380 C 280 330, 350 260, 440 200" class="axis" stroke="#5a1a7a"/>
+    <path d="M 650 380 C 620 330, 550 260, 460 200" class="axis" stroke="#5a1a7a"/>
+
+    <!-- 頂部の放射開口 -->
+    <ellipse cx="450" cy="135" rx="30" ry="10" fill="#fff" stroke="#5a1a7a" stroke-width="1.5"/>
+    <text x="450" y="120" text-anchor="middle" class="tiny" fill="#5a1a7a">最終放射開口</text>
+
+    <!-- 一次放射矢印 -->
+    <line x1="450" y1="135" x2="450" y2="95" class="primary"/>
+    <line x1="430" y1="135" x2="400" y2="95" class="primary"/>
+    <line x1="470" y1="135" x2="500" y2="95" class="primary"/>
+
+    <!-- 楔形からCreatureへの接続 (喉) -->
+    <circle cx="250" cy="380" r="4" fill="#5a1a7a"/>
+    <circle cx="650" cy="380" r="4" fill="#5a1a7a"/>
+    <text x="250" y="370" text-anchor="middle" class="tiny" fill="#5a1a7a">Creature喉L</text>
+    <text x="650" y="370" text-anchor="middle" class="tiny" fill="#5a1a7a">Creature喉R</text>
+
+    <!-- 響板からの二次放射 -->
+    <line x1="300" y1="380" x2="280" y2="340" class="secondary"/>
+    <line x1="600" y1="380" x2="620" y2="340" class="secondary"/>
+    <text x="240" y="325" class="tiny" fill="#6a4a1a">響板振動による二次放射</text>
+    <text x="620" y="325" class="tiny" fill="#6a4a1a">(Creature内部で一次音と合成)</text>
+
+    <!-- 内部説明 -->
+    <text x="450" y="255" text-anchor="middle" class="small" fill="#5a1a7a">Creature型内部</text>
+    <text x="450" y="272" text-anchor="middle" class="tiny" fill="#5a1a7a">左右ホーン出口からの波が収束・整合</text>
+    <text x="450" y="287" text-anchor="middle" class="tiny" fill="#5a1a7a">+ 響板の二次放射も同一空間で合成</text>
+    <text x="450" y="302" text-anchor="middle" class="tiny" fill="#5a1a7a">全域で dS/dx 滑らか &#8594; 整合放射</text>
+  </g>
+
+  <!-- 寸法線 (右側) -->
+  <line x1="835" y1="75" x2="835" y2="380" class="dim"/>
+  <text x="855" y="225" class="tiny" transform="rotate(-90 855 225)">上段 305 mm</text>
+
+  <line x1="835" y1="380" x2="835" y2="620" class="dim"/>
+  <text x="855" y="500" class="tiny" transform="rotate(-90 855 500)">中下段 240 mm</text>
+
+  <!-- === 右下: 物理的な役割分担 === -->
+  <rect x="40" y="700" width="820" height="75" rx="6" fill="#f0f0f8" stroke="#555" stroke-width="1.2"/>
+  <text x="55" y="720" class="sub">物理的な役割分担 -- 「歪みの発生場所」と「耳に届く場所」を空間的に分離</text>
+  <text x="55" y="740" class="label">[1] 楔形折り返し (下段): 長い音響軸長 L_eff を確保。曲げ歪みは発生するが低音域なので波長が長く影響小</text>
+  <text x="55" y="757" class="label">[2] Creature型 (上段): 響板出口に被さる清潔な最終段。中高音の倍音はここを通過 &#8594; 耳に届く音は歪まない</text>
+  <text x="55" y="772" class="label">[3] 響板: 楔形の出口天板を兼ねつつ、機械振動で二次放射。Creature内部で一次音と同位相合成される</text>
+</svg>

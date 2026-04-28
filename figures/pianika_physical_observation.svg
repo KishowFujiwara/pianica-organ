@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 700" width="680" height="700" font-family="sans-serif">
+  <title>ピアニカ実物分解の観測結果</title>
+  <desc>リードプレート、リード配列、空気室、加工精度の観測</desc>
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arl" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M8 1L2 5L8 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="14" font-weight="500" fill="#2C2C2A">ピアニカ実物観測: リードと空気室</text>
+  <line x1="40" y1="54" x2="640" y2="54" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="80" font-size="14" font-weight="500" fill="#534AB7">リードプレート(画像1)の構造</text>
+
+  <rect x="60" y="100" width="560" height="60" fill="#FAC775" stroke="#854F0B" stroke-width="0.8" rx="2"/>
+  <text x="340" y="135" font-size="12" text-anchor="middle" fill="#412402">金属プレート(真鍮/洋白)</text>
+
+  <rect x="80" y="108" width="60" height="8" fill="#2C2C2A"/>
+  <rect x="150" y="108" width="52" height="8" fill="#2C2C2A"/>
+  <rect x="212" y="108" width="45" height="8" fill="#2C2C2A"/>
+  <rect x="267" y="108" width="38" height="8" fill="#2C2C2A"/>
+  <rect x="315" y="108" width="33" height="8" fill="#2C2C2A"/>
+  <rect x="358" y="108" width="28" height="8" fill="#2C2C2A"/>
+  <rect x="396" y="108" width="24" height="8" fill="#2C2C2A"/>
+  <rect x="430" y="108" width="20" height="8" fill="#2C2C2A"/>
+  <rect x="460" y="108" width="17" height="8" fill="#2C2C2A"/>
+  <rect x="487" y="108" width="14" height="8" fill="#2C2C2A"/>
+  <rect x="511" y="108" width="12" height="8" fill="#2C2C2A"/>
+  <rect x="533" y="108" width="10" height="8" fill="#2C2C2A"/>
+
+  <text x="85" y="180" font-size="12" text-anchor="start" fill="#5F5E5A">低音(L≈40mm、F2相当)</text>
+  <text x="600" y="180" font-size="12" text-anchor="end" fill="#5F5E5A">高音(L≈14mm、F5相当)</text>
+
+  <line x1="80" y1="190" x2="620" y2="190" stroke="#888780" stroke-width="0.5" marker-start="url(#arl)" marker-end="url(#arr2)"/>
+  <text x="340" y="208" font-size="12" text-anchor="middle" fill="#5F5E5A">リード長 L が L^2 に反比例で周波数を決める</text>
+
+  <line x1="40" y1="228" x2="640" y2="228" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="254" font-size="14" font-weight="500" fill="#0F6E56">空気室(画像2)の構造</text>
+
+  <rect x="100" y="280" width="480" height="120" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8" rx="4"/>
+  <text x="340" y="310" font-size="12" text-anchor="middle" fill="#04342C">プラスチック筐体 = 空気室</text>
+  <text x="340" y="328" font-size="12" text-anchor="middle" fill="#04342C">25cm × 8cm × 4cm, 容積 約 800 cm^3</text>
+  <text x="340" y="346" font-size="12" text-anchor="middle" fill="#04342C">37鍵共通の加圧チャンバー</text>
+
+  <rect x="140" y="365" width="400" height="16" fill="#FAC775" stroke="#854F0B" stroke-width="0.5" rx="2"/>
+  <text x="340" y="377" font-size="12" text-anchor="middle" fill="#412402">リードプレート(差し込み式)</text>
+
+  <text x="40" y="405" font-size="12" fill="#5F5E5A">呼気脈動 0.5〜2s を平滑化する時定数を持つ</text>
+
+  <line x1="40" y1="425" x2="640" y2="425" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="451" font-size="14" font-weight="500" fill="#BA7517">加工精度と設計パラメータ</text>
+
+  <rect x="40" y="470" width="190" height="80" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5" rx="4"/>
+  <text x="135" y="492" font-size="14" font-weight="500" text-anchor="middle" fill="#633806">リード</text>
+  <text x="135" y="510" font-size="12" text-anchor="middle" fill="#633806">厚さ 0.1〜0.3mm</text>
+  <text x="135" y="526" font-size="12" text-anchor="middle" fill="#633806">長さ 14〜40mm</text>
+  <text x="135" y="542" font-size="12" text-anchor="middle" fill="#633806">真鍮/リン青銅</text>
+
+  <rect x="245" y="470" width="190" height="80" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5" rx="4"/>
+  <text x="340" y="492" font-size="14" font-weight="500" text-anchor="middle" fill="#633806">スロット</text>
+  <text x="340" y="510" font-size="12" text-anchor="middle" fill="#633806">リードとの隙間</text>
+  <text x="340" y="526" font-size="12" text-anchor="middle" fill="#633806">0.05〜0.1mm</text>
+  <text x="340" y="542" font-size="12" text-anchor="middle" fill="#633806">音量を決定</text>
+
+  <rect x="450" y="470" width="190" height="80" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5" rx="4"/>
+  <text x="545" y="492" font-size="14" font-weight="500" text-anchor="middle" fill="#633806">空気室</text>
+  <text x="545" y="510" font-size="12" text-anchor="middle" fill="#633806">容積 800 cm^3</text>
+  <text x="545" y="526" font-size="12" text-anchor="middle" fill="#633806">全鍵共通</text>
+  <text x="545" y="542" font-size="12" text-anchor="middle" fill="#633806">脈動平滑</text>
+
+  <line x1="40" y1="570" x2="640" y2="570" stroke="#888780" stroke-width="0.5"/>
+
+  <text x="40" y="596" font-size="14" font-weight="500" fill="#D85A30">リードオルガン設計への転用</text>
+
+  <text x="40" y="620" font-size="12" fill="#5F5E5A">- リード長 F2〜F5 で 14〜40mm は転用可、C2には60mm以上が必要</text>
+  <text x="40" y="638" font-size="12" fill="#5F5E5A">- スロット隙間 0.1mm 精度は手作業でも到達可能</text>
+  <text x="40" y="656" font-size="12" fill="#5F5E5A">- 空気室(共用)+ バルブ(個別)の2段構造はオルガンでも採用</text>
+  <text x="40" y="676" font-size="12" fill="#5F5E5A">- 調律は先端/根元の削りで±1セント精度まで可能</text>
+</svg>

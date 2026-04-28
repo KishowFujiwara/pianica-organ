@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" font-family="sans-serif">
+  <defs>
+    <pattern id="grid3" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#dde4ea" stroke-width="0.5"/>
+    </pattern>
+    <marker id="orangeArrow3" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="14" markerHeight="14" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 L 3 6 Z" fill="#e07020"/>
+    </marker>
+    <marker id="flowArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2a7"/>
+    </marker>
+  </defs>
+  <rect width="720" height="560" fill="url(#grid3)"/>
+
+  <text x="30" y="28" font-size="15" fill="#000" font-weight="bold">平面図 -- 3つの楔形 (第1順流 + 第2逆流 + 第3順流)</text>
+
+  <!-- 筐体外枠 -->
+  <rect x="40" y="50" width="640" height="340" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- ===== 第1楔形 (下): 筐体底 + 下の斜線 ===== -->
+  <path d="M 195 340 L 540 260 L 540 390 L 195 390 Z" 
+        fill="#e0edf5" stroke="none"/>
+
+  <!-- ===== 第2楔形 (中): 下の斜線 + 上の斜線 ===== -->
+  <path d="M 280 135 L 640 225 L 540 260 L 195 340 L 195 240 Z" 
+        fill="#edf5e5" stroke="none"/>
+  <!-- もう少し正確に: 上斜線の左端(280,135)から下斜線の始点(195,340)へは直接つながらない。
+       実際には左端で上下に広い領域が中楔形になる -->
+  <!-- 修正: 左側の境界は筐体の左辺(x=40 または ピアニカ右端 x=195 で区切られる) -->
+
+  <!-- ===== 第3楔形 (上): 筐体天辺 + 上の斜線 ===== -->
+  <path d="M 280 135 L 640 225 L 640 50 L 280 50 Z" 
+        fill="#f5e5ed" stroke="none"/>
+
+  <!-- ===== ラベル ===== -->
+  <text x="365" y="372" font-size="13" font-weight="bold" fill="#1a4a6a">第1楔形 (下)</text>
+  <text x="365" y="387" font-size="10" fill="#1a4a6a">左喉 -> 右開口 (順流)</text>
+
+  <text x="380" y="210" font-size="13" font-weight="bold" fill="#4a7a1a">第2楔形 (中)</text>
+  <text x="380" y="226" font-size="10" fill="#4a7a1a">左開口 &lt;- 右喉 (逆流)</text>
+
+  <text x="430" y="100" font-size="13" font-weight="bold" fill="#7a1a4a">第3楔形 (上)</text>
+  <text x="430" y="116" font-size="10" fill="#7a1a4a">左喉 -> 右開口 (順流)</text>
+
+  <!-- スケッチ通りの 斜線 -->
+  <line x1="195" y1="340" x2="540" y2="260" stroke="#2a6d8a" stroke-width="2.5"/>
+  <line x1="280" y1="135" x2="640" y2="225" stroke="#2a6d8a" stroke-width="2.5"/>
+
+  <!-- 筐体上下辺を強調 (楔形1と楔形3の壁) -->
+  <line x1="195" y1="390" x2="540" y2="390" stroke="#c33" stroke-width="3"/>
+  <line x1="280" y1="50" x2="640" y2="50" stroke="#c33" stroke-width="3"/>
+
+  <!-- ピアニカ -->
+  <rect x="52" y="340" width="140" height="42" fill="#f0e0c8" stroke="#333" stroke-width="1.2"/>
+  <text x="122" y="367" text-anchor="middle" font-size="14" fill="#000">ピアニカ</text>
+
+  <!-- 空気の流れ (緑色の小矢印でジグザグ経路を明示) -->
+  <!-- 第1楔形: 左→右 -->
+  <line x1="220" y1="365" x2="300" y2="350" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="340" y1="345" x2="420" y2="325" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="460" y1="320" x2="510" y2="310" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+
+  <!-- 右端折り返し (オレンジ矢印) -->
+  <path d="M 570 300 L 510 300 Q 495 300 495 285 L 495 240"
+        fill="none" stroke="#e07020" stroke-width="14" stroke-linecap="butt"
+        marker-end="url(#orangeArrow3)"/>
+  <text x="510" y="335" font-size="11" fill="#000">空気の流れ</text>
+
+  <!-- 第2楔形: 右→左 -->
+  <line x1="460" y1="220" x2="380" y2="215" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="360" y1="215" x2="280" y2="215" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="260" y1="220" x2="220" y2="225" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+
+  <!-- 左端折り返し (オレンジ矢印) -->
+  <path d="M 200 230 L 200 170 Q 200 155 215 155 L 260 155"
+        fill="none" stroke="#e07020" stroke-width="14" stroke-linecap="butt"
+        marker-end="url(#orangeArrow3)"/>
+  <text x="155" y="265" font-size="11" fill="#000">空気の流れ</text>
+
+  <!-- 第3楔形: 左→右 -->
+  <line x1="295" y1="95" x2="370" y2="100" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="390" y1="105" x2="470" y2="130" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+  <line x1="490" y1="140" x2="570" y2="170" stroke="#2a7" stroke-width="2" marker-end="url(#flowArrow)"/>
+
+  <!-- 最終開口 (第3楔形の右端) -->
+  <line x1="640" y1="50" x2="640" y2="225" stroke="#7a1a4a" stroke-width="4"/>
+  <text x="655" y="140" font-size="10" fill="#7a1a4a">最終開口</text>
+  <text x="655" y="153" font-size="10" fill="#7a1a4a">(放射 or</text>
+  <text x="655" y="166" font-size="10" fill="#7a1a4a"> 次段)</text>
+
+  <!-- ===== 下部: 読み取り結果 ===== -->
+  <rect x="40" y="420" width="640" height="130" fill="#f8f4ec" stroke="#555" stroke-width="1" rx="4"/>
+  <text x="55" y="442" font-size="13" font-weight="bold" fill="#000">読み取り結果: 3つの楔形とジグザグ経路</text>
+
+  <text x="55" y="465" font-size="11" fill="#1a4a6a">
+    [第1楔形 (下)] 喉 117mm (左) -> 開口 305mm (右), 軸長 810mm. 順流 (ピアニカ -> 右端)
+  </text>
+  <text x="55" y="482" font-size="11" fill="#4a7a1a">
+    [第2楔形 (中)] 開口 430mm (左) &lt;- 喉 140mm (右), 軸長 610mm. 逆流 (右 -> 左)
+  </text>
+  <text x="55" y="499" font-size="11" fill="#7a1a4a">
+    [第3楔形 (上)] 喉 200mm (左) -> 開口 410mm (右), 軸長 840mm. 順流 (左端 -> 右端)
+  </text>
+  <text x="55" y="521" font-size="11" fill="#444">
+    全体の空気経路: ピアニカ -> 第1 (左->右) -> 右端折り返し -> 第2 (右->左) -> 左端折り返し -> 第3 (左->右)
+  </text>
+  <text x="55" y="538" font-size="11" fill="#444">
+    総軸長 = 810 + 610 + 840 = 2260 mm (折り返し含まず)
+  </text>
+</svg>

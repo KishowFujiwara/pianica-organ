@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="sans-serif">
+<style>
+  .title { font-size: 18px; font-weight: bold; }
+  .sub { font-size: 14px; font-weight: bold; }
+  .label { font-size: 12px; }
+  .small { font-size: 10px; fill: #555; }
+  .num { font-size: 16px; font-weight: bold; }
+  .reed { fill: #c89b6b; stroke: #5a3a1a; stroke-width: 1.5; }
+  .abs { fill: #d8d4c4; stroke: #555; stroke-width: 1.5; }
+  .horn { fill: #e8d8b0; stroke: #855; stroke-width: 1.5; }
+  .arrow1 { stroke: #28a; stroke-width: 1.5; fill: none; marker-end: url(#a1); }
+  .arrow2 { stroke: #c33; stroke-width: 4; fill: none; marker-end: url(#a2); }
+  .barv1 { fill: #28a; }
+  .barv2 { fill: #c33; }
+</style>
+<defs>
+  <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#28a"/>
+  </marker>
+  <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#c33"/>
+  </marker>
+</defs>
+
+<text x="450" y="28" text-anchor="middle" class="title">v1/v2設計の前提と22経路解析の実測の不整合</text>
+
+<!-- 上半分: v1/v2の前提モデル -->
+<text x="60" y="65" class="sub">[v1/v2 設計の前提モデル]</text>
+<text x="60" y="85" class="small">「リードからの空気流をホーンが処理 -> 大音量化」</text>
+
+<!-- ピアニカ -->
+<rect x="100" y="100" width="120" height="80" class="abs"/>
+<text x="160" y="125" text-anchor="middle" class="label">ピアニカ</text>
+<rect x="115" y="135" width="90" height="6" class="reed"/>
+<text x="160" y="160" text-anchor="middle" class="small">リード37本</text>
+<text x="160" y="175" text-anchor="middle" class="small">ABS箱</text>
+
+<!-- 矢印: ピアニカ -> ホーン -->
+<path d="M225 140 L320 140" class="arrow1"/>
+<text x="272" y="130" text-anchor="middle" class="small">空気流</text>
+<text x="272" y="155" text-anchor="middle" class="small">168 μW</text>
+
+<!-- ホーン -->
+<polygon points="320,120 470,80 470,200 320,160" class="horn"/>
+<text x="395" y="145" text-anchor="middle" class="label">ホーン</text>
+<text x="395" y="160" text-anchor="middle" class="small">(楔形 or 37ベル)</text>
+
+<!-- 矢印: ホーン -> 外部 -->
+<path d="M475 140 L580 140" class="arrow1"/>
+<text x="527" y="130" text-anchor="middle" class="small">放射</text>
+<text x="527" y="155" text-anchor="middle" class="small">+20 dB利得</text>
+
+<!-- 外部 -->
+<text x="610" y="135" class="num" fill="#28a">~ 70 dB</text>
+<text x="610" y="155" class="small">(目標 95 dB)</text>
+<text x="610" y="170" class="small" fill="#c33">差: -25 dB</text>
+
+<!-- 下半分: 22経路解析の実測 -->
+<line x1="50" y1="220" x2="850" y2="220" stroke="#999" stroke-dasharray="4 3"/>
+
+<text x="60" y="250" class="sub">[22経路解析の実測モデル]</text>
+<text x="60" y="270" class="small">「ABS箱が振動板として鳴る = スピーカーのエンクロージャと同構造」</text>
+
+<!-- ピアニカ拡大 -->
+<rect x="100" y="290" width="350" height="180" class="abs"/>
+<text x="120" y="310" class="label">ピアニカ筐体 (ABS 1.5mm 薄壁)</text>
+
+<!-- リード -->
+<rect x="200" y="380" width="80" height="6" class="reed"/>
+<text x="240" y="375" text-anchor="middle" class="small">リード</text>
+
+<!-- リードプレート -->
+<rect x="180" y="386" width="120" height="4" fill="#aaa" stroke="#666"/>
+<text x="240" y="403" text-anchor="middle" class="small">リードプレート(金属)</text>
+
+<!-- 経路①: 細い青矢印 -->
+<path d="M240 380 Q 240 350 260 320" class="arrow1"/>
+<text x="285" y="340" class="small">経路① 168μW</text>
+
+<!-- 経路②: 太い赤矢印, 複数 -->
+<path d="M180 388 L 130 450" class="arrow2"/>
+<path d="M300 388 L 420 450" class="arrow2"/>
+<path d="M180 388 L 110 320" class="arrow2"/>
+<path d="M300 388 L 440 320" class="arrow2"/>
+<text x="120" y="467" class="small" fill="#c33">経路②</text>
+
+<!-- ABS底面強調 -->
+<rect x="100" y="465" width="350" height="5" fill="#c33"/>
+<text x="275" y="487" text-anchor="middle" class="small" fill="#c33">ABS底面 (320x60mm) -> 大面積放射 (286倍)</text>
+
+<!-- 右側: パワー比較バー -->
+<text x="500" y="290" class="sub">音響パワー比較</text>
+
+<!-- 経路① バー -->
+<rect x="500" y="310" width="3" height="20" class="barv1"/>
+<text x="510" y="325" class="num" fill="#28a">168 μW</text>
+<text x="510" y="343" class="small">経路①: スロット直接放射</text>
+
+<!-- 経路② バー -->
+<rect x="500" y="360" width="300" height="30" class="barv2"/>
+<text x="510" y="380" class="num" fill="white">48,000 μW</text>
+<text x="510" y="408" class="small">経路②: 固体伝導 -> ABS壁面放射</text>
+
+<!-- 比率 -->
+<text x="500" y="445" class="num" fill="#c33">比率 1 : 286</text>
+<text x="500" y="465" class="small">v1/v2 は経路①(0.35%)を音源と仮定</text>
+<text x="500" y="480" class="small">残り99.65%のパワーは無処理</text>
+
+<!-- 結論 -->
+<rect x="60" y="510" width="780" height="75" fill="#fdf6e0" stroke="#ca5"/>
+<text x="450" y="535" text-anchor="middle" class="sub">結論: v1/v2 はピアニカの音響パワー収支と矛盾</text>
+<text x="450" y="555" text-anchor="middle" class="small">パイプオルガン級95dB は理論限界 -25dB 不足. 22経路中21経路は v1/v2 で無処理.</text>
+<text x="450" y="572" text-anchor="middle" class="small">推奨方向: 方向A (cassotto化) または 方向B (ピアニカ内部処理拡張)</text>
+
+</svg>

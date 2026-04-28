@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="sans-serif">
+<style>
+  .title { font-size: 16px; font-weight: bold; }
+  .lbl { font-size: 11px; }
+  .small { font-size: 9px; }
+  .num { font-size: 12px; font-weight: bold; }
+</style>
+<text x="400" y="25" text-anchor="middle" class="title">外部放射への各経路の寄与</text>
+<text x="400" y="42" text-anchor="middle" class="small">(B系列とD系列は内部伝導/FBのため除外, 実際に外部空気を励起する経路のみ)</text>
+<text x="190" y="90.0" text-anchor="end" class="lbl">C1 (壁面外部放射)</text>
+<rect x="200" y="70" width="500.0" height="30" fill="#d80" opacity="0.7"/>
+<text x="710" y="90.0" class="num" fill="#d80">15000 μW (71.4%)</text>
+<text x="190" y="130.0" text-anchor="end" class="lbl">C2 (壁->穴)</text>
+<rect x="200" y="110" width="166.7" height="30" fill="#d80" opacity="0.7"/>
+<text x="377" y="130.0" class="num" fill="#d80">5000 μW (23.8%)</text>
+<text x="190" y="170.0" text-anchor="end" class="lbl">C4 (外装放射)</text>
+<rect x="200" y="150" width="26.7" height="30" fill="#d80" opacity="0.7"/>
+<text x="237" y="170.0" class="num" fill="#d80">800 μW (3.8%)</text>
+<text x="190" y="210.0" text-anchor="end" class="lbl">A1 (鍵盤穴-楽音)</text>
+<rect x="200" y="190" width="5.6" height="30" fill="#28a" opacity="0.7"/>
+<text x="216" y="210.0" class="num" fill="#28a">168 μW (0.8%)</text>
+<text x="190" y="250.0" text-anchor="end" class="lbl">C5 (パイプ放射)</text>
+<rect x="200" y="230" width="1.0" height="30" fill="#d80" opacity="0.7"/>
+<text x="215" y="250.0" class="num" fill="#d80">30 μW (0.1%)</text>
+<text x="190" y="290.0" text-anchor="end" class="lbl">A4 (口腔逆流)</text>
+<rect x="200" y="270" width="0.3" height="30" fill="#28a" opacity="0.7"/>
+<text x="215" y="290.0" class="num" fill="#28a">10 μW (0.0%)</text>
+<text x="190" y="330.0" text-anchor="end" class="lbl">A3 (バルブ漏れ)</text>
+<rect x="200" y="310" width="0.0" height="30" fill="#28a" opacity="0.7"/>
+<text x="215" y="330.0" class="small">0.5 μW (&lt;0.1%)</text>
+<text x="190" y="370.0" text-anchor="end" class="lbl">C3 (バルブ放射)</text>
+<rect x="200" y="350" width="0.0" height="30" fill="#d80" opacity="0.7"/>
+<text x="215" y="370.0" class="small">0.2 μW (&lt;0.1%)</text>
+
+<rect x="50" y="430" width="700" height="55" fill="#fdf6e0" stroke="#ca5"/>
+<text x="400" y="450" text-anchor="middle" class="lbl" font-weight="bold">外部放射合計: 21009 μW</text>
+<text x="400" y="467" text-anchor="middle" class="small">支配経路: C1 (壁面放射) 71.4%, C2 (壁->穴) 23.8%</text>
+<text x="400" y="481" text-anchor="middle" class="small">「楽音主経路」と呼ばれた A1 は実は 0.8% に過ぎない</text>
+</svg>
