@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ピアニカP-32D 22経路パワーフロー数理モデル</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+        ],
+        throwOnError: false
+    });"></script>
+<style>
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #333;
+    background: #fafafa;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid #333; padding-bottom: 0.3rem; }
+h2 { font-size: 1.4rem; border-bottom: 1px solid #ccc; padding-bottom: 0.2rem; margin-top: 2rem; }
+h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+pre {
+    background: #f0f0f0;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+}
+code {
+    background: #f0f0f0;
+    padding: 0.15rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+pre code { background: none; padding: 0; }
+blockquote {
+    border-left: 4px solid #ccc;
+    margin-left: 0;
+    padding-left: 1rem;
+    color: #666;
+}
+table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.8rem;
+    text-align: left;
+}
+th { background: #f0f0f0; }
+.katex-display {
+    margin: 1.2rem 0;
+    overflow-x: auto;
+}
+</style>
+</head>
+<body>
+<h1 id="p-32d-22">ピアニカP-32D 22経路パワーフロー数理モデル</h1>
+<p><strong>Version</strong>: v2.0 (構造パワー/放射パワー混合を正しく扱う修正版)<br />
+<strong>Date</strong>: 2026-04-29<br />
+<strong>Purpose</strong>: 包括レポートv1.0のC1値定義曖昧性を解消する</p>
+<hr />
+<h2 id="1">1. 問題の所在</h2>
+<p>包括レポートv1.0では、22経路のパワー値を「μW」で列記したが、<br />
+<strong>構造振動パワー</strong>と<strong>外部放射音響パワー</strong>を区別せずに記載していた。</p>
+<p>特に:<br />
+- C1 = 15,000 μW は「壁面から外部へ放射された音響パワー」と読めるが<br />
+- 実測72 dB SPL @1mから逆算した全外部放射は約200 μWしかない<br />
+- 15,000 μWが外部放射なら効率7.9%（管楽器として異常に高い）</p>
+<p><strong>根本原因</strong>: 経路のうちC2, D2, A2は構造パワーと音響パワーの<strong>相互変換</strong>が<br />
+起きる場所であり、「構造」と「放射」をきれいに分離できない。<br />
+独立変数として扱うと混ざる場所がある。</p>
+<hr />
+<h2 id="2">2. ノードモデル</h2>
+<p>22経路を5つのノード間のパワーフローとして再定式化する。</p>
+<div class="codehilite"><pre><span></span><code>ノード1: リード (R)           -- 自励振動エネルギー源
+ノード2: リードプレート (P)    -- 固体構造体
+ノード3: ABS壁面 (W)          -- 固体構造体 + 放射面
+ノード4: 箱内空気 (A)          -- 音響空間
+ノード5: 外部空気 (E)          -- 最終出力（観測点）
+</code></pre></div>
+
+<p>各ノードのエネルギー種別:</p>
+<table>
+<thead>
+<tr>
+<th>ノード</th>
+<th>エネルギー種別</th>
+<th>状態変数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>機械(梁振動)</td>
+<td>$v_R$ (リード先端速度)</td>
+</tr>
+<tr>
+<td>P</td>
+<td>機械(板振動)</td>
+<td>$v_P$ (プレート速度)</td>
+</tr>
+<tr>
+<td>W</td>
+<td>機械(板振動)</td>
+<td>$v_W$ (壁面速度)</td>
+</tr>
+<tr>
+<td>A</td>
+<td>音響(圧力)</td>
+<td>$p_A$ (箱内音圧)</td>
+</tr>
+<tr>
+<td>E</td>
+<td>音響(圧力)</td>
+<td>$p_E$ (外部音圧)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. ノード間パワーフロー方程式</h2>
+<h3 id="31-r">3.1 ノードR（リード）のパワーバランス</h3>
+<p>$$P_{\text{in}} = P_{R \to P} + P_{R \to A} + P_{R,\text{diss}} + P_{A \to R}^{(\text{FB})}$$</p>
+<p>ここで:<br />
+- $P_{\text{in}}$: 息の空気パワー = $\Delta p \cdot Q$<br />
+- $P_{R \to P}$: リード -&gt; リードプレートへの固体伝導 (B1a + B1b)<br />
+- $P_{R \to A}$: リード -&gt; 箱内空気への音響放射 (スロット気流 = 経路(1)の入口)<br />
+- $P_{R,\text{diss}}$: リード自身の内部損失<br />
+- $P_{A \to R}^{(\text{FB})}$: 箱内空気からリードへの帰還 (D1 + D2の一部)</p>
+<h3 id="32-p">3.2 ノードP（リードプレート）のパワーバランス</h3>
+<p>$$P_{R \to P} = P_{P \to W} + P_{P,\text{diss}} + P_{P \to P'}$$</p>
+<p>ここで:<br />
+- $P_{P \to W}$: プレート -&gt; ABS壁面への伝達 (B2 + B3)<br />
+- $P_{P,\text{diss}}$: プレート内部損失 + ガムテープ等の付加損失<br />
+- $P_{P \to P'}$: 隣リードへの機械連成 (D3)</p>
+<h3 id="33-wabs-">3.3 ノードW（ABS壁面）のパワーバランス -- ここが核心</h3>
+<p>$$P_{P \to W} + P_{A \to W} = P_{W \to E} + P_{W \to A} + P_{W,\text{diss}}$$</p>
+<p><strong>右辺の3項が「混ざる」場所</strong>:</p>
+<ul>
+<li>$P_{W \to E}$: 壁面 -&gt; 外部空気への音響放射 (<strong>C1</strong>: これが本当の外部放射)</li>
+<li>$P_{W \to A}$: 壁面 -&gt; 箱内空気への再放射 (<strong>C2の入口</strong>: 構造が音響に戻る)</li>
+<li>$P_{W,\text{diss}}$: 壁面の内部損失（熱）</li>
+</ul>
+<p><strong>左辺にも混合がある</strong>:</p>
+<ul>
+<li>$P_{P \to W}$: 固体伝導（構造パワー）</li>
+<li>$P_{A \to W}$: 箱内音圧による壁面駆動（音響 -&gt; 構造）= <strong>A2経路</strong></li>
+</ul>
+<h3 id="34-a">3.4 ノードA（箱内空気）のパワーバランス</h3>
+<p>$$P_{R \to A} + P_{W \to A} = P_{A \to E} + P_{A \to W} + P_{A \to R}^{(\text{FB})} + P_{A,\text{diss}}$$</p>
+<p>ここで:<br />
+- $P_{R \to A}$: リードのスロット気流（経路(1)の入口）<br />
+- $P_{W \to A}$: 壁面からの再放射（<strong>C2の入口</strong>、構造パワーが音響に変換）<br />
+- $P_{A \to E}$: 穴から外部へ（<strong>A1</strong>: 鍵盤穴経由の放射）<br />
+- $P_{A \to W}$: 箱内音圧が壁面を駆動（<strong>A2</strong>: 音響が構造に変換）<br />
+- $P_{A \to R}^{(\text{FB})}$: リードへの帰還（D1 + D2の空気側）<br />
+- $P_{A,\text{diss}}$: 箱内空気の粘性損失</p>
+<h3 id="35-e-">3.5 ノードE（外部空気）-- 観測量</h3>
+<p>$$P_{\text{out}} = P_{W \to E} + P_{A \to E}$$</p>
+<p>これが実測可能な全外部放射パワー。</p>
+<hr />
+<h2 id="4">4. 混合が起きる場所の明示</h2>
+<table>
+<thead>
+<tr>
+<th>経路</th>
+<th>変換</th>
+<th>物理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A2: $P_{A \to W}$</td>
+<td>音響 -&gt; 構造</td>
+<td>箱内音圧がABS壁を振動させる</td>
+</tr>
+<tr>
+<td>C2入口: $P_{W \to A}$</td>
+<td>構造 -&gt; 音響</td>
+<td>ABS壁の振動が箱内に音を戻す</td>
+</tr>
+<tr>
+<td>D2: $P_{W \to A} \to P_{A \to R}$</td>
+<td>構造 -&gt; 音響 -&gt; 機械</td>
+<td>壁 -&gt; 空気 -&gt; リード帰還</td>
+</tr>
+<tr>
+<td>B1b: $P_{R \to P}$の一部</td>
+<td>音響 -&gt; 構造</td>
+<td>スロット隙間の空気圧がプレート面を叩く</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A2とC2は互いの逆過程</strong>。壁面ノードWと箱内空気ノードAの間で<br />
+エネルギーが行ったり来たりする結合振動系を形成している。</p>
+<hr />
+<h2 id="5">5. 定常状態の連立方程式</h2>
+<p>各ノードの伝達効率を定義する:</p>
+<p>$$\eta_{R \to P} = \frac{P_{R \to P}}{P_{\text{in}}}$$</p>
+<p>$$\eta_{P \to W} = \frac{P_{P \to W}}{P_{R \to P}}$$</p>
+<p>$$\eta_{W \to E} = \sigma_{\text{rad}}^{(\text{ext})}(f) \cdot \frac{\rho_0 c S_{\text{ext}}}{\omega^2 m_W^2}$$</p>
+<p>$$\eta_{W \to A} = \sigma_{\text{rad}}^{(\text{int})}(f) \cdot \frac{\rho_0 c S_{\text{int}}}{\omega^2 m_W^2}$$</p>
+<p>壁面ノードWのバランス:</p>
+<p>$$P_{P \to W} + P_{A \to W} = P_{W \to E} + P_{W \to A} + P_{W,\text{diss}}$$</p>
+<p>損失の表現:</p>
+<p>$$P_{W,\text{diss}} = \omega \eta_W E_W$$</p>
+<p>ここで $E_W$ は壁面の蓄積振動エネルギー、$\eta_W$ はABSの損失係数。</p>
+<p>Q値との関係:</p>
+<p>$$Q_W = \frac{1}{\eta_W + \eta_{W \to E}^{(\text{rad})} + \eta_{W \to A}^{(\text{rad})}}$$</p>
+<p>重要な認識: <strong>Q値は内部損失だけでなく放射損失も含む</strong>。<br />
+しかし放射効率 $\sigma_{\text{rad}} \ll 1$ なので:</p>
+<p>$$Q_W \approx \frac{1}{\eta_W} = \frac{1}{0.03} \approx 33$$</p>
+<p>放射損失はQにほとんど寄与しない。つまり壁面に入ったエネルギーの<br />
+ほぼ全部は内部損失で熱になり、音として出るのはごく一部。</p>
+<hr />
+<h2 id="6">6. 数値計算</h2>
+<h3 id="61">6.1 入力パラメータ</h3>
+<table>
+<thead>
+<tr>
+<th>パラメータ</th>
+<th>記号</th>
+<th>値</th>
+<th>単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>息圧</td>
+<td>$\Delta p$</td>
+<td>1,500</td>
+<td>Pa</td>
+</tr>
+<tr>
+<td>流量</td>
+<td>$Q$</td>
+<td>$2.65 \times 10^{-4}$</td>
+<td>m$^3$/s</td>
+</tr>
+<tr>
+<td>息のパワー</td>
+<td>$P_{\text{in}}$</td>
+<td>0.265</td>
+<td>W</td>
+</tr>
+<tr>
+<td>ABS損失係数</td>
+<td>$\eta_W$</td>
+<td>0.03</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ABS底面積</td>
+<td>$S$</td>
+<td>$192 \times 10^{-4}$</td>
+<td>m$^2$</td>
+</tr>
+<tr>
+<td>ABS面密度</td>
+<td>$m_s$</td>
+<td>1.575</td>
+<td>kg/m$^2$</td>
+</tr>
+<tr>
+<td>ABS曲げ剛性</td>
+<td>$D$</td>
+<td>0.675</td>
+<td>N$\cdot$m</td>
+</tr>
+<tr>
+<td>底面(1,1)モード</td>
+<td>$f_{11}$</td>
+<td>323</td>
+<td>Hz</td>
+</tr>
+<tr>
+<td>放射効率(323Hz)</td>
+<td>$\sigma_{\text{rad}}$</td>
+<td>0.01</td>
+<td>- (注)</td>
+</tr>
+<tr>
+<td>空気密度</td>
+<td>$\rho_0$</td>
+<td>1.225</td>
+<td>kg/m$^3$</td>
+</tr>
+<tr>
+<td>音速</td>
+<td>$c$</td>
+<td>343</td>
+<td>m/s</td>
+</tr>
+</tbody>
+</table>
+<p>注: コインシデンス周波数 ~8kHz に対し 323Hz は遥かに低いので<br />
+$\sigma_{\text{rad}} \approx 0.01$ が妥当（GPTの0.05は高すぎる推定）。</p>
+<h3 id="62">6.2 カスケード計算</h3>
+<p><strong>Step 1: リード -&gt; リードプレート</strong></p>
+<p>包括レポートの値を維持（物理的根拠あり）:</p>
+<p>$$P_{R \to P} = B1a + B1b = 30{,}000 + 18{,}000 = 48{,}000\,\mu\text{W} = 0.048\,\text{W}$$</p>
+<p><strong>Step 2: リードプレート -&gt; ABS壁面</strong></p>
+<p>$$P_{P \to W} = B2 + B3 = 15{,}000 + 10{,}500 = 25{,}500\,\mu\text{W}$$</p>
+<p>プレート内部損失 $P_{P,\text{diss}} = 48{,}000 - 25{,}500 - 8{,}000(\text{D3}) = 14{,}500\,\mu\text{W}$</p>
+<p>（D3 = 8,000 μW は包括レポートの推定値）</p>
+<p><strong>Step 3: A2（箱内音圧 -&gt; 壁面駆動）の推定</strong></p>
+<p>リードから箱内空気への入力 $P_{R \to A} \approx 168\,\mu\text{W}$ (A1相当)</p>
+<p>箱内音圧による壁面駆動は、壁面インピーダンスに対する音圧の仕事率:</p>
+<p>$$P_{A \to W} = \frac{|p_A|^2}{2} \cdot \text{Re}\left[\frac{1}{Z_W}\right] \cdot S$$</p>
+<p>$P_{R \to A} = 168\,\mu\text{W}$ に対して $P_{A \to W}$ は同オーダー以下。<br />
+$P_{P \to W} = 25{,}500\,\mu\text{W}$ に比べて無視できる（比率 &lt; 1%）。</p>
+<p>したがって <strong>A2経路は壁面エネルギー収支にほとんど寄与しない</strong>。<br />
+固体伝導が圧倒的に支配的。</p>
+<p><strong>Step 4: 壁面のエネルギー収支</strong></p>
+<p>壁面到達パワー（ほぼ全部が構造パワー）:</p>
+<p>$$P_{\text{wall,in}} = P_{P \to W} + P_{A \to W} \approx 25{,}500\,\mu\text{W}$$</p>
+<p>壁面の定常振動エネルギー:</p>
+<p>$$E_W = \frac{P_{\text{wall,in}}}{\omega_{11} \eta_W} = \frac{25{,}500 \times 10^{-6}}{2\pi \times 323 \times 0.03} = 4.19 \times 10^{-4}\,\text{J}$$</p>
+<p>壁面のRMS速度:</p>
+<p>$$\langle v_W^2 \rangle = \frac{2 E_W}{m_s S} = \frac{2 \times 4.19 \times 10^{-4}}{1.575 \times 192 \times 10^{-4}} = 0.0277\,\text{m}^2/\text{s}^2$$</p>
+<p>$$v_{W,\text{rms}} = \sqrt{0.0277} = 0.166\,\text{m/s}$$</p>
+<p>壁面変位振幅:</p>
+<p>$$x_W = \frac{v_{W,\text{rms}}}{\omega_{11}} = \frac{0.166}{2\pi \times 323} = 81.8\,\mu\text{m}$$</p>
+<p><strong>これは大きすぎる。問題あり。後述。</strong></p>
+<p><strong>Step 5: 壁面から外部への放射</strong></p>
+<p>$$P_{W \to E} = \sigma_{\text{rad}} \rho_0 c S \langle v_W^2 \rangle$$</p>
+<p>$$P_{W \to E} = 0.01 \times 1.225 \times 343 \times 192 \times 10^{-4} \times 0.0277$$</p>
+<p>$$P_{W \to E} = 2{,}237\,\mu\text{W} \approx 2.2\,\text{mW}$$</p>
+<p><strong>Step 6: 壁面から箱内への再放射（C2入口）</strong></p>
+<p>壁面は外側だけでなく内側にも放射する。内側の放射効率は<br />
+箱内空間の音響特性に依存するが、外側と同程度と仮定:</p>
+<p>$$P_{W \to A} \approx \sigma_{\text{rad}}^{(\text{int})} \rho_0 c S_{\text{int}} \langle v_W^2 \rangle$$</p>
+<p>箱が小さいので内部放射効率は外部より高くなる可能性があるが、<br />
+概算として同じ0.01を使う:</p>
+<p>$$P_{W \to A} \approx 2{,}237\,\mu\text{W}$$</p>
+<p><strong>Step 7: C2経路の完結（箱内再放射 -&gt; 穴から外部）</strong></p>
+<p>$P_{W \to A}$ が箱内空気に入り、そこから鍵盤穴を通じて外部に出る:</p>
+<p>$$P_{C2} = P_{W \to A} \times \eta_{\text{port}}$$</p>
+<p>穴の放射効率 $\eta_{\text{port}}$ は穴のサイズと波長の比で決まる。<br />
+323Hzでの波長1.06mに対し穴の径は数mm。$ka \ll 1$ なので:</p>
+<p>$$\eta_{\text{port}} \approx \frac{(ka)^2}{2} \approx 0.001$$</p>
+<p>$$P_{C2} \approx 2{,}237 \times 0.001 = 2.2\,\mu\text{W}$$</p>
+<p><strong>Step 8: 壁面の損失（熱）</strong></p>
+<p>$$P_{W,\text{diss}} = P_{\text{wall,in}} - P_{W \to E} - P_{W \to A}$$</p>
+<p>$$= 25{,}500 - 2{,}237 - 2{,}237 = 21{,}026\,\mu\text{W}$$</p>
+<p>壁面到達パワーの82%が熱として消散。</p>
+<hr />
+<h2 id="7">7. パワーフロー全体図（修正版）</h2>
+<div class="codehilite"><pre><span></span><code><span class="n">P_in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span><span class="p">,</span><span class="mo">000</span><span class="w"> </span><span class="n">uW</span><span class="w"> </span><span class="p">(</span><span class="err">息のパワー</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span>
+<span class="w">  </span><span class="o">+--</span><span class="w"> </span><span class="n">P_R</span><span class="p">,</span><span class="n">diss</span><span class="w"> </span><span class="p">(</span><span class="err">リード内部損失</span><span class="p">,</span><span class="w"> </span><span class="err">気流乱流</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">217</span><span class="p">,</span><span class="mo">000</span><span class="w"> </span><span class="n">uW</span><span class="w"> </span><span class="p">(</span><span class="mf">81.9</span><span class="o">%</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span>
+<span class="w">  </span><span class="o">+--</span><span class="w"> </span><span class="n">P_</span><span class="p">{</span><span class="n">R</span><span class="o">-&gt;</span><span class="n">A</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="err">スロット気流</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">168</span><span class="w"> </span><span class="n">uW</span><span class="w"> </span><span class="p">(</span><span class="mf">0.06</span><span class="o">%</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span>
+<span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">+--</span><span class="w"> </span><span class="n">P_</span><span class="p">{</span><span class="n">A</span><span class="o">-&gt;</span><span class="n">E</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">168</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">eta_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="mf">0.2</span><span class="w"> </span><span class="n">uW</span>
+<span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">+--</span><span class="w"> </span><span class="n">P_</span><span class="p">{</span><span class="n">A</span><span class="o">-&gt;</span><span class="n">W</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="err">数</span><span class="w"> </span><span class="n">uW</span><span class="w"> </span><span class="p">(</span><span class="err">無視可能</span><span class="p">)</span>
+<span class="w">  </span><span class="o">|</span>
+<span class="w">  </span><span class="o">+--</span><span class="w"> </span><span class="n">P_</span><span class="p">{</span><span class="n">R</span><span class="o">-&gt;</span><span class="n">P</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="n">B1a</span><span class="o">+</span><span class="n">B1b</span><span class="w"> </span><span class="err">固体伝導</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="mo">000</span><span class="w"> </span><span class="n">uW</span><span class="w"> </span><span class="p">(</span><span class="mf">18.1</span><span class="o">%</span><span class="p">)</span>
+<span class="w">        </span><span class="o">|</span>
+<span class="w">        </span><span class="o">+--</span><span class="w"> </span><span class="n">P_</span><span class="p">{</span><span class="n">P</span><span class="p">,</span><span class="n">diss</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="err">プレート内部損失</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="mi">500</span><span class="w"> </span><span class="n">uW</span>
+<span class="w">        </span><span class="o">+--</span><span class="w"> </span><span class="n">P_</span><span class="p">{</span><span class="n">P</span><span class="o">-&gt;</span><span class="n">P</span><span class="s">&#39;} (D3 隣リード連成) = 8,000 uW</span>
+<span class="s">        |</span>
+<span class="s">        +-- P_{P-&gt;W} (B2+B3) = 25,500 uW</span>
+<span class="s">              |</span>
+<span class="s">              +-- P_{W,diss} (壁面内部損失=熱) = 21,026 uW (82%)</span>
+<span class="s">              |</span>
+<span class="s">              +-- P_{W-&gt;E} (C1 外部放射) = 2,237 uW  &lt;-- 修正値!</span>
+<span class="s">              |</span>
+<span class="s">              +-- P_{W-&gt;A} (C2入口 箱内再放射) = 2,237 uW</span>
+<span class="s">                    |</span>
+<span class="s">                    +-- 穴から外部 (C2完結) = ~2.2 uW</span>
+<span class="s">                    +-- リード帰還 (D2) = 微小</span>
+<span class="s">                    +-- 箱内損失 = 残り</span>
+</code></pre></div>
+
+<h2 id="8">8. 外部放射パワーの修正値</h2>
+<table>
+<thead>
+<tr>
+<th>経路</th>
+<th>パワー [uW]</th>
+<th>寄与率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1 (壁面 -&gt; 外部)</td>
+<td>2,237</td>
+<td>99.8%</td>
+</tr>
+<tr>
+<td>C2 (壁 -&gt; 箱内 -&gt; 穴)</td>
+<td>2.2</td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td>A1 (リード -&gt; 空気 -&gt; 穴)</td>
+<td>0.2</td>
+<td>&lt;0.01%</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td><strong>~2,240</strong></td>
+<td><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9. 実測との照合</h2>
+<p>実測72 dB SPL @1mからの逆算:</p>
+<p>$$W_{\text{meas}} = 4\pi r^2 I_0 \cdot 10^{L_p/10} = 4\pi \times 10^{-12} \times 10^{7.2} \approx 200\,\mu\text{W}$$</p>
+<p>モデル値 2,240 μW は実測の約11倍。</p>
+<h3 id="_1">不整合の原因分析</h3>
+<p>考えられる原因:</p>
+<p><strong>(a) 放射効率 $\sigma_{\text{rad}}$ の過大推定</strong></p>
+<p>$\sigma_{\text{rad}} = 0.01$ ではなく $\sigma_{\text{rad}} = 0.001$ なら:</p>
+<p>$$P_{W \to E} = 224\,\mu\text{W}$$</p>
+<p>実測200 μWとほぼ一致。コインシデンス周波数以下では<br />
+$\sigma_{\text{rad}} \sim 10^{-3}$ は十分あり得る値。</p>
+<p><strong>(b) B1a/B1b の値が過大</strong></p>
+<p>包括レポートv1.0のB1a = 30,000 μWの根拠は推定であり、<br />
++-50%の不確実性がある。半分なら全体も半分。</p>
+<p><strong>(c) 壁面変位 82μm が非現実的</strong></p>
+<p>Step 4で計算した壁面変位82μmは、ABS 1.5mm板としてはかなり大きい。<br />
+ただし(1,1)モードの共振点での値なので、Q=33の増幅を含む。<br />
+共振外の周波数では大幅に小さくなる。</p>
+<p><strong>(d) 現実的な修正</strong></p>
+<p>$\sigma_{\text{rad}} = 0.001$ を採用すると:</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>v1.0の値</th>
+<th>v2.0修正値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1 (外部放射)</td>
+<td>15,000 uW</td>
+<td><strong>224 uW</strong></td>
+</tr>
+<tr>
+<td>C2 (穴経由)</td>
+<td>5,000 uW</td>
+<td><strong>0.2 uW</strong></td>
+</tr>
+<tr>
+<td>A1 (穴直接)</td>
+<td>168 uW</td>
+<td><strong>0.2 uW</strong></td>
+</tr>
+<tr>
+<td>全外部放射</td>
+<td>21,008 uW</td>
+<td><strong>~224 uW</strong></td>
+</tr>
+<tr>
+<td>実測</td>
+<td>72 dB ~200 uW</td>
+<td><strong>200 uW</strong></td>
+</tr>
+<tr>
+<td>効率</td>
+<td>7.9% (NG)</td>
+<td><strong>0.085%</strong> (妥当)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-v10">10. 包括レポートv1.0の何が間違っていたか</h2>
+<p>v1.0の経路別パワー表は、各経路を流れる<strong>構造振動パワー</strong>と<br />
+<strong>外部放射音響パワー</strong>を区別せずに列記していた。</p>
+<p>具体的には:<br />
+- B1a = 30,000 μW, B2 = 15,000 μW → これらは<strong>構造パワー</strong>（正しい）<br />
+- C1 = 15,000 μW → これを<strong>外部放射パワー</strong>と記載（<strong>誤り</strong>）<br />
+  - 正しくは: C1は壁面の振動パワーから放射効率を掛けた値であるべき<br />
+  - 15,000 μWは「壁面に蓄積された振動パワーの一部」であって「外部に出た音」ではない</p>
+<p><strong>v1.0で C1 = 15,000 μW としたのは、壁面到達パワー25,500 μWから<br />
+内部損失を引いた残りをそのまま「放射」と呼んだため</strong>。<br />
+実際にはその「残り」からさらに放射効率 $\sigma_{\text{rad}} \approx 0.001$ を<br />
+掛けなければ外部放射にならない。</p>
+<hr />
+<h2 id="11-v10">11. 修正してもv1.0の主要結論は変わるか</h2>
+<h3 id="_2">変わらない結論</h3>
+<ul>
+<li><strong>壁面放射が支配的</strong>: C1の外部放射224 μW &gt;&gt; A1の0.2 μW。比率は変わらない</li>
+<li><strong>ピアニカはスピーカー構造</strong>: 固体伝導 -&gt; 壁面放射が主経路</li>
+<li><strong>ABS底面323Hzが音色の核</strong>: 壁面モードの影響は不変</li>
+<li><strong>メンディングテープの効果メカニズム</strong>: Q低下による壁面応答変化</li>
+</ul>
+<h3 id="_3">変わる結論</h3>
+<ul>
+<li><strong>パワーの絶対値</strong>: 外部放射は ~200 μW であり、21,000 μW ではない</li>
+<li><strong>効率</strong>: 0.085% であり、7.9% ではない</li>
+<li><strong>C2の寄与</strong>: 0.2 μW と極めて小さい（v1.0の5,000 μW は構造パワー）</li>
+<li><strong>「95.2%がC1+C2」の数字</strong>: 比率の方向は正しいがC2の寄与は実質ゼロに近い</li>
+<li>正しくは: 外部放射のほぼ100%がC1（壁面直接放射）</li>
+</ul>
+<h3 id="_4">構造パワーと放射パワーの関係</h3>
+<p>$$P_{\text{rad}} = P_{\text{structural}} \times \sigma_{\text{rad}}(f)$$</p>
+<p>これは常に成り立つ。v1.0ではこの $\sigma_{\text{rad}}$ の掛け算が<br />
+C系列の経路で省略されていた。</p>
+<hr />
+<h2 id="12-gpt-54">12. GPT 5.4の指摘への最終評価</h2>
+<p>GPTが「構造パワーと放射パワーを分けるべき」と指摘したのは正しかった。<br />
+ただしGPTの問題は:</p>
+<ol>
+<li>物理原理から内発的にこの区別に到達したのではなく、<br />
+   逆算結果（56μm）が「大きすぎる」という感覚で後付けで気づいた</li>
+<li>A2/C2経路での相互変換（混ざる場所）を認識していなかった</li>
+<li>$\sigma_{\text{rad}} = 0.05$ を3回とも検証なしに使い続けた</li>
+</ol>
+<p>我々の包括レポートの問題は:</p>
+<ol>
+<li>構造パワーと放射パワーの区別を明記しなかった</li>
+<li>C1 = 15,000 μW の物理的意味を曖昧にした</li>
+<li>実測値（72 dB SPL）との照合を省略した</li>
+</ol>
+<p><strong>両者とも「初版段階の馬鹿」パターン</strong>: 定義の厳密性が検証圧力なしには<br />
+自発的に確保されない。</p>
+<hr />
+<h2 id="v20">付録: 用語定義（v2.0で明確化）</h2>
+<table>
+<thead>
+<tr>
+<th>用語</th>
+<th>定義</th>
+<th>単位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>構造振動パワー</td>
+<td>固体中を伝搬する振動エネルギーの時間平均流量</td>
+<td>W</td>
+</tr>
+<tr>
+<td>音響放射パワー</td>
+<td>振動面が外部空気に放射する音響エネルギーの時間平均</td>
+<td>W</td>
+</tr>
+<tr>
+<td>放射効率</td>
+<td>$\sigma_{\text{rad}} = P_{\text{rad}} / (\rho_0 c S \langle v^2 \rangle)$</td>
+<td>無次元</td>
+</tr>
+<tr>
+<td>壁面到達パワー</td>
+<td>B2+B3+A2で壁面ノードに入る構造パワーの合計</td>
+<td>W</td>
+</tr>
+<tr>
+<td>内部損失パワー</td>
+<td>$\eta_W \omega E_W$ で壁面内部で熱に変換されるパワー</td>
+<td>W</td>
+</tr>
+<tr>
+<td>外部放射パワー</td>
+<td>壁面/穴から外部空気に出る音響パワーの合計</td>
+<td>W</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
