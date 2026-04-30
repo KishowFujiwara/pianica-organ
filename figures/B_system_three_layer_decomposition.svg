@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" font-family="sans-serif">
+  <style>
+    .title { font-size: 22px; font-weight: bold; }
+    .label { font-size: 14px; }
+    .small { font-size: 11px; fill: #555; }
+    .num   { font-size: 13px; font-weight: bold; }
+    .ok    { fill: #2a7a2a; }
+    .warn  { fill: #c47a00; }
+    .reject{ fill: #b00020; }
+    .insight{fill: #0050a0; }
+    .box   { fill: #f7f7f2; stroke: #333; stroke-width: 1.5; }
+    .box-A { fill: #e8f4ea; stroke: #2a7a2a; stroke-width: 2; }
+    .box-B { fill: #e6efff; stroke: #0050a0; stroke-width: 2; }
+    .box-C { fill: #fff5e0; stroke: #c47a00; stroke-width: 2; }
+    .arr   { fill: none; stroke: #444; stroke-width: 2; marker-end: url(#arrow); }
+    .arr-major { fill: none; stroke: #0050a0; stroke-width: 3; marker-end: url(#arrowblue); }
+    .arr-minor { fill: none; stroke: #aaa; stroke-width: 1.5; stroke-dasharray: 4 3; marker-end: url(#arrowgray); }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <marker id="arrowblue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0050a0"/>
+    </marker>
+    <marker id="arrowgray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="32" text-anchor="middle" class="title">B系の3層分解: リード本体 / プレート反射 / 空気場挙動</text>
+  <text x="450" y="54" text-anchor="middle" class="small">F3 (175 Hz) における各層の独立物理検証 — commit dfc79ff の含意評価</text>
+
+  <!-- 入力 (息) -->
+  <rect x="40" y="100" width="120" height="60" rx="8" class="box"/>
+  <text x="100" y="125" text-anchor="middle" class="label">息 (DC気流)</text>
+  <text x="100" y="145" text-anchor="middle" class="num">100 mW</text>
+  <text x="100" y="160" text-anchor="middle" class="small">ΔP=1kPa, Q=100mL/s</text>
+
+  <!-- 系A: リード本体 -->
+  <rect x="220" y="80" width="220" height="180" rx="10" class="box-A"/>
+  <text x="330" y="105" text-anchor="middle" class="label" font-weight="bold">[系A] リード自励振動</text>
+  <text x="330" y="128" text-anchor="middle" class="small">黄銅 20×3×0.5mm, 0.25g</text>
+  <line x1="240" y1="138" x2="420" y2="138" stroke="#2a7a2a" stroke-width="0.5"/>
+  <text x="240" y="158" class="small">蓄積エネルギー (毎周期)</text>
+  <text x="420" y="158" text-anchor="end" class="num ok">38 μJ</text>
+  <text x="240" y="178" class="small">維持パワー (Q=40)</text>
+  <text x="420" y="178" text-anchor="end" class="num ok">1.0 mW</text>
+  <text x="240" y="198" class="small">息に対する割合</text>
+  <text x="420" y="198" text-anchor="end" class="num ok">1%</text>
+  <line x1="240" y1="208" x2="420" y2="208" stroke="#2a7a2a" stroke-width="0.5"/>
+  <text x="240" y="228" class="small">→ BN1=18% の内訳:</text>
+  <text x="240" y="245" class="small">  リード維持1% + 空気駆動17%</text>
+  <text x="330" y="255" text-anchor="middle" class="num ok">[PASS] 確定</text>
+
+  <!-- 系B: プレート反射 -->
+  <rect x="490" y="80" width="370" height="180" rx="10" class="box-B"/>
+  <text x="675" y="105" text-anchor="middle" class="label" font-weight="bold">[系B] プレート (黄銅1mm) での空気反射</text>
+  <text x="675" y="128" text-anchor="middle" class="small">面密度 ρh = 8.4 kg/m², Z_plate = 9236 Pa·s/m</text>
+  <line x1="510" y1="138" x2="840" y2="138" stroke="#0050a0" stroke-width="0.5"/>
+
+  <!-- 反射視覚化 -->
+  <g transform="translate(510,150)">
+    <rect x="0" y="20" width="80" height="50" fill="#d4a050" stroke="#604020" stroke-width="2"/>
+    <text x="40" y="48" text-anchor="middle" class="small">プレート</text>
+    <text x="40" y="62" text-anchor="middle" class="small">(壁)</text>
+    <!-- 入射 -->
+    <path d="M 100,45 L 90,45" class="arr"/>
+    <text x="100" y="40" class="small">入射100%</text>
+    <!-- 反射 -->
+    <path d="M 90,55 L 100,55" stroke="#0050a0" stroke-width="3" marker-end="url(#arrowblue)" fill="none"/>
+    <text x="105" y="65" class="num insight">反射 83.5%</text>
+    <!-- 透過 -->
+    <text x="40" y="92" text-anchor="middle" class="small">透過 16.5%</text>
+    <text x="40" y="105" text-anchor="middle" class="small">(極微小)</text>
+  </g>
+
+  <text x="700" y="180" class="label">→ リード音は</text>
+  <text x="700" y="200" class="num insight">スロット開口(40mm²)</text>
+  <text x="700" y="218" class="label">からのみ放射される</text>
+  <text x="700" y="240" class="small insight">[INSIGHT] リード = モノポール音源として確定</text>
+  <text x="700" y="255" class="small">比較: 桐0.7mm板は反射 8.1% のみ (Z=231)</text>
+
+  <!-- 系C: 空気場挙動 -->
+  <rect x="40" y="310" width="820" height="220" rx="10" class="box-C"/>
+  <text x="450" y="335" text-anchor="middle" class="label" font-weight="bold">[系C] スロット開口部から出る空気の振る舞い (帯域依存)</text>
+  <text x="450" y="355" text-anchor="middle" class="small">リード受圧面積 60mm², 実効速度 0.27m/s, Q = 16.5 mL/s, ka = 0.011 (無指向性)</text>
+
+  <!-- 共振時 vs 非共振時 -->
+  <rect x="80" y="380" width="350" height="130" rx="8" fill="#fff" stroke="#c47a00" stroke-width="1.5"/>
+  <text x="255" y="402" text-anchor="middle" class="label" font-weight="bold">F3共振帯域 (バスレフ稼働)</text>
+  <line x1="100" y1="410" x2="410" y2="410" stroke="#c47a00" stroke-width="0.5"/>
+  <text x="100" y="430" class="small">非共振 箱内圧</text>
+  <text x="410" y="430" text-anchor="end" class="num">1.6 Pa</text>
+  <text x="100" y="448" class="small">共振増幅 (Q_h=10)</text>
+  <text x="410" y="448" text-anchor="end" class="num warn">15.6 Pa</text>
+  <text x="100" y="466" class="small">ポート放射パワー</text>
+  <text x="410" y="466" text-anchor="end" class="num warn">~0.09 mW</text>
+  <text x="100" y="488" class="small" font-style="italic">→ ポート集中放射が支配的</text>
+  <text x="100" y="503" class="small" font-style="italic">→ 壁面振動は副次</text>
+
+  <rect x="470" y="380" width="350" height="130" rx="8" fill="#fff" stroke="#c47a00" stroke-width="1.5"/>
+  <text x="645" y="402" text-anchor="middle" class="label" font-weight="bold">非共振帯域 (中音〜高音)</text>
+  <line x1="490" y1="410" x2="800" y2="410" stroke="#c47a00" stroke-width="0.5"/>
+  <text x="490" y="430" class="small">箱内圧 (蓄積のみ)</text>
+  <text x="800" y="430" text-anchor="end" class="num">弱い</text>
+  <text x="490" y="448" class="small">支配メカニズム</text>
+  <text x="800" y="448" text-anchor="end" class="num">壁面板モード</text>
+  <text x="490" y="466" class="small">放射効率 σ</text>
+  <text x="800" y="466" text-anchor="end" class="num">周波数依存</text>
+  <text x="490" y="488" class="small" font-style="italic">→ 桐板の Gamma が効く帯域</text>
+  <text x="490" y="503" class="small" font-style="italic">→ 帯域別の物理で別途評価必要</text>
+
+  <!-- 統合判定 -->
+  <rect x="40" y="560" width="820" height="140" rx="10" fill="#fff8f0" stroke="#b00020" stroke-width="2"/>
+  <text x="450" y="585" text-anchor="middle" class="label" font-weight="bold" fill="#b00020">統合判定: dfc79ff 文書への含意</text>
+
+  <text x="60" y="610" class="small">[1] 「BN2 53% → 95% に改善」</text>
+  <text x="380" y="610" class="num warn">[PARTIAL]</text>
+  <text x="450" y="610" class="small">概念は妥当だが、比較対象が異なる別物。数値根拠なし。</text>
+
+  <text x="60" y="632" class="small">[2] 「全体効率 10.3%」「P-32D比 98倍」</text>
+  <text x="380" y="632" class="num reject">[REJECT]</text>
+  <text x="450" y="632" class="small">単一値モデル自体が破綻。F3共振とそれ以外で別計算必要。</text>
+
+  <text x="60" y="654" class="small">[3] 「2重箱で BN2バイパス」(構造提案)</text>
+  <text x="380" y="654" class="num warn">[HOLD]</text>
+  <text x="450" y="654" class="small">構造としては有効。定量主張は撤回し、帯域別モデルへ。</text>
+
+  <text x="60" y="678" class="small">[4] 系B の発見 — リードはスロット集中モノポール音源</text>
+  <text x="380" y="678" class="num insight">[INSIGHT]</text>
+  <text x="450" y="678" class="small">これを起点に、エネルギーフロー全体を再構築する基盤になる。</text>
+
+  <!-- 流れ矢印 -->
+  <path d="M 160,130 L 220,170" class="arr-major"/>
+  <text x="183" y="125" class="small insight" font-weight="bold">18%</text>
+  <path d="M 160,140 L 80,300" class="arr-minor"/>
+  <text x="100" y="220" class="small">82% 散逸</text>
+  <path d="M 440,170 L 490,170" class="arr"/>
+  <path d="M 600,260 L 450,310" class="arr"/>
+  <text x="540" y="288" class="small insight">スロット出力</text>
+</svg>
