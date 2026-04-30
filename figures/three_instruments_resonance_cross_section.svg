@@ -1,0 +1,38 @@
+<svg width="100%" viewBox="0 0 680 820" xmlns="http://www.w3.org/2000/svg">
+<style>
+.th { font-family: sans-serif; font-size: 14px; font-weight: 500; fill: #3d3d3a; }
+.ts { font-family: sans-serif; font-size: 12px; fill: #5f5e5a; }
+.t { font-family: sans-serif; font-size: 14px; fill: #3d3d3a; }
+</style>
+<text class="th" x="113" y="36" text-anchor="middle">Guitar</text>
+<ellipse cx="113" cy="260" rx="90" ry="160" fill="none" stroke="#8B6914" stroke-width="2" opacity="0.6"/>
+<path d="M23 260 Q113 300 203 260" fill="none" stroke="#8B6914" stroke-width="1.5" opacity="0.5"/>
+<path d="M23 260 Q113 220 203 260" fill="none" stroke="#8B6914" stroke-width="2.5"/>
+<ellipse cx="113" cy="220" rx="20" ry="8" fill="none" stroke="#3d3d3a" stroke-width="1"/>
+<text class="ts" x="113" y="218" text-anchor="middle" opacity="0.6">S-hole</text>
+<ellipse cx="113" cy="260" rx="85" ry="155" fill="#D4A54A" opacity="0.08"/>
+<line x1="113" y1="55" x2="113" y2="280" stroke="#3d3d3a" stroke-width="0.8"/>
+<rect x="96" y="238" width="34" height="6" rx="1" fill="#5C3D12"/>
+<rect x="100" y="50" width="26" height="6" rx="1" fill="#3d3d3a" opacity="0.4"/>
+<path d="M113 100 Q125 130 113 160 Q101 190 113 220" fill="none" stroke="#E24B4A" stroke-width="1" opacity="0.5"/>
+<text class="ts" x="113" y="72" text-anchor="middle" fill="#E24B4A">String (plucked)</text>
+<text class="ts" x="113" y="384" text-anchor="middle" fill="#D4A54A">Helmholtz cavity V~13L</text>
+<text class="th" x="340" y="36" text-anchor="middle">Grand piano</text>
+<path d="M250 230 L430 230" stroke="#8B6914" stroke-width="2.5"/>
+<path d="M255 180 L425 180" stroke="#888780" stroke-width="3" opacity="0.4"/>
+<text class="ts" x="340" y="174" text-anchor="middle" opacity="0.5">Iron frame (20t)</text>
+<rect x="265" y="224" width="160" height="5" rx="1" fill="#5C3D12"/>
+<text class="ts" x="340" y="252" text-anchor="middle" opacity="0.6">Spruce 8mm(center)->5mm(edge)</text>
+<text class="ts" x="340" y="320" text-anchor="middle" fill="#1D9E75">Open below (no Helmholtz)</text>
+<text class="ts" x="330" y="85" text-anchor="middle" fill="#E24B4A">String (struck)</text>
+<text class="th" x="567" y="36" text-anchor="middle">Violin</text>
+<path d="M507 130 Q517 100 537 100 Q557 100 567 130 Q587 160 577 200 Q567 230 567 260 Q567 290 577 320 Q587 350 567 380 Q557 410 537 410 Q517 410 507 380 Q497 350 507 320 Q517 290 507 260 Q507 230 497 200 Q487 160 507 130" fill="#D4A54A" opacity="0.08" stroke="#8B6914" stroke-width="1.5"/>
+<path d="M522 220 Q518 240 522 260" fill="none" stroke="#3d3d3a" stroke-width="1.2"/>
+<path d="M552 220 Q556 240 552 260" fill="none" stroke="#3d3d3a" stroke-width="1.2"/>
+<path d="M524 254 L537 244 L550 254" fill="none" stroke="#5C3D12" stroke-width="2"/>
+<line x1="545" y1="256" x2="545" y2="280" stroke="#E24B4A" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text class="ts" x="558" y="272" fill="#E24B4A">Sound post</text>
+<text class="ts" x="537" y="72" text-anchor="middle" fill="#E24B4A">String (bowed)</text>
+<text class="ts" x="537" y="300" text-anchor="middle" fill="#D4A54A">V ~ 2L</text>
+<text class="ts" x="537" y="314" text-anchor="middle" fill="#1D9E75">f_H ~ 290Hz</text>
+</svg>

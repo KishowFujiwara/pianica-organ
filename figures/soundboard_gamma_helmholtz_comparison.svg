@@ -1,0 +1,27 @@
+<svg width="100%" viewBox="0 0 680 900" xmlns="http://www.w3.org/2000/svg">
+<style>
+.th { font-family: sans-serif; font-size: 14px; font-weight: 500; fill: #3d3d3a; }
+.ts { font-family: sans-serif; font-size: 12px; fill: #5f5e5a; }
+</style>
+<text class="th" x="340" y="30" text-anchor="middle">Soundboard: plate modes, Gamma, and Helmholtz</text>
+<rect x="40" y="46" width="600" height="90" rx="8" fill="#f1efe8" stroke="#b4b2a9" stroke-width="0.5"/>
+<text class="th" x="340" y="92" text-anchor="middle">f_mn = (pi/2) * sqrt(D/(rho*h)) * ((m/a)^2 + (n/b)^2)</text>
+<text class="ts" x="340" y="116" text-anchor="middle">D = E*h^3 / (12*(1-nu^2))</text>
+<rect x="40" y="150" width="600" height="80" rx="8" fill="#f1efe8" stroke="#b4b2a9" stroke-width="0.5"/>
+<text class="th" x="340" y="196" text-anchor="middle">Gamma = eta * rho_mat * h / (rho_air * c)</text>
+<text class="ts" x="340" y="216" text-anchor="middle">Gamma less than 2: radiation eff greater than 33%</text>
+<rect x="40" y="250" width="190" height="280" rx="8" fill="#f1efe8" stroke="#D85A30" stroke-width="1"/>
+<text class="th" x="135" y="274" text-anchor="middle">Guitar</text>
+<text class="ts" x="60" y="458">f_11 ~ 170 Hz</text>
+<text class="ts" x="60" y="498" fill="#D85A30">Gamma ~ 3.0, eff 25%</text>
+<rect x="245" y="250" width="190" height="280" rx="8" fill="#f1efe8" stroke="#1D9E75" stroke-width="1"/>
+<text class="th" x="340" y="274" text-anchor="middle">Grand piano</text>
+<text class="ts" x="260" y="458">f_11 ~ 45 Hz</text>
+<text class="ts" x="260" y="498" fill="#1D9E75">Gamma ~ 1.5, eff 40%</text>
+<rect x="450" y="250" width="190" height="280" rx="8" fill="#f1efe8" stroke="#7F77DD" stroke-width="1"/>
+<text class="th" x="545" y="274" text-anchor="middle">Violin</text>
+<text class="ts" x="465" y="458">f_11 ~ 460 Hz</text>
+<text class="ts" x="465" y="498" fill="#7F77DD">Gamma ~ 2.0, eff 33%</text>
+<rect x="40" y="575" width="600" height="60" rx="8" fill="#f1efe8" stroke="#b4b2a9" stroke-width="0.5"/>
+<text class="th" x="340" y="600" text-anchor="middle">f_H = (c/2pi) * sqrt(S_hole / (l_eff * V))</text>
+</svg>

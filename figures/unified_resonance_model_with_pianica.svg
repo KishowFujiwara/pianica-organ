@@ -1,0 +1,28 @@
+<svg width="100%" viewBox="0 0 680 780" xmlns="http://www.w3.org/2000/svg">
+<style>
+.th { font-family: sans-serif; font-size: 14px; font-weight: 500; fill: #3d3d3a; }
+.ts { font-family: sans-serif; font-size: 12px; fill: #5f5e5a; }
+</style>
+<text class="th" x="340" y="30" text-anchor="middle">Unified resonance model: 4 instruments</text>
+<rect x="40" y="46" width="600" height="110" rx="8" fill="#f1efe8" stroke="#b4b2a9" stroke-width="0.5"/>
+<text class="th" x="340" y="68" text-anchor="middle">Universal energy budget</text>
+<text class="ts" x="60" y="92">P_rad / P_input = T_coupling * 1/(1+Gamma)</text>
+<text class="ts" x="60" y="112">Guitar:  0.023 * 0.25 = 0.6%</text>
+<text class="ts" x="60" y="132">Piano:   0.15  * 0.40 = 6.0%</text>
+<text class="ts" x="60" y="148">Violin:  0.02  * 0.33 = 0.7% (but continuous)</text>
+<text class="ts" x="340" y="112">Pianica v3: 0.97 * 0.36 = 35% (!)</text>
+<text class="ts" x="340" y="132">Pianica P-32D: 0.18 * 0.01 = 0.2%</text>
+<text class="ts" x="340" y="148">Improvement: 35/0.2 = 175x = +22dB</text>
+<rect x="40" y="466" width="600" height="300" rx="8" fill="#f1efe8" stroke="#b4b2a9" stroke-width="0.5"/>
+<text class="th" x="340" y="492" text-anchor="middle">Physical insights</text>
+<text class="ts" x="60" y="520">1. Pianica T=97% is 3-50x higher than classic instruments</text>
+<text class="ts" x="60" y="544">2. Gamma_pianica=1.8 sits between piano(1.5) and violin(2.0)</text>
+<text class="ts" x="60" y="568">3. Violin is closest architectural analog (continuous + small box)</text>
+<text class="ts" x="60" y="592">4. Helmholtz cavity could boost pianica bass (TBD)</text>
+<text class="ts" x="60" y="624">5. Free reed = bow: both continuously replenish energy</text>
+<text class="ts" x="60" y="648">   -> high T is not a problem, it is an ADVANTAGE</text>
+<text class="ts" x="60" y="672">   -> Pianica exploits what piano/guitar cannot: T ~ 1</text>
+<text class="ts" x="60" y="704">6. Kiri achieves spruce-level Gamma at 30% less density</text>
+<text class="ts" x="60" y="728">   -> rho*h product is key: 280*2 = 560 vs 400*2.5 = 1000</text>
+<text class="ts" x="60" y="748">   -> Kiri 2mm is BETTER than spruce 2.5mm for this application</text>
+</svg>
