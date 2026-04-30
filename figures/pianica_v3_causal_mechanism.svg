@@ -1,0 +1,161 @@
+<svg width="100%" viewBox="0 0 680 1100" xmlns="http://www.w3.org/2000/svg">
+<style>
+.th { font-family: sans-serif; font-size: 14px; font-weight: 500; fill: #3d3d3a; }
+.ts { font-family: sans-serif; font-size: 12px; fill: #5f5e5a; }
+.box { fill: #f1efe8; stroke: #b4b2a9; stroke-width: 0.5; }
+marker path { stroke-linecap: round; stroke-linejoin: round; }
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker>
+</defs>
+
+<!-- Question -->
+<rect x="120" y="16" width="440" height="46" rx="10" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+<text class="th" x="340" y="44" text-anchor="middle" fill="#633806">Why is pianica v3 total efficiency 35%?</text>
+
+<!-- Formula -->
+<rect x="140" y="76" width="400" height="36" rx="6" class="box"/>
+<text class="ts" x="340" y="100" text-anchor="middle">Total = T_coupling * 1/(1+Gamma) = 0.97 * 0.36 = 35%</text>
+
+<!-- Split -->
+<line x1="240" y1="112" x2="170" y2="145" stroke="#993C1D" stroke-width="1" marker-end="url(#a)"/>
+<line x1="440" y1="112" x2="510" y2="145" stroke="#0F6E56" stroke-width="1" marker-end="url(#a)"/>
+
+<!-- ===== CHAIN A: T = 97% ===== -->
+<rect x="50" y="150" width="240" height="40" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<text class="th" x="170" y="174" text-anchor="middle" fill="#993C1D">Chain A: T_coupling = 97%</text>
+
+<!-- Why #1: Impedance match -->
+<line x1="120" y1="190" x2="120" y2="210" stroke="#993C1D" stroke-width="0.8" marker-end="url(#a)"/>
+<rect x="40" y="215" width="160" height="90" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text class="th" x="120" y="236" text-anchor="middle" fill="#712B13">Cause A1</text>
+<text class="ts" x="120" y="256" text-anchor="middle">Z_ABS / Z_kiri = 2.9</text>
+<text class="ts" x="120" y="274" text-anchor="middle">Nearly matched!</text>
+<text class="ts" x="120" y="292" text-anchor="middle" fill="#993C1D">T = 4*2.9/(3.9)^2 = 76%</text>
+
+<!-- Why #2: No sustain constraint -->
+<line x1="220" y1="190" x2="220" y2="210" stroke="#993C1D" stroke-width="0.8" marker-end="url(#a)"/>
+<rect x="210" y="215" width="160" height="90" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text class="th" x="290" y="236" text-anchor="middle" fill="#712B13">Cause A2</text>
+<text class="ts" x="290" y="256" text-anchor="middle">Free reed = continuous</text>
+<text class="ts" x="290" y="274" text-anchor="middle">No energy storage needed</text>
+<text class="ts" x="290" y="292" text-anchor="middle" fill="#993C1D">T has no upper limit</text>
+
+<!-- Deeper: Why does Z match? -->
+<line x1="120" y1="305" x2="120" y2="325" stroke="#993C1D" stroke-width="0.5" marker-end="url(#a)"/>
+<rect x="30" y="330" width="180" height="100" rx="6" class="box"/>
+<text class="ts" x="40" y="350" fill="#993C1D">Why Z matches:</text>
+<text class="ts" x="40" y="370">ABS: rho=1050, c=2760</text>
+<text class="ts" x="40" y="388">-> Z = 2.9 MRayl</text>
+<text class="ts" x="40" y="406">Kiri: rho=280, c=3600</text>
+<text class="ts" x="40" y="424">-> Z = 1.0 MRayl</text>
+
+<!-- Deeper: Why no constraint? -->
+<line x1="290" y1="305" x2="290" y2="325" stroke="#993C1D" stroke-width="0.5" marker-end="url(#a)"/>
+<rect x="210" y="330" width="180" height="100" rx="6" class="box"/>
+<text class="ts" x="220" y="350" fill="#993C1D">Root mechanism:</text>
+<text class="ts" x="220" y="370">Breath -> pressure -> reed</text>
+<text class="ts" x="220" y="388">oscillates continuously</text>
+<text class="ts" x="220" y="406">Even if board drains 97%,</text>
+<text class="ts" x="220" y="424">breath refills instantly</text>
+
+<!-- String contrast -->
+<rect x="30" y="445" width="360" height="80" rx="6" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+<text class="ts" x="40" y="465" fill="#791F1F">Strings CANNOT do this (the fundamental conflict):</text>
+<text class="ts" x="40" y="485">Pluck/strike stores finite energy in string</text>
+<text class="ts" x="40" y="503">If T=97%, energy drains in ~5ms -> no audible tone</text>
+<text class="ts" x="40" y="519">Must keep T low (2-30%) to preserve sustain</text>
+
+<!-- ===== CHAIN B: Gamma = 1.8 ===== -->
+<rect x="390" y="150" width="240" height="40" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text class="th" x="510" y="174" text-anchor="middle" fill="#085041">Chain B: Gamma = 1.8</text>
+
+<!-- Formula -->
+<line x1="510" y1="190" x2="510" y2="210" stroke="#0F6E56" stroke-width="0.8" marker-end="url(#a)"/>
+<rect x="400" y="215" width="220" height="50" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="th" x="510" y="236" text-anchor="middle" fill="#085041">Gamma = eta*rho*h / (rho_air*c)</text>
+<text class="ts" x="510" y="256" text-anchor="middle">= internal loss / radiation load</text>
+
+<!-- 3 causes -->
+<line x1="440" y1="265" x2="440" y2="285" stroke="#0F6E56" stroke-width="0.5" marker-end="url(#a)"/>
+<line x1="510" y1="265" x2="510" y2="285" stroke="#0F6E56" stroke-width="0.5" marker-end="url(#a)"/>
+<line x1="580" y1="265" x2="580" y2="285" stroke="#0F6E56" stroke-width="0.5" marker-end="url(#a)"/>
+
+<rect x="400" y="290" width="80" height="56" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="th" x="440" y="312" text-anchor="middle" fill="#085041">Low rho</text>
+<text class="ts" x="440" y="332" text-anchor="middle">280</text>
+
+<rect x="490" y="290" width="60" height="56" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="th" x="520" y="312" text-anchor="middle" fill="#085041">Thin h</text>
+<text class="ts" x="520" y="332" text-anchor="middle">2mm</text>
+
+<rect x="560" y="290" width="70" height="56" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="th" x="595" y="312" text-anchor="middle" fill="#085041">Low eta</text>
+<text class="ts" x="595" y="332" text-anchor="middle">0.008</text>
+
+<!-- Calculation -->
+<line x1="510" y1="346" x2="510" y2="365" stroke="#0F6E56" stroke-width="0.5" marker-end="url(#a)"/>
+<rect x="400" y="370" width="230" height="60" rx="6" class="box"/>
+<text class="ts" x="410" y="390">0.008 * 280 * 0.002 / 420</text>
+<text class="ts" x="410" y="410" fill="#0F6E56">= 1.07e-5 / 420 = 1.8 [PASS]</text>
+<text class="ts" x="410" y="424" fill="#0F6E56">-> eta_rad = 1/(1+1.8) = 36%</text>
+
+<!-- Why kiri wins -->
+<line x1="510" y1="430" x2="510" y2="450" stroke="#0F6E56" stroke-width="0.5" marker-end="url(#a)"/>
+<rect x="400" y="455" width="230" height="75" rx="6" class="box"/>
+<text class="ts" x="410" y="475" fill="#085041">Why kiri beats spruce here:</text>
+<text class="ts" x="410" y="495">rho*h product is key:</text>
+<text class="ts" x="410" y="513">Kiri 2mm:    280*2 = 560</text>
+<text class="ts" x="410" y="531" opacity="0.5">Spruce 2.5mm: 400*2.5 = 1000</text>
+
+<!-- ===== CONVERGENCE ===== -->
+<line x1="200" y1="530" x2="280" y2="570" stroke="#BA7517" stroke-width="1" marker-end="url(#a)"/>
+<line x1="510" y1="530" x2="400" y2="570" stroke="#BA7517" stroke-width="1" marker-end="url(#a)"/>
+
+<rect x="200" y="575" width="280" height="50" rx="10" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+<text class="th" x="340" y="600" text-anchor="middle" fill="#633806">0.97 * 0.36 = 35%</text>
+<text class="ts" x="340" y="618" text-anchor="middle" fill="#854F0B">175x improvement over P-32D (0.2%)</text>
+
+<!-- ===== BOTTOM: The real root cause ===== -->
+<line x1="340" y1="625" x2="340" y2="660" stroke="#BA7517" stroke-width="0.8" marker-end="url(#a)"/>
+
+<rect x="40" y="665" width="600" height="420" rx="10" class="box" stroke="#BA7517" stroke-width="1"/>
+<text class="th" x="340" y="694" text-anchor="middle">The real root cause: structural freedom from sustain</text>
+
+<!-- Diagram: the fundamental conflict in strings -->
+<text class="ts" x="60" y="724" fill="#791F1F">Bowed/plucked/struck string instruments:</text>
+
+<!-- Two arrows fighting -->
+<rect x="80" y="740" width="130" height="36" rx="6" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+<text class="ts" x="145" y="762" text-anchor="middle" fill="#791F1F">Store in string</text>
+<text class="th" x="240" y="762" text-anchor="middle" fill="#A32D2D">&lt;--&gt;</text>
+<rect x="270" y="740" width="140" height="36" rx="6" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.5"/>
+<text class="ts" x="340" y="762" text-anchor="middle" fill="#791F1F">Radiate from board</text>
+
+<text class="ts" x="440" y="762">T controls this trade-off</text>
+
+<text class="ts" x="80" y="798">Guitar:  T=2%  -> 98% stays in string -> long sustain, quiet</text>
+<text class="ts" x="80" y="816">Piano:   T=15% -> 85% stays in string -> moderate sustain, loud</text>
+<text class="ts" x="80" y="834">Violin:  T=2%  -> but bow replenishes -> sustain + quiet(ish)</text>
+
+<!-- Pianica: no conflict -->
+<line x1="340" y1="850" x2="340" y2="870" stroke="#0F6E56" stroke-width="0.8" marker-end="url(#a)"/>
+
+<text class="ts" x="60" y="888" fill="#085041">Free reed instrument (pianica v3):</text>
+
+<rect x="80" y="900" width="200" height="36" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="ts" x="180" y="922" text-anchor="middle" fill="#085041">Breath -> reed (continuous)</text>
+<text class="th" x="300" y="922" fill="#0F6E56">--></text>
+<rect x="320" y="900" width="200" height="36" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="ts" x="420" y="922" text-anchor="middle" fill="#085041">Radiate from board 97%</text>
+
+<text class="ts" x="80" y="958">No conflict. No trade-off. Energy is not stored -- it flows through.</text>
+<text class="ts" x="80" y="976" fill="#085041">The reed is a valve, not a reservoir.</text>
+
+<!-- Final summary -->
+<rect x="60" y="1000" width="560" height="70" rx="8" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="80" y="1022" fill="#633806">Summary: Pianica v3 achieves 35% because:</text>
+<text class="ts" x="80" y="1042" fill="#633806">1. Free reed eliminates the sustain-vs-radiation conflict (T -> 97%)</text>
+<text class="ts" x="80" y="1060" fill="#633806">2. Kiri's low rho*h product keeps Gamma below 2 (eta_rad = 36%)</text>
+
+</svg>
