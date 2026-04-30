@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 760" font-family="sans-serif">
+  <style>
+    .title { font-size: 22px; font-weight: bold; }
+    .h1 { font-size: 16px; font-weight: bold; }
+    .h2 { font-size: 14px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 10px; fill: #555; }
+    .num { font-size: 12px; font-weight: bold; }
+    .axis { stroke: #333; stroke-width: 1.5; fill: none; }
+    .grid { stroke: #ddd; stroke-width: 0.5; }
+    .helm { fill: none; stroke: #c47a00; stroke-width: 2.5; }
+    .plate { fill: none; stroke: #2a6ca0; stroke-width: 2.5; }
+    .coupled { fill: none; stroke: #5a3a8a; stroke-width: 3; }
+  </style>
+
+  <text x="490" y="32" text-anchor="middle" class="title">ヘルムホルツ共鳴 vs 板振動 — 結合と選択</text>
+  <text x="490" y="54" text-anchor="middle" class="small">桐0.7mm + 20mmポート + V_Bass=1.4L における結合系の物理</text>
+
+  <!-- ============= TOP-LEFT: 単独モード比較 ============= -->
+  <rect x="20" y="80" width="470" height="280" rx="10" fill="#fafafa" stroke="#888" stroke-width="1"/>
+  <text x="255" y="105" text-anchor="middle" class="h1">[原理対比] 単独動作した時の周波数特性</text>
+
+  <!-- 周波数軸 -->
+  <line x1="60" y1="320" x2="450" y2="320" class="axis"/>
+  <line x1="60" y1="140" x2="60" y2="320" class="axis"/>
+  <text x="255" y="345" text-anchor="middle" class="small">周波数 [Hz] (対数)</text>
+  <text x="48" y="230" text-anchor="middle" class="small" transform="rotate(-90 48 230)">SPL</text>
+
+  <!-- 目盛 -->
+  <text x="60" y="335" text-anchor="middle" class="small">50</text>
+  <text x="135" y="335" text-anchor="middle" class="small">100</text>
+  <text x="232" y="335" text-anchor="middle" class="small">175(F3)</text>
+  <text x="330" y="335" text-anchor="middle" class="small">500</text>
+  <text x="415" y="335" text-anchor="middle" class="small">2000</text>
+
+  <!-- ヘルムホルツ単独 (鋭い1ピーク at 175) -->
+  <path d="M 60,310 L 200,310 Q 232,150 264,310 L 450,310" class="helm"/>
+  <text x="232" y="155" text-anchor="middle" class="num" fill="#c47a00">f_H=176Hz</text>
+  <text x="232" y="170" text-anchor="middle" class="small">Q=10</text>
+
+  <!-- 板振動単独 (多数のピーク) -->
+  <path d="M 60,300 Q 90,200 110,290 Q 130,250 145,260 Q 165,180 180,260 
+           Q 200,200 220,250 Q 240,170 260,240 Q 280,210 300,230
+           Q 320,200 340,225 Q 360,210 380,220 Q 400,215 420,220 L 450,220" 
+        class="plate"/>
+  <text x="320" y="215" class="small" fill="#2a6ca0">板モード群 (多数)</text>
+
+  <!-- 凡例 -->
+  <line x1="80" y1="365" x2="110" y2="365" class="helm"/>
+  <text x="115" y="368" class="small">ヘルムホルツ (剛体箱想定)</text>
+  <line x1="290" y1="365" x2="320" y2="365" class="plate"/>
+  <text x="325" y="368" class="small">板モード (桐 0.7mm)</text>
+
+  <!-- ============= TOP-RIGHT: 桐0.7mmの問題 ============= -->
+  <rect x="510" y="80" width="450" height="280" rx="10" fill="#fff5f0" stroke="#b00020" stroke-width="2"/>
+  <text x="735" y="105" text-anchor="middle" class="h1" fill="#b00020">[発見] 桐0.7mm は『柔らかすぎる』</text>
+
+  <text x="530" y="135" class="label">板の音響コンプライアンス C_plate を計算すると:</text>
+  <text x="530" y="155" class="num" fill="#b00020">C_plate = η·A/(ω²·ρh) = 259 nL/Pa</text>
+  <text x="530" y="175" class="num">C_air   = V/(ρc²)      =   9.6 nL/Pa</text>
+  <text x="530" y="195" class="h2" fill="#b00020">→ 比 = 27倍、空気バネより板バネのほうが27倍柔らかい</text>
+
+  <text x="530" y="225" class="label">結果: ヘルムホルツが期待通りに動かない</text>
+  <text x="540" y="245" class="small">剛体箱で計算した f_H = 176 Hz</text>
+  <text x="540" y="262" class="small">桐板を含めた実効値:</text>
+  <text x="540" y="282" class="num" fill="#b00020">f_H_eff ≈ 33 Hz (大幅低下), Q_eff ≈ 2</text>
+  <text x="540" y="302" class="small">→ 単純な『175Hzで鳴るバスレフポート』にはならない</text>
+
+  <text x="530" y="335" class="small" font-style="italic">※ 単一(1,1)モード+η=0.45 の粗推定。実機ではリブ/支持で変動</text>
+
+  <!-- ============= MIDDLE: T0/T1 結合モデル ============= -->
+  <rect x="20" y="380" width="940" height="220" rx="10" fill="#f4f0fa" stroke="#5a3a8a" stroke-width="2"/>
+  <text x="490" y="405" text-anchor="middle" class="h1">[T0/T1 結合モデル] ギター物理に学ぶ — 2峰に分裂する</text>
+
+  <!-- 結合系の応答 -->
+  <line x1="60" y1="565" x2="930" y2="565" class="axis"/>
+  <line x1="60" y1="430" x2="60" y2="565" class="axis"/>
+  <text x="48" y="500" text-anchor="middle" class="small" transform="rotate(-90 48 500)">SPL</text>
+  <text x="490" y="585" text-anchor="middle" class="small">周波数 [Hz]</text>
+
+  <!-- 目盛 -->
+  <text x="60" y="580" text-anchor="middle" class="small">30</text>
+  <text x="200" y="580" text-anchor="middle" class="small">100</text>
+  <text x="340" y="580" text-anchor="middle" class="small">175(F3)</text>
+  <text x="480" y="580" text-anchor="middle" class="small">325</text>
+  <text x="650" y="580" text-anchor="middle" class="small">1000</text>
+  <text x="900" y="580" text-anchor="middle" class="small">2000</text>
+
+  <!-- T0 ピーク at ~100Hz, T1 ピーク at ~325Hz, + 板モード -->
+  <!-- 結合系のグラフ -->
+  <path d="M 60,560 Q 130,470 200,460 Q 260,500 340,530
+           Q 400,490 480,440 Q 540,500 620,490
+           Q 680,460 760,470 Q 830,475 900,480 L 930,485" class="coupled"/>
+  
+  <!-- T0 とT1 ピーク表示 -->
+  <line x1="200" y1="460" x2="200" y2="430" stroke="#5a3a8a" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <text x="200" y="425" text-anchor="middle" class="num" fill="#5a3a8a">T0 ≈ 80-100 Hz</text>
+  <text x="200" y="440" text-anchor="middle" class="small">(ヘルムホルツ寄り)</text>
+
+  <line x1="480" y1="440" x2="480" y2="430" stroke="#5a3a8a" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <text x="480" y="425" text-anchor="middle" class="num" fill="#5a3a8a">T1 ≈ 200-325 Hz</text>
+  <text x="480" y="440" text-anchor="middle" class="small">(板モード寄り)</text>
+
+  <text x="780" y="455" class="small">高次板モード群</text>
+
+  <!-- F3 帯域マーカー -->
+  <rect x="340" y="430" width="80" height="135" fill="#ffe" stroke="#c47a00" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="380" y="600" text-anchor="middle" class="small" fill="#c47a00">F3-B3 帯域</text>
+
+  <text x="490" y="630" text-anchor="middle" class="label" fill="#5a3a8a">
+    ギター・リュート・三味線は全て T0/T1 構造で鳴っている
+  </text>
+  <text x="490" y="650" text-anchor="middle" class="small">
+    ピアニカでも、桐板の柔らかさを「欠点」ではなく「楽器の機能」として活かせる
+  </text>
+
+  <!-- ============= BOTTOM: 設計案 ============= -->
+  <rect x="20" y="615" width="940" height="135" rx="10" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="490" y="638" text-anchor="middle" class="h1">[設計選択] 3案</text>
+
+  <!-- 3案を横並び -->
+  <g transform="translate(40,650)">
+    <rect x="0" y="0" width="290" height="90" fill="#eef5fb" stroke="#2a6ca0" stroke-width="1.5"/>
+    <text x="145" y="18" text-anchor="middle" class="h2">案 A: 板振動マスター</text>
+    <text x="10" y="35" class="small">桐0.7mm + ポート無/極小</text>
+    <text x="10" y="50" class="small">広帯域だが F3-B3 弱い</text>
+    <text x="10" y="65" class="small">楽器性: ◎  低音SPL: △</text>
+    <text x="10" y="80" class="num" fill="#2a6ca0">用途: シンプル実験機</text>
+  </g>
+
+  <g transform="translate(345,650)">
+    <rect x="0" y="0" width="290" height="90" fill="#fff5f0" stroke="#b00020" stroke-width="1.5"/>
+    <text x="145" y="18" text-anchor="middle" class="h2">案 B': ヘルムホルツマスター</text>
+    <text x="10" y="35" class="small">桐3mm or MDF + 大ポート</text>
+    <text x="10" y="50" class="small">F3にピーク、フラットな中高音</text>
+    <text x="10" y="65" class="small">楽器性: △  低音SPL: ◎</text>
+    <text x="10" y="80" class="num" fill="#b00020">用途: 効率特化</text>
+  </g>
+
+  <g transform="translate(650,650)">
+    <rect x="0" y="0" width="290" height="90" fill="#f4f0fa" stroke="#5a3a8a" stroke-width="2"/>
+    <text x="145" y="18" text-anchor="middle" class="h2" fill="#5a3a8a">★案 C: T0/T1 結合系 (楽器の正解)</text>
+    <text x="10" y="35" class="small">桐0.7mm + 20mmポート (現状維持)</text>
+    <text x="10" y="50" class="small">T0/T1 の2峰 + 高次板モード</text>
+    <text x="10" y="65" class="small">楽器性: ◎  低音SPL: ○</text>
+    <text x="10" y="80" class="num" fill="#5a3a8a">用途: 楽器として完成形</text>
+  </g>
+</svg>

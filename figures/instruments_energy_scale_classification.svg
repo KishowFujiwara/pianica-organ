@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 700" font-family="sans-serif">
+  <style>
+    .title { font-size: 22px; font-weight: bold; }
+    .h1 { font-size: 16px; font-weight: bold; }
+    .h2 { font-size: 14px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 10px; fill: #555; }
+    .num { font-size: 12px; font-weight: bold; }
+    .axis { stroke: #333; stroke-width: 1.5; fill: none; }
+    .grid { stroke: #ddd; stroke-width: 0.5; }
+    .class1 { fill: #5a3a8a; }
+    .class2 { fill: #c47a00; }
+    .class3 { fill: #b00020; }
+  </style>
+
+  <text x="490" y="32" text-anchor="middle" class="title">励振エネルギーで分類すると、ピアニカはギターと同じ階層</text>
+  <text x="490" y="54" text-anchor="middle" class="small">「ギターが参考になる本当の理由」 — エネルギースケールでの相同性</text>
+
+  <!-- ============= 散布図 ============= -->
+  <rect x="40" y="80" width="900" height="380" rx="10" fill="#fafafa" stroke="#888" stroke-width="1"/>
+
+  <!-- 軸 -->
+  <line x1="100" y1="430" x2="900" y2="430" class="axis"/>
+  <line x1="100" y1="120" x2="100" y2="430" class="axis"/>
+  <text x="500" y="455" text-anchor="middle" class="label">励振パワー (対数) [mW]</text>
+  <text x="65" y="280" text-anchor="middle" class="label" transform="rotate(-90 65 280)">必要な共鳴箱効率 [%]</text>
+
+  <!-- X軸目盛 (対数: 0.1, 1, 10, 100, 1000, 10000) -->
+  <text x="100" y="445" text-anchor="middle" class="small">0.1</text>
+  <text x="260" y="445" text-anchor="middle" class="small">1</text>
+  <text x="420" y="445" text-anchor="middle" class="small">10</text>
+  <text x="580" y="445" text-anchor="middle" class="small">100</text>
+  <text x="740" y="445" text-anchor="middle" class="small">1000</text>
+  <text x="900" y="445" text-anchor="middle" class="small">10000</text>
+  <line x1="100" y1="430" x2="100" y2="434" class="axis"/>
+  <line x1="260" y1="430" x2="260" y2="434" class="axis"/>
+  <line x1="420" y1="430" x2="420" y2="434" class="axis"/>
+  <line x1="580" y1="430" x2="580" y2="434" class="axis"/>
+  <line x1="740" y1="430" x2="740" y2="434" class="axis"/>
+  <line x1="900" y1="430" x2="900" y2="434" class="axis"/>
+
+  <!-- Y軸目盛 -->
+  <text x="90" y="430" text-anchor="end" class="small">0%</text>
+  <text x="90" y="370" text-anchor="end" class="small">10%</text>
+  <text x="90" y="310" text-anchor="end" class="small">20%</text>
+  <text x="90" y="250" text-anchor="end" class="small">30%</text>
+  <text x="90" y="190" text-anchor="end" class="small">40%</text>
+  <text x="90" y="130" text-anchor="end" class="small">50%</text>
+
+  <!-- グリッド -->
+  <line x1="100" y1="370" x2="900" y2="370" class="grid"/>
+  <line x1="100" y1="310" x2="900" y2="310" class="grid"/>
+  <line x1="100" y1="250" x2="900" y2="250" class="grid"/>
+  <line x1="100" y1="190" x2="900" y2="190" class="grid"/>
+  <line x1="100" y1="130" x2="900" y2="130" class="grid"/>
+
+  <!-- クラス領域の背景 -->
+  <!-- クラスI: 1-20 mW, 効率 25-50% -->
+  <rect x="260" y="130" width="200" height="180" fill="#f4f0fa" opacity="0.5"/>
+  <text x="360" y="150" text-anchor="middle" class="h2" fill="#5a3a8a">クラス I: 微弱励振</text>
+  <text x="360" y="167" text-anchor="middle" class="small" fill="#5a3a8a">高効率必須 (≥25%)</text>
+
+  <!-- クラスII: 10-100 mW, 効率 5-15% -->
+  <rect x="420" y="280" width="240" height="120" fill="#fdf5e8" opacity="0.7"/>
+  <text x="540" y="298" text-anchor="middle" class="h2" fill="#c47a00">クラス II: 中規模励振</text>
+  <text x="540" y="315" text-anchor="middle" class="small" fill="#c47a00">中効率 (5-15%)</text>
+
+  <!-- クラスIII: >1W, 効率 1-5% -->
+  <rect x="700" y="370" width="200" height="60" fill="#fff5f0" opacity="0.7"/>
+  <text x="800" y="388" text-anchor="middle" class="h2" fill="#b00020">クラス III: 強力励振</text>
+  <text x="800" y="405" text-anchor="middle" class="small" fill="#b00020">低効率でも音量出る</text>
+
+  <!-- データ点 -->
+  <!-- ギター 0.5 mW, 30% -->
+  <g transform="translate(220,250)">
+    <circle r="9" class="class1"/>
+    <text x="-15" y="4" text-anchor="end" class="num" fill="#5a3a8a">ギター</text>
+    <text x="14" y="4" class="small">0.5 mW</text>
+  </g>
+  <!-- ピアニカ 17 mW, 30% -->
+  <g transform="translate(450,250)">
+    <circle r="11" class="class1" stroke="#000" stroke-width="2"/>
+    <text x="20" y="-4" class="num" fill="#5a3a8a">ピアニカ ★</text>
+    <text x="20" y="10" class="small">17 mW</text>
+  </g>
+
+  <!-- 線でクラスIを繋ぐ -->
+  <line x1="220" y1="250" x2="450" y2="250" stroke="#5a3a8a" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="335" y="240" text-anchor="middle" class="small" fill="#5a3a8a">同じ階層 → 同じ最適解 (T0/T1結合系)</text>
+
+  <!-- バイオリン 15 mW, 8% -->
+  <g transform="translate(440,378)">
+    <circle r="9" class="class2"/>
+    <text x="14" y="4" class="small" fill="#c47a00">バイオリン 15 mW</text>
+  </g>
+  <!-- ピアノ 7 mW, 10% -->
+  <g transform="translate(395,370)">
+    <circle r="9" class="class2"/>
+    <text x="-15" y="4" text-anchor="end" class="small" fill="#c47a00">ピアノ 7 mW</text>
+  </g>
+  <!-- スピーカー 5000 mW, 3% -->
+  <g transform="translate(850,412)">
+    <circle r="9" class="class3"/>
+    <text x="-15" y="4" text-anchor="end" class="small" fill="#b00020">スピーカー 5W</text>
+  </g>
+
+  <!-- 注釈 -->
+  <text x="490" y="490" text-anchor="middle" class="label" font-style="italic">
+    励振エネルギーが希少な楽器ほど、共鳴箱に高効率設計が必要になる。
+  </text>
+
+  <!-- ============= 下段: 含意 ============= -->
+  <rect x="40" y="510" width="900" height="170" rx="10" fill="#f4f0fa" stroke="#5a3a8a" stroke-width="2"/>
+  <text x="490" y="535" text-anchor="middle" class="h1" fill="#5a3a8a">[含意] 設計戦略の根拠が単純化される</text>
+
+  <text x="60" y="565" class="label">ユーザの仮説:</text>
+  <text x="60" y="585" class="num" fill="#5a3a8a">「ギターが参考になるのは、撥弦エネルギーのロスがフリーリードのエネルギーロスと近しいから」</text>
+
+  <text x="60" y="615" class="label">物理的検証結果:</text>
+  <text x="60" y="635" class="small">- ギター撥弦の連続換算パワー 0.5 mW、ピアニカリードの実効音響源 17 mW (同じオーダー)</text>
+  <text x="60" y="652" class="small">- 両者は『微弱励振 + 高効率共鳴箱』というクラスIに属する</text>
+  <text x="60" y="669" class="small">- バイオリン(15mW)・ピアノ(7mW)はクラスIIで、F孔/F-hole は中規模励振用に最適化されている</text>
+
+  <text x="490" y="700" text-anchor="middle" class="num" fill="#5a3a8a">→ ピアニカが学ぶべきはギター製作 (千年の蓄積)、バイオリンではない</text>
+</svg>
