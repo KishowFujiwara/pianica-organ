@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 760" font-family="sans-serif">
+  <style>
+    .title { font-size: 22px; font-weight: bold; }
+    .h1 { font-size: 16px; font-weight: bold; }
+    .h2 { font-size: 14px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 10px; fill: #555; }
+    .num { font-size: 12px; font-weight: bold; }
+    .axis { stroke: #333; stroke-width: 1.5; fill: none; }
+    .body { fill: #d4a070; stroke: #6a4520; stroke-width: 1.5; }
+    .recommended { fill: #f4d6a0; stroke: #2a7a2a; stroke-width: 3; }
+  </style>
+
+  <text x="490" y="32" text-anchor="middle" class="title">教会小礼拝室用 据え置きフリーリード楽器</text>
+  <text x="490" y="54" text-anchor="middle" class="small">「ピアニカ」を捨て「小型リードオルガン」へ — pianica-organ レポ名の本旨に到達</text>
+
+  <!-- ============= TOP: サイズ階層 ============= -->
+  <rect x="20" y="80" width="940" height="280" rx="10" fill="#fafafa" stroke="#888" stroke-width="1"/>
+  <text x="490" y="105" text-anchor="middle" class="h1">[サイズ階層] 4つの選択肢の比較</text>
+
+  <!-- 楽器を実寸感で並べる (左から大きさ順) -->
+  
+  <!-- テーブルトップ 3L -->
+  <g transform="translate(50,140)">
+    <rect x="0" y="60" width="60" height="40" class="body"/>
+    <rect x="3" y="63" width="54" height="34" fill="#fff5e0" stroke="#6a4520"/>
+    <text x="30" y="85" text-anchor="middle" class="small">3 L</text>
+    <text x="30" y="120" text-anchor="middle" class="h2">テーブルトップ</text>
+    <text x="30" y="135" text-anchor="middle" class="small">20×15×10 cm</text>
+    <text x="30" y="150" text-anchor="middle" class="small">A0=100Hz, d=17mm</text>
+    <text x="30" y="170" text-anchor="middle" class="small" fill="#888">玩具メロディオン</text>
+    <text x="30" y="185" text-anchor="middle" class="small">SPL不足</text>
+  </g>
+
+  <!-- 据置 小型 6L -->
+  <g transform="translate(170,130)">
+    <rect x="0" y="50" width="84" height="50" class="body"/>
+    <rect x="3" y="53" width="78" height="44" fill="#fff5e0" stroke="#6a4520"/>
+    <text x="42" y="80" text-anchor="middle" class="small">6 L</text>
+    <text x="42" y="120" text-anchor="middle" class="h2">据置 小型</text>
+    <text x="42" y="135" text-anchor="middle" class="small">28×21×10 cm</text>
+    <text x="42" y="150" text-anchor="middle" class="small">A0=90Hz, d=24mm</text>
+    <text x="42" y="170" text-anchor="middle" class="small" fill="#888">アコーディオン級</text>
+    <text x="42" y="185" text-anchor="middle" class="small">SPL不足傾向</text>
+  </g>
+
+  <!-- 据置 中型 12L (推奨) -->
+  <g transform="translate(310,115)">
+    <rect x="0" y="35" width="120" height="65" class="recommended"/>
+    <rect x="3" y="38" width="114" height="59" fill="#fff" stroke="#2a7a2a"/>
+    <text x="60" y="73" text-anchor="middle" class="num" fill="#2a7a2a">★ 12 L (推奨)</text>
+    <text x="60" y="120" text-anchor="middle" class="h2" fill="#2a7a2a">据置 中型</text>
+    <text x="60" y="135" text-anchor="middle" class="small">32×25×15 cm</text>
+    <text x="60" y="150" text-anchor="middle" class="small">A0=80Hz, d=35mm</text>
+    <text x="60" y="170" text-anchor="middle" class="small" fill="#2a7a2a">ドレッドノートギター級</text>
+    <text x="60" y="185" text-anchor="middle" class="small">SPL 80dB達成可</text>
+  </g>
+
+  <!-- 据置 大型 20L -->
+  <g transform="translate(490,100)">
+    <rect x="0" y="20" width="140" height="80" class="body"/>
+    <rect x="3" y="23" width="134" height="74" fill="#fff5e0" stroke="#6a4520"/>
+    <text x="70" y="65" text-anchor="middle" class="small">20 L</text>
+    <text x="70" y="120" text-anchor="middle" class="h2">据置 大型</text>
+    <text x="70" y="135" text-anchor="middle" class="small">36×28×20 cm</text>
+    <text x="70" y="150" text-anchor="middle" class="small">A0=70Hz, d=43mm</text>
+    <text x="70" y="170" text-anchor="middle" class="small" fill="#888">小型リードオルガン</text>
+    <text x="70" y="185" text-anchor="middle" class="small">SPL 85dB+ 余裕</text>
+  </g>
+
+  <!-- 教会小礼拝室の人物比較 -->
+  <g transform="translate(720,130)">
+    <text x="100" y="0" text-anchor="middle" class="h2">参考: 演奏者と教会</text>
+    <!-- 人物 -->
+    <circle cx="50" cy="40" r="8" fill="#666"/>
+    <rect x="42" y="48" width="16" height="40" fill="#666"/>
+    <line x1="50" y1="60" x2="40" y2="80" stroke="#666" stroke-width="3"/>
+    <line x1="50" y1="60" x2="60" y2="80" stroke="#666" stroke-width="3"/>
+    <text x="50" y="105" text-anchor="middle" class="small">演奏者</text>
+    <text x="50" y="118" text-anchor="middle" class="small">170cm</text>
+
+    <!-- 楽器 (中型推奨と同じ縮尺) -->
+    <rect x="80" y="50" width="60" height="35" class="recommended"/>
+    <text x="110" y="105" text-anchor="middle" class="small">中型12L</text>
+    <text x="110" y="118" text-anchor="middle" class="small">演奏卓上</text>
+
+    <text x="170" y="60" class="small">据え置きで</text>
+    <text x="170" y="75" class="small">座って演奏</text>
+    <text x="170" y="105" class="small">ハーモニウム式</text>
+  </g>
+
+  <!-- ============= MIDDLE: 中型推奨の詳細 ============= -->
+  <rect x="20" y="380" width="600" height="200" rx="10" fill="#e8f4ea" stroke="#2a7a2a" stroke-width="2"/>
+  <text x="320" y="405" text-anchor="middle" class="h1" fill="#2a7a2a">[推奨] 中型 12L 構成詳細</text>
+
+  <text x="40" y="430" class="h2">サイズ・素材</text>
+  <text x="50" y="448" class="small">- ボディ: 60 × 40 × 15 cm</text>
+  <text x="50" y="463" class="small">- 板厚: 桐 1.5mm (0.7mmから増、構造強度+音響予測性)</text>
+  <text x="50" y="478" class="small">- ブレース: X-brace + Bass bar (剛性10倍化)</text>
+
+  <text x="40" y="505" class="h2">音響パラメータ</text>
+  <text x="50" y="523" class="small">- A0 (剛体時): 80 Hz、ポート d=35mm 1個 or d=30mm×2</text>
+  <text x="50" y="538" class="small">- 結合後 T0 ≈ 46Hz, T1 ≈ 158Hz (実測でチューニング)</text>
+  <text x="50" y="553" class="small">- バスレフ動作: 80-160Hz、F3(175Hz)を上端で支援</text>
+
+  <text x="40" y="572" class="num" fill="#2a7a2a">音域: F3-C7 (37音)、E2/F2まで拡張可</text>
+
+  <!-- ============= 駆動系 ============= -->
+  <rect x="640" y="380" width="320" height="200" rx="10" fill="#fdf5e8" stroke="#c47a00" stroke-width="2"/>
+  <text x="800" y="405" text-anchor="middle" class="h1" fill="#c47a00">[駆動系の選択]</text>
+
+  <text x="660" y="430" class="h2">必要入力パワー</text>
+  <text x="670" y="448" class="small">SPL 80dB at 1m → 1.26 mW</text>
+  <text x="670" y="463" class="small">効率30%想定 → 入力 4 mW</text>
+  <text x="670" y="478" class="small">息100mW で十分 (理論上)</text>
+
+  <text x="660" y="505" class="h2">現実的な選択</text>
+  <text x="670" y="523" class="small">息直接: 体力的に持続困難</text>
+  <text x="670" y="538" class="small">フットポンプ: ハーモニウム流 ★</text>
+  <text x="670" y="553" class="small">電動ブロワ: 安定だが伝統失う</text>
+
+  <text x="800" y="572" text-anchor="middle" class="num" fill="#c47a00">フットポンプ推奨</text>
+
+  <!-- ============= BOTTOM: 教会音響 ============= -->
+  <rect x="20" y="600" width="940" height="140" rx="10" fill="#f4f0fa" stroke="#5a3a8a" stroke-width="2"/>
+  <text x="490" y="625" text-anchor="middle" class="h1" fill="#5a3a8a">[教会小礼拝室での音響]</text>
+
+  <!-- 簡略図 (部屋平面 + 楽器位置) -->
+  <g transform="translate(50,640)">
+    <rect x="0" y="0" width="240" height="80" fill="#fff" stroke="#5a3a8a" stroke-width="1.5"/>
+    <text x="120" y="-3" text-anchor="middle" class="small">小礼拝室 平面 (約 100m³)</text>
+    <!-- 楽器 -->
+    <rect x="105" y="5" width="30" height="15" class="recommended"/>
+    <text x="120" y="35" text-anchor="middle" class="small">楽器</text>
+    <!-- 聴衆 -->
+    <circle cx="40" cy="55" r="3" fill="#666"/><circle cx="80" cy="55" r="3" fill="#666"/>
+    <circle cx="160" cy="55" r="3" fill="#666"/><circle cx="200" cy="55" r="3" fill="#666"/>
+    <circle cx="40" cy="68" r="3" fill="#666"/><circle cx="80" cy="68" r="3" fill="#666"/>
+    <circle cx="160" cy="68" r="3" fill="#666"/><circle cx="200" cy="68" r="3" fill="#666"/>
+    <text x="120" y="70" text-anchor="middle" class="small">聴衆 20-30人</text>
+  </g>
+
+  <text x="320" y="660" class="label">残響時間 RT ≈ 1.5 s (典型的な小礼拝室)</text>
+  <text x="320" y="678" class="label">必要SPL: 80 dB at 1m (聖歌伴奏として十分)</text>
+  <text x="320" y="696" class="label">放射音響パワー: 1.3 mW (中型12L で達成可能)</text>
+  <text x="320" y="715" class="num" fill="#5a3a8a">→ 既存ピアニカ(0.1mW)から 13倍の改善が必要</text>
+  <text x="320" y="732" class="small">P-32D比は事実上「別カテゴリの楽器」になる</text>
+
+  <text x="700" y="678" class="num" fill="#5a3a8a">用途:</text>
+  <text x="700" y="695" class="small">- 聖歌伴奏 (賛美歌)</text>
+  <text x="700" y="710" class="small">- 独奏 (前奏・後奏)</text>
+  <text x="700" y="725" class="small">- 小編成での合奏</text>
+</svg>

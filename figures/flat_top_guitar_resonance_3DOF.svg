@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 800" font-family="sans-serif">
+  <style>
+    .title { font-size: 22px; font-weight: bold; }
+    .h1 { font-size: 16px; font-weight: bold; }
+    .h2 { font-size: 14px; font-weight: bold; }
+    .label { font-size: 12px; }
+    .small { font-size: 10px; fill: #555; }
+    .num { font-size: 12px; font-weight: bold; }
+    .axis { stroke: #333; stroke-width: 1.5; fill: none; }
+    .top { fill: #f4d6a0; stroke: #6a4520; stroke-width: 1.5; }
+    .back { fill: #b08060; stroke: #4a2810; stroke-width: 1.5; }
+    .side { fill: #8a5a3a; stroke: #4a2810; stroke-width: 1.5; }
+    .air { fill: #e0eef8; opacity: 0.7; }
+    .brace { stroke: #6a4520; stroke-width: 2.5; fill: none; }
+    .soundhole { fill: none; stroke: #6a4520; stroke-width: 2; }
+  </style>
+
+  <text x="490" y="32" text-anchor="middle" class="title">フラットトップアコースティックギター — ボディ共鳴機構</text>
+  <text x="490" y="54" text-anchor="middle" class="small">3DOF カップリング (Top + Back + Air) でT(1,1)1/2/3 が低周波を支配</text>
+
+  <!-- ============= LEFT: 構造断面 ============= -->
+  <rect x="20" y="80" width="450" height="380" rx="10" fill="#fafafa" stroke="#888" stroke-width="1"/>
+  <text x="245" y="105" text-anchor="middle" class="h1">[構造] X-braced フラットトップ断面</text>
+
+  <!-- 平面図 (上から見た) -->
+  <g transform="translate(60,135)">
+    <text x="170" y="-5" text-anchor="middle" class="h2">トップ板 (上から見る)</text>
+    <!-- 8の字形のボディ -->
+    <path d="M 60,30 Q 30,30 30,80 Q 30,130 60,140 Q 100,150 170,150 Q 240,150 280,140 Q 310,130 310,80 Q 310,30 280,30 Q 240,15 200,15 Q 170,5 170,5 Q 170,5 140,15 Q 100,15 60,30" 
+          class="top"/>
+    <!-- サウンドホール -->
+    <circle cx="170" cy="60" r="22" fill="#3a2010"/>
+    <circle cx="170" cy="60" r="22" class="soundhole"/>
+    <text x="170" y="63" text-anchor="middle" class="small" fill="#fff">soundhole</text>
+    <text x="170" y="76" text-anchor="middle" class="small" fill="#fff">d=100mm</text>
+
+    <!-- X-brace -->
+    <line x1="100" y1="40" x2="240" y2="120" class="brace"/>
+    <line x1="240" y1="40" x2="100" y2="120" class="brace"/>
+    <text x="170" y="100" text-anchor="middle" class="small" fill="#6a4520">X-brace</text>
+
+    <!-- ブリッジ -->
+    <rect x="140" y="100" width="60" height="12" fill="#3a2010" stroke="#000"/>
+    <text x="170" y="125" text-anchor="middle" class="small">bridge</text>
+
+    <!-- 寸法 -->
+    <text x="170" y="170" text-anchor="middle" class="small">510×405 mm (Dreadnought)</text>
+  </g>
+
+  <!-- 側面断面図 -->
+  <g transform="translate(60,300)">
+    <text x="170" y="-5" text-anchor="middle" class="h2">側面断面</text>
+    <!-- トップ板 -->
+    <rect x="30" y="10" width="280" height="6" class="top"/>
+    <text x="320" y="17" class="small">Top 2.5mm スプルース</text>
+    <!-- サイド板 -->
+    <rect x="30" y="16" width="6" height="100" class="side"/>
+    <rect x="304" y="16" width="6" height="100" class="side"/>
+    <!-- バック板 -->
+    <rect x="30" y="116" width="280" height="8" class="back"/>
+    <text x="320" y="125" class="small">Back 3mm ローズウッド</text>
+    <!-- 内部空気 -->
+    <rect x="36" y="16" width="268" height="100" class="air"/>
+    <text x="170" y="70" text-anchor="middle" class="label">内部空気 V≈13L</text>
+    <!-- サウンドホール (断面) -->
+    <line x1="160" y1="10" x2="160" y2="16" stroke="#fff" stroke-width="6"/>
+    <line x1="180" y1="10" x2="180" y2="16" stroke="#fff" stroke-width="6"/>
+    <text x="170" y="6" text-anchor="middle" class="small">hole</text>
+  </g>
+
+  <!-- ============= RIGHT: 3DOF モード ============= -->
+  <rect x="490" y="80" width="470" height="380" rx="10" fill="#f4f0fa" stroke="#5a3a8a" stroke-width="2"/>
+  <text x="725" y="105" text-anchor="middle" class="h1" fill="#5a3a8a">[3DOF カップリング] 低周波の3つの固有モード</text>
+
+  <!-- T(1,1)1 -->
+  <g transform="translate(510,140)">
+    <text x="0" y="0" class="h2" fill="#5a3a8a">T(1,1)1 ≈ 100 Hz "monopole breathing"</text>
+    <text x="0" y="18" class="small">top + back 同位相 + 空気が呼吸</text>
+    <!-- 模式図 -->
+    <g transform="translate(280,-10)">
+      <rect x="0" y="5" width="80" height="3" class="top"/>
+      <path d="M 0,8 Q 40,-5 80,8" stroke="#6a4520" stroke-width="1" fill="none"/>
+      <rect x="0" y="35" width="80" height="3" class="back"/>
+      <path d="M 0,38 Q 40,50 80,38" stroke="#4a2810" stroke-width="1" fill="none"/>
+      <text x="40" y="22" text-anchor="middle" class="small">↕</text>
+      <text x="90" y="20" class="small">空気↑↓</text>
+    </g>
+  </g>
+
+  <!-- T(1,1)2 -->
+  <g transform="translate(510,200)">
+    <text x="0" y="0" class="h2" fill="#5a3a8a">T(1,1)2 ≈ 200 Hz "top dominant"</text>
+    <text x="0" y="18" class="small">top主体、空気と逆位相、back弱</text>
+    <g transform="translate(280,-10)">
+      <rect x="0" y="5" width="80" height="3" class="top"/>
+      <path d="M 0,8 Q 40,-8 80,8" stroke="#6a4520" stroke-width="2" fill="none"/>
+      <rect x="0" y="35" width="80" height="3" class="back"/>
+      <text x="40" y="22" text-anchor="middle" class="small">↑</text>
+      <text x="90" y="20" class="small">空気↓</text>
+    </g>
+  </g>
+
+  <!-- T(1,1)3 -->
+  <g transform="translate(510,260)">
+    <text x="0" y="0" class="h2" fill="#5a3a8a">T(1,1)3 ≈ 300 Hz "back dominant"</text>
+    <text x="0" y="18" class="small">back主体、top弱、放射への寄与は副次</text>
+    <g transform="translate(280,-10)">
+      <rect x="0" y="5" width="80" height="3" class="top"/>
+      <rect x="0" y="35" width="80" height="3" class="back"/>
+      <path d="M 0,38 Q 40,55 80,38" stroke="#4a2810" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- 中・高周波 -->
+  <rect x="510" y="320" width="430" height="120" fill="#fff" stroke="#5a3a8a" stroke-width="1" rx="5"/>
+  <text x="725" y="340" text-anchor="middle" class="h2">中・高周波: 板モードが独立化</text>
+  <text x="525" y="360" class="small">300-400 Hz: cross dipole / long dipole (左右or上下逆位相)</text>
+  <text x="525" y="378" class="small">400-1500 Hz: T(2,1), T(1,2), T(2,2) 等の高次モード</text>
+  <text x="525" y="396" class="small">>1500 Hz: top と back が独立、放射効率低下</text>
+  <text x="525" y="420" class="num" fill="#5a3a8a">主放射体は常にトップ板 (back の2-3倍の放射量)</text>
+
+  <!-- ============= BOTTOM: ピアニカ転用マップ ============= -->
+  <rect x="20" y="475" width="940" height="310" rx="10" fill="#fff" stroke="#5a3a8a" stroke-width="2"/>
+  <text x="490" y="500" text-anchor="middle" class="h1">[ピアニカ転用マップ] 何を継承し、何を変えるか</text>
+
+  <!-- そのまま継承 -->
+  <rect x="40" y="520" width="290" height="240" fill="#e8f4ea" stroke="#2a7a2a" stroke-width="1.5" rx="5"/>
+  <text x="185" y="542" text-anchor="middle" class="h2" fill="#2a7a2a">[そのまま継承]</text>
+  <text x="55" y="565" class="small">✓ 3DOF カップリング理論 (top+back+air)</text>
+  <text x="65" y="582" class="small">→ ピアニカ: 桐板+底板+空洞</text>
+  <text x="55" y="605" class="small">✓ X-brace パターン (モード制御)</text>
+  <text x="65" y="622" class="small">→ 桐0.7mm の補強+モード制御に必須</text>
+  <text x="55" y="645" class="small">✓ 縁薄・中央厚 (ダイアフラグマティック)</text>
+  <text x="65" y="662" class="small">→ 既に0430c で議論済み</text>
+  <text x="55" y="685" class="small">✓ ブレース位置決め原理</text>
+  <text x="65" y="702" class="small">→ リードプレート接続点からの距離で制御</text>
+  <text x="55" y="725" class="small">✓ サウンドホール≠装飾(ロゼッタ)</text>
+  <text x="65" y="742" class="small">→ ポートとしての機能を厳密に分離</text>
+
+  <!-- 調整が必要 -->
+  <rect x="345" y="520" width="290" height="240" fill="#fdf5e8" stroke="#c47a00" stroke-width="1.5" rx="5"/>
+  <text x="490" y="542" text-anchor="middle" class="h2" fill="#c47a00">[調整が必要]</text>
+  <text x="360" y="565" class="small">△ A0 周波数の置き場所</text>
+  <text x="370" y="582" class="small">ギター: F#2-A2 (92-110Hz) ← 低音弦</text>
+  <text x="370" y="599" class="small">ピアニカ: F3=175Hz が最低音</text>
+  <text x="370" y="616" class="small" fill="#c47a00">→ A0=120Hz 付近(F3より下)が安全</text>
+  <text x="360" y="640" class="small">△ ブリッジ相当の構造</text>
+  <text x="370" y="657" class="small">ギター: 駒で T=2.3% に絞る</text>
+  <text x="370" y="674" class="small">ピアニカ: T=97% (リード→プレート→桐)</text>
+  <text x="370" y="691" class="small" fill="#c47a00">→ ブリッジより面接触で広く伝える</text>
+  <text x="360" y="715" class="small">△ バック板の有無</text>
+  <text x="370" y="732" class="small">3DOF→2DOF に簡略化するか</text>
+  <text x="370" y="749" class="small" fill="#c47a00">→ 設計選択 (バック有り推奨)</text>
+
+  <!-- 捨てる -->
+  <rect x="650" y="520" width="290" height="240" fill="#fff5f0" stroke="#b00020" stroke-width="1.5" rx="5"/>
+  <text x="795" y="542" text-anchor="middle" class="h2" fill="#b00020">[捨てるべき]</text>
+  <text x="665" y="565" class="small">✗ 弦特有の構造</text>
+  <text x="675" y="582" class="small">ナット, フレット, ブリッジ高さ調整</text>
+  <text x="675" y="599" class="small">→ 不要</text>
+  <text x="665" y="625" class="small">✗ 連弦の複雑な励振パターン</text>
+  <text x="675" y="642" class="small">ピアニカは単音独立、混和は鍵盤側</text>
+  <text x="665" y="668" class="small">✗ 強結合 (wolf-note リスク)</text>
+  <text x="675" y="685" class="small">連続励振だと特に避けるべき</text>
+  <text x="675" y="702" class="small" fill="#b00020">→ 過結合させない設計が重要</text>
+  <text x="665" y="728" class="small">✗ 弓奏での複雑な制振</text>
+  <text x="675" y="745" class="small">バイオリン由来の知見 → 不要</text>
+</svg>
