@@ -1,0 +1,90 @@
+<svg width="100%" viewBox="0 0 680 720" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>トップ板内側 ブレース配置詳細図</title>
+<desc>X-brace、Bass bar、Tone bar、Bridge patch の配置詳細</desc>
+<style>
+.t { font: 14px sans-serif; fill: #2C2C2A; }
+.ts { font: 12px sans-serif; fill: #5F5E5A; }
+.th { font: 500 14px sans-serif; fill: #2C2C2A; }
+</style>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+
+<text class="th" x="340" y="30" text-anchor="middle">トップ板内側 ブレース配置 (Martin流改変)</text>
+<text class="ts" x="340" y="50" text-anchor="middle">桐 1.5mm 板に スプルース 8x12mm ブレース、剛性12倍化</text>
+
+<rect x="80" y="80" width="500" height="320" rx="6" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+
+<text class="ts" x="280" y="95" fill="#854F0B">上端 (高音側)</text>
+<text class="ts" x="280" y="395" fill="#854F0B">下端 (低音側)</text>
+<text class="ts" x="90" y="240" fill="#854F0B">高音側</text>
+<text class="ts" x="540" y="240" fill="#854F0B">低音側</text>
+
+<circle cx="330" cy="160" r="19" fill="none" stroke="#993C1D" stroke-width="2"/>
+<text class="ts" x="330" y="165" text-anchor="middle" fill="#993C1D">SH</text>
+<text class="ts" x="370" y="138" fill="#993C1D">d=38mm</text>
+<text class="ts" x="370" y="152" fill="#993C1D">y=100</text>
+
+<line x1="330" y1="200" x2="180" y2="350" stroke="#5F5E5A" stroke-width="4"/>
+<line x1="330" y1="200" x2="480" y2="350" stroke="#5F5E5A" stroke-width="4"/>
+<circle cx="330" cy="200" r="4" fill="#5F5E5A"/>
+<text class="ts" x="125" y="345" fill="#5F5E5A">X-brace 腕長 300mm</text>
+<text class="ts" x="475" y="345" fill="#5F5E5A">8x12mm スプルース</text>
+
+<line x1="240" y1="120" x2="240" y2="380" stroke="#185FA5" stroke-width="4"/>
+<text class="ts" x="195" y="115" fill="#0C447C">Bass bar 400mm</text>
+
+<line x1="420" y1="160" x2="420" y2="370" stroke="#0F6E56" stroke-width="4"/>
+<text class="ts" x="465" y="155" fill="#085041">Tone bar 300mm</text>
+
+<rect x="230" y="280" width="200" height="60" rx="2" fill="#D4A54A" stroke="#5C3D12" stroke-width="1" opacity="0.7"/>
+<text class="ts" x="330" y="306" text-anchor="middle" fill="#4A1B0C">Bridge patch</text>
+<text class="ts" x="330" y="322" text-anchor="middle" fill="#4A1B0C">200x60x3mm 桐</text>
+
+<text class="th" x="40" y="450">寸法詳細表</text>
+
+<rect x="40" y="465" width="600" height="220" rx="6" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+
+<text class="th" x="60" y="490">部材</text>
+<text class="th" x="180" y="490">寸法 (mm)</text>
+<text class="th" x="320" y="490">材</text>
+<text class="th" x="430" y="490">役割</text>
+
+<line x1="50" y1="500" x2="630" y2="500" stroke="#5F5E5A" stroke-width="0.3" opacity="0.4"/>
+
+<text class="ts" x="60" y="520">X-brace (左右2本)</text>
+<text class="ts" x="180" y="520">8 x 12 x 300</text>
+<text class="ts" x="320" y="520">スプルース</text>
+<text class="ts" x="430" y="520">主骨格、剛性5倍寄与</text>
+
+<text class="ts" x="60" y="545">Bass bar (低音側)</text>
+<text class="ts" x="180" y="545">8 x 12 x 400</text>
+<text class="ts" x="320" y="545">スプルース</text>
+<text class="ts" x="430" y="545">低音域剛性、振動制御</text>
+
+<text class="ts" x="60" y="570">Tone bar (高音側)</text>
+<text class="ts" x="180" y="570">8 x 12 x 300</text>
+<text class="ts" x="320" y="570">スプルース</text>
+<text class="ts" x="430" y="570">高音域剛性</text>
+
+<text class="ts" x="60" y="595">Bridge patch</text>
+<text class="ts" x="180" y="595">200 x 60 x 3</text>
+<text class="ts" x="320" y="595">桐</text>
+<text class="ts" x="430" y="595">リード支持、駆動点補強</text>
+
+<text class="ts" x="60" y="620">サウンドホール補強</text>
+<text class="ts" x="180" y="620">外径60 内径38 t=2</text>
+<text class="ts" x="320" y="620">桐</text>
+<text class="ts" x="430" y="620">SH縁の割れ防止</text>
+
+<text class="ts" x="60" y="645">トップ板</text>
+<text class="ts" x="180" y="645">550 x 350 x 1.5</text>
+<text class="ts" x="320" y="645">桐 (柾目)</text>
+<text class="ts" x="430" y="645">主放射板</text>
+
+<text class="ts" x="60" y="670">[剛性ファクタ]</text>
+<text class="ts" x="180" y="670">12倍 (文献値8-15)</text>
+<text class="ts" x="320" y="670">f_p = 164 Hz</text>
+<text class="ts" x="430" y="670">T1=345Hz への寄与</text>
+
+</svg>
