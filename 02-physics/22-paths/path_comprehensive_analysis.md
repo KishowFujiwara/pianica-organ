@@ -452,7 +452,7 @@ v1/v2 設計でホーンの $f_c$ が論じられたが、**実態は経路①(1
 |------|------|
 | pianica_22paths_analysis.md | 22経路の概念分類 (本分析の前提) |
 | design-verification-v1.md | v1/v2設計検証 (本分析を踏まえた v3 への要件定義) |
-| (新規) journals/2026-04/0428_opus_22paths_comprehensive.md | 本セッションジャーナル |
+| (新規) journals/02-physics/2026-04/0428_opus_22paths_comprehensive.md | 本セッションジャーナル |
 | figures/path_powerflow.svg | パワーフロー有向グラフ |
 | figures/path_freq_heatmap.svg | 周波数応答ヒートマップ |
 | figures/path_radiation_contrib.svg | 外部放射寄与度バー |

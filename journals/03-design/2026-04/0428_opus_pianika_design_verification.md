@@ -122,7 +122,7 @@ VE評価では **方向 A または B が高評価**。
 |---------|-----------|------|
 | decoded/pianika-organ/design-verification-v1.md | 約450行 | 検証文書 |
 | decoded/pianika-organ/figures/design_verification_paths.svg | 4.9KB | 検証可視化図 |
-| journals/2026-04/0428_opus_pianika_design_verification.md | 本文書 | ジャーナル |
+| journals/03-design/2026-04/0428_opus_pianika_design_verification.md | 本文書 | ジャーナル |
 | git-manifest.md | 更新 | 台帳 |
 
 ## 7. 技術的知見

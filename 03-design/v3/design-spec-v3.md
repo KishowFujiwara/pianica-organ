@@ -502,5 +502,5 @@ design-spec-v1 (0423) で宣言された目標に対する達成度:
 - ブレース図: `figures/chapel_organ_v3/F2_brace_layout.svg`
 - 全体組立図: `figures/chapel_organ_v3/F3_whole_assembly.svg`
 - 音響特性図: `figures/chapel_organ_v3/F4_acoustic_summary.svg`
-- 関連ジャーナル: `journals/2026-04/0430i_opus_flat_top_guitar_chapel_organ_redesign.md`
-- 起点: `journals/2026-04/0423_opus_pianika_organ_design.md`, `design-spec-v1.md`
+- 関連ジャーナル: `journals/03-design/2026-04/0430i_opus_flat_top_guitar_chapel_organ_redesign.md`
+- 起点: `journals/03-design/2026-04/0423_opus_pianika_organ_design.md`, `design-spec-v1.md`

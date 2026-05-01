@@ -216,6 +216,6 @@ userPreferences「Opusはデータアクセスに関する単純作業 (GIT, フ
 
 ## 参照
 
-- 直前ジャーナル: `journals/2026-04/0430k_opus_cahaya_disassembly_32keys_p32d_alignment.md`
+- 直前ジャーナル: `journals/01-specification/2026-04/0430k_opus_cahaya_disassembly_32keys_p32d_alignment.md`
 - 各章索引: `01-specification/README.md`, `02-physics/README.md`, `03-design/README.md`
 - ルート索引: `README.md` (本セッションで更新)

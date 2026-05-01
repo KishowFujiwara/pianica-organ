@@ -104,7 +104,7 @@
 decoded/pianika-organ/
   pianica_p32d_acoustic_report.md       (新規, 統合レポート)
   figures/acoustic_report_summary.svg   (新規, 4段階フロー図)
-journals/2026-04/0428_opus_acoustic_report.md  (本ジャーナル)
+journals/02-physics/2026-04/0428_opus_acoustic_report.md  (本ジャーナル)
 git-manifest.md                          (更新)
 ```
 
@@ -250,7 +250,7 @@ decoded/pianika-organ/                              [12 files]
     [v1関連 18枚]
   figures-v2/                         [30枚]
 
-journals/2026-04/0428_opus_acoustic_report.md       ← 新規
+journals/02-physics/2026-04/0428_opus_acoustic_report.md       ← 新規
 ```
 
 文書の積層構造:

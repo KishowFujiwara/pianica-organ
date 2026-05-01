@@ -58,10 +58,10 @@
   | パターン                        | 旧                          | 新                          |
   +-------------------------------+----------------------------+----------------------------+
   | ジャーナル -> 01/02/03         | ../../../01-specification    | ../../01-specification      |
-  | ジャーナル -> README           | ../../../README.md          | ../../README.md             |
+  | ジャーナル -> README           | ../../../../README.md          | ../../../README.md             |
   | ジャーナル -> 同月別ジャーナル  | ./0430b.md  または ../03-design/journals/2026-04/0430b.md | ./0430b.md (変化なし)         |
   | ジャーナル -> 別月ジャーナル    | ../2026-04/foo.md            | ../2026-04/foo.md (変化なし)  |
-  | 非ジャーナル -> ジャーナル     | ../../03-design/journals/    | ../../journals/             |
+  | 非ジャーナル -> ジャーナル     | ../../../03-design/journals/    | ../../journals/             |
   | ルート相対表記                 | 03-design/journals/...       | journals/...                |
   +-------------------------------+----------------------------+----------------------------+
 ```
@@ -72,8 +72,8 @@
 1. git mv 03-design/journals/2026-04 journals/2026-04
 2. git mv 03-design/journals/2026-05 journals/2026-05
 3. ジャーナル内 ../../../ → ../../  (sed)
-4. ジャーナル内 ../../03-design/journals/2026-XX/ → ../2026-XX/
-5. 非ジャーナル ../../03-design/journals/ → ../../journals/
+4. ジャーナル内 ../../../03-design/journals/2026-XX/ → ../2026-XX/
+5. 非ジャーナル ../../../03-design/journals/ → ../../journals/
 6. 非ジャーナル ../03-design/journals/ → ../journals/
 7. ルート相対表記 03-design/journals/ → journals/
 8. README.md (root) 構造図更新

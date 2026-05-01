@@ -243,7 +243,7 @@ decoded/pianika-organ/                                [16 files]
     pole_zero.png              ← 新規
     nyquist_d1.png             ← 新規
 
-journals/2026-04/0428_opus_sysid_22paths.md    ← 新規
+journals/02-physics/2026-04/0428_opus_sysid_22paths.md    ← 新規
 ```
 
 文書積層構造の完成 (5層):

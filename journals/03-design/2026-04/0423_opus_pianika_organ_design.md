@@ -122,7 +122,7 @@ KaTeX対応HTML版も同時生成。
 | decoded/pianika-organ/README.md | 約 50 | 概要 |
 | decoded/pianika-organ/design-spec-v1.md | 938 | 設計仕様書 |
 | decoded/pianika-organ/figures/*.svg | 18枚 | 設計図・観測図 |
-| journals/2026-04/0423_opus_pianika_organ_design.md | (本文書) | ジャーナル |
+| journals/03-design/2026-04/0423_opus_pianika_organ_design.md | (本文書) | ジャーナル |
 
 ---
 

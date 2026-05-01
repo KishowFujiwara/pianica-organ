@@ -262,7 +262,7 @@ v3確定 (0430j):     60-70%残
 
 ## 参照
 
-- 直前ジャーナル: `journals/2026-04/0430p_opus_design_targets_per_component.md`
+- 直前ジャーナル: `journals/03-design/2026-04/0430p_opus_design_targets_per_component.md`
 - 改訂先: `../v3/L6_construction_details.md` (L6-0 P7 + L6-1 改訂)
-- CAHAYA画像: `../../01-specification/cahaya/images/cahaya_01_overview.jpg` 〜 `cahaya_11_keyboard_side.jpg`
-- 関連: `journals/2026-04/0430k_opus_cahaya_disassembly_32keys_p32d_alignment.md` (32鍵訂正の同型例)
+- CAHAYA画像: `../../../01-specification/cahaya/images/cahaya_01_overview.jpg` 〜 `cahaya_11_keyboard_side.jpg`
+- 関連: `journals/01-specification/2026-04/0430k_opus_cahaya_disassembly_32keys_p32d_alignment.md` (32鍵訂正の同型例)

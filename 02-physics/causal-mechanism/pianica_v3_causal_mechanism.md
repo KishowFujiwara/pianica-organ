@@ -299,4 +299,4 @@ v3 は ABS 壁面に桐を貼ることで Gamma を 93 -> 1.8 に改善。
 - Gamma + ヘルムホルツ比較: figures/soundboard_gamma_helmholtz_comparison.svg
 - 4楽器統一モデル: figures/unified_resonance_model_with_pianica.svg
 - 因果機構図: figures/pianica_v3_causal_mechanism.svg
-- セッションジャーナル: journals/2026-04/0430f_opus_three_instruments_resonance_physics.md
+- セッションジャーナル: journals/02-physics/2026-04/0430f_opus_three_instruments_resonance_physics.md

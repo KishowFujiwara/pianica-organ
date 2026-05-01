@@ -87,7 +87,7 @@ decoded/pianika-organ/
   figures/path_powerflow.svg          (新規, パワーフロー)
   figures/path_freq_heatmap.svg       (新規, 周波数ヒートマップ)
   figures/path_radiation_contrib.svg  (新規, 寄与度バー)
-journals/2026-04/0428_opus_22paths_comprehensive.md  (本ジャーナル)
+journals/02-physics/2026-04/0428_opus_22paths_comprehensive.md  (本ジャーナル)
 git-manifest.md                       (更新)
 ```
 
@@ -264,7 +264,7 @@ decoded/pianika-organ/                           [11 files]
   figures-v2/                     [30枚]
     [v2関連]
 
-journals/2026-04/0428_opus_22paths_comprehensive.md  ← 新規
+journals/02-physics/2026-04/0428_opus_22paths_comprehensive.md  ← 新規
 ```
 
 文書積層構造:

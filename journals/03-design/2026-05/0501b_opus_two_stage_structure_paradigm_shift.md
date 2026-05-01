@@ -229,9 +229,9 @@ AIが出来なかったこと:
 ## 参照
 
 - 直前ジャーナル: `0501a_opus_cahaya_damping_experiment_side_material_pde.md`
-- Gamma計算: `../../02-physics/materials/air_chamber_material_physics.md`
-- 因果機構分析: `../../02-physics/causal-mechanism/pianica_v3_causal_mechanism.md`
-- 22経路解析: `../../02-physics/22-paths/path_comprehensive_analysis.md`
-- 0430b (元の正しい計画): `../2026-04/0430b_opus_soundboard_design_cahaya_experiment.md`
-- 0430h (ギター飛躍): `../2026-04/0430h_opus_T0T1_paradigm_energy_scale_classification.md`
+- Gamma計算: `../../../02-physics/materials/air_chamber_material_physics.md`
+- 因果機構分析: `../../../02-physics/causal-mechanism/pianica_v3_causal_mechanism.md`
+- 22経路解析: `../../../02-physics/22-paths/path_comprehensive_analysis.md`
+- 0430b (元の正しい計画): `../../02-physics/2026-04/0430b_opus_soundboard_design_cahaya_experiment.md`
+- 0430h (ギター飛躍): `../../02-physics/2026-04/0430h_opus_T0T1_paradigm_energy_scale_classification.md`
 - 0430j (空気室新規の誤り): `../2026-04/0430j_opus_chassis_design_finalized_caseC.md`

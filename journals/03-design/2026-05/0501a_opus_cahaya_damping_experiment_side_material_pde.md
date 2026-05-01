@@ -162,5 +162,5 @@ design-spec-v3.md 第3章 3.6節に以下を新設:
 - 直前ジャーナル: `0430q_opus_gasket_observation_correction.md`
 - 改訂先: `../v3/design-spec-v3.md` (2.2b + 3.5 + 3.6 追加)
 - HTML版: `/mnt/user-data/outputs/design-spec-v3.html`
-- 02-physics 分析: `../../02-physics/22-paths/pianica_22paths_acoustic_analysis.md` (S1/S2/S3)
-- CAHAYA画像: `../../01-specification/cahaya/images/`
+- 02-physics 分析: `../../../02-physics/22-paths/pianica_22paths_acoustic_analysis.md` (S1/S2/S3)
+- CAHAYA画像: `../../../01-specification/cahaya/images/`

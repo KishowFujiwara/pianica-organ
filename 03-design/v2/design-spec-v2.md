@@ -95,7 +95,7 @@ f_min ≈ c / (2·w_mouth)
 
 ## セッション履歴
 
-本設計は 2026-04-23 に Claude Opus 4.7 とのセッションで確定した。セッションジャーナルは [journals/2026-04/0423_opus_pianika_organ_v2_wedge_horn.md](../../journals/2026-04/0423_opus_pianika_organ_v2_wedge_horn.md) を参照。
+本設計は 2026-04-23 に Claude Opus 4.7 とのセッションで確定した。セッションジャーナルは [journals/03-design/2026-04/0423_opus_pianika_organ_v2_wedge_horn.md](../../journals/03-design/2026-04/0423_opus_pianika_organ_v2_wedge_horn.md) を参照。
 
 ---
 
