@@ -1,6 +1,6 @@
 # Git Repository Manifest -- ピアニカ・オルガン リポジトリコンテンツ台帳
 
-最終更新: 2026-05-01
+最終更新: 2026-05-01 (0501i: スピーカ vs 共鳴箱 Appendix B+C 追加)
 
 > このファイルはGitリポジトリの内容台帳である。
 > 本リポジトリはGit側のSSOT (Single Source of Truth) として機能する。
@@ -91,6 +91,7 @@ pianica-organ/
 | causal-mechanism/pianica_v3_causal_mechanism.md | v3因果機構 (BN1復元、3.4%効率) | 約400行 |
 | materials/air_chamber_material_physics.md | 材料物理 + Gamma計算 | 約300行 |
 | three-instruments/three_instruments_comparison.md | 3楽器共鳴構造比較 | 約350行 |
+| **speaker_vs_resonance_box.md** | **スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (神戸中央教会主聖堂SR)** | **約2,294行** |
 
 ---
 
@@ -134,10 +135,10 @@ pianica-organ/
 | 章 | 件数 | 主成果物 |
 |---|---|---|
 | 01-specification | 3本 | CAHAYA分解、計測ガイド |
-| 02-physics | 12本 | 22経路、Gamma、T0/T1 |
+| 02-physics | 13本 | 22経路、Gamma、T0/T1、スピーカ vs 共鳴箱 |
 | 03-design | 10本 | 設計仕様書 v1/v2/v3 改訂 |
 | cross | 7本 | リポジトリ整備、検証、メタ |
-| **合計** | **32本** | |
+| **合計** | **33本** | |
 
 ### 01-specification ジャーナル (3本)
 
@@ -163,6 +164,7 @@ pianica-organ/
 | 02-physics/2026-04/0430f_opus_three_instruments_resonance_physics.md | 2026-04-30 | 3楽器共鳴構造比較 |
 | 02-physics/2026-04/0430g_opus_B_system_decomposition_dfc79ff_verification.md | 2026-04-30 | B系3層分解 + dfc79ff撤回 |
 | 02-physics/2026-04/0430h_opus_T0T1_paradigm_energy_scale_classification.md | 2026-04-30 | T0/T1パラダイム |
+| 02-physics/2026-05/0501i_opus_speaker_vs_resonance_box_appendix_b_c.md | 2026-05-01 | スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (主聖堂SR) |
 
 ### 03-design ジャーナル (10本)
 
@@ -278,7 +280,15 @@ pianica-organ/
 | b9ec57b | 2026-05-01 | [verify] | ディレクトリ別検証 (0501e) |
 | e6a6eef | 2026-05-01 | [restructure] | Journal独立化 (0501f) |
 | cc2921e | 2026-05-01 | [restructure] | ジャーナル章別分類 (0501g) |
-| (本commit) | 2026-05-01 | [meta] | git-manifest + github_workflow 導入 (0501h) |
+| e71dfc1 | 2026-05-01 | [meta] | git-manifest + github_workflow 導入 (0501h) |
+| 42a7306 | 2026-05-01 | [observe] | CAHAYA README日本製ドキュメント形式 |
+| b1a76cd | 2026-05-01 | [observe-fix] | CAHAYA 22経路訂正 (中華式一体成形) |
+
+### Phase 11: スピーカ vs 共鳴箱の理論的整理 (1件)
+
+| コミット | 日付 | カテゴリ | 内容 |
+|---|---|---|---|
+| (本commit) | 2026-05-01 | [physics+journal] | 0501i スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (神戸中央教会主聖堂SR) / 2,294行 / 設計言語の3段階階層を確立 |
 
 ---
 
@@ -286,14 +296,14 @@ pianica-organ/
 
 | 項目 | 数量 |
 |---|---|
-| 総コミット数 | 44 (本commit含めず) |
+| 総コミット数 | 47 (本commitで48) |
 | プロジェクト期間 | 4日間 (2026-04-28 〜 2026-05-01) |
-| 全ファイル数 | 178 (本commit含めず、md/svg/png/jpg/docx/html/json/py) |
+| 全ファイル数 | 約180 (本commitで182、md/svg/png/jpg/docx/html/json/py) |
 | 章別 (01-specification) | 31 |
-| 章別 (02-physics) | 56 |
+| 章別 (02-physics) | 57 (speaker_vs_resonance_box.md 追加) |
 | 章別 (03-design) | 58 |
-| journals/ | 33 |
-| ジャーナル本数 | 32本 (本セッション含めず) |
+| journals/ | 34 (0501i 追加) |
+| ジャーナル本数 | 33本 (0501i 含む) |
 | 設計バージョン | v1, v2, v3, spinet (4世代、現役はv3) |
 | 撤回された設計 | v1, v2, spinet, 三角形共鳴箱、効率連鎖モデル |
 
