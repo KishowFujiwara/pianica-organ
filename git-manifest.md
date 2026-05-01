@@ -137,7 +137,7 @@ pianica-organ/
 | 01-specification | 3本 | CAHAYA分解、計測ガイド |
 | 02-physics | 13本 | 22経路、Gamma、T0/T1、スピーカ vs 共鳴箱 |
 | 03-design | 10本 | 設計仕様書 v1/v2/v3 改訂 |
-| cross | 7本 | リポジトリ整備、検証、メタ |
+| cross | 9本 | リポジトリ整備、検証、メタ |
 | **合計** | **33本** | |
 
 ### 01-specification ジャーナル (3本)
@@ -181,7 +181,7 @@ pianica-organ/
 | 03-design/2026-05/0501a_opus_cahaya_damping_experiment_side_material_pde.md | 2026-05-01 | 側面材料 + PDE数理モデル |
 | 03-design/2026-05/0501b_opus_two_stage_structure_paradigm_shift.md | 2026-05-01 | 2段構造パラダイム転換 |
 
-### cross ジャーナル (7本)
+### cross ジャーナル (9本)
 
 | ファイル | 日付 | 内容 |
 |---|---|---|
@@ -192,6 +192,8 @@ pianica-organ/
 | cross/2026-05/0501e_opus_bijection_verification_by_directory.md | 2026-05-01 | ディレクトリ別検証 |
 | cross/2026-05/0501f_opus_journal_directory_independence.md | 2026-05-01 | Journal独立化 |
 | cross/2026-05/0501g_opus_journals_chapter_classification.md | 2026-05-01 | ジャーナル章別再分類 |
+| cross/2026-05/0501h_opus_github_workflow_manifest_introduction.md | 2026-05-01 | GitHub運用ドキュメント導入 |
+| cross/2026-05/0501i_opus_meta_reflection_5_recurring_biases.md | 2026-05-01 | メタ反省: 5回連続バイアス + Adaptiveモード仮説 |
 
 ---
 
