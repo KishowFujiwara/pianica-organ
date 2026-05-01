@@ -1,6 +1,6 @@
 # Git Repository Manifest -- ピアニカ・オルガン リポジトリコンテンツ台帳
 
-最終更新: 2026-05-01 (0501i: スピーカ vs 共鳴箱 Appendix B+C 追加)
+最終更新: 2026-05-01 (0501j: speaker_vs_resonance_box および resonance_box_vs_speaker の自己批判的再検証、警告ヘッダ追加)
 
 > このファイルはGitリポジトリの内容台帳である。
 > 本リポジトリはGit側のSSOT (Single Source of Truth) として機能する。
@@ -91,7 +91,9 @@ pianica-organ/
 | causal-mechanism/pianica_v3_causal_mechanism.md | v3因果機構 (BN1復元、3.4%効率) | 約400行 |
 | materials/air_chamber_material_physics.md | 材料物理 + Gamma計算 | 約300行 |
 | three-instruments/three_instruments_comparison.md | 3楽器共鳴構造比較 | 約350行 |
-| **speaker_vs_resonance_box.md** | **スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (神戸中央教会主聖堂SR)** | **約2,294行** |
+| **speaker_vs_resonance_box.md** | **スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (神戸中央教会主聖堂SR)** [警告ヘッダあり、要検証] | **約2,294行** |
+| **resonance_box_vs_speaker.md** | **共鳴箱主体版 (続編) + Appendix A-E** [警告ヘッダあり、要検証] | **約3,303行** |
+| **critical_review_of_speaker_resonance_docs.md** | **上記2文書の自己批判的再検証 (Gamma物理計算誤り、主聖堂楕円形誤仮定、実測誤記、信頼度分類)** | **約476行** |
 
 ---
 
@@ -164,7 +166,8 @@ pianica-organ/
 | 02-physics/2026-04/0430f_opus_three_instruments_resonance_physics.md | 2026-04-30 | 3楽器共鳴構造比較 |
 | 02-physics/2026-04/0430g_opus_B_system_decomposition_dfc79ff_verification.md | 2026-04-30 | B系3層分解 + dfc79ff撤回 |
 | 02-physics/2026-04/0430h_opus_T0T1_paradigm_energy_scale_classification.md | 2026-04-30 | T0/T1パラダイム |
-| 02-physics/2026-05/0501i_opus_speaker_vs_resonance_box_appendix_b_c.md | 2026-05-01 | スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (主聖堂SR) |
+| 02-physics/2026-05/0501i_opus_speaker_vs_resonance_box_appendix_b_c.md | 2026-05-01 | スピーカ vs 共鳴箱 + Appendix B + C [要検証、0501j参照] |
+| 02-physics/2026-05/0501j_opus_critical_review_speaker_resonance_docs.md | 2026-05-01 | 0501i 以降に生成した5,597行の自己批判的再検証 |
 
 ### 03-design ジャーナル (10本)
 
@@ -290,7 +293,13 @@ pianica-organ/
 
 | コミット | 日付 | カテゴリ | 内容 |
 |---|---|---|---|
-| (本commit) | 2026-05-01 | [physics+journal] | 0501i スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (神戸中央教会主聖堂SR) / 2,294行 / 設計言語の3段階階層を確立 |
+| a816beb | 2026-05-01 | [physics+journal] | 0501i スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (神戸中央教会主聖堂SR) / 2,294行 / 設計言語の3階層を確立 [後の0501jで要検証と判定] |
+
+### Phase 12: 自己批判的再検証 (本commit、本日)
+
+| コミット | 日付 | カテゴリ | 内容 |
+|---|---|---|---|
+| (本commit) | 2026-05-01 | [physics+journal+fix] | 0501j 0501i 以降に生成した resonance_box_vs_speaker.md 続編 (3,303行) と前作 speaker_vs_resonance_box.md (2,294行) 計5,597行の自己批判的再検証 / Gamma=1.8物理計算誤り / 主聖堂楕円形を矩形と誤仮定 / 「実測f_11=96Hz」実機なし / 90倍効率差は比較基準のずれ / 魂柱=スピーカ「同型」はアナロジー誇張 / 信頼度A:25% B:30% C:25% D:20% / 両文書冒頭に警告ヘッダ追加 |
 
 ---
 
@@ -298,16 +307,17 @@ pianica-organ/
 
 | 項目 | 数量 |
 |---|---|
-| 総コミット数 | 47 (本commitで48) |
+| 総コミット数 | 48 (本commitで49) |
 | プロジェクト期間 | 4日間 (2026-04-28 〜 2026-05-01) |
-| 全ファイル数 | 約180 (本commitで182、md/svg/png/jpg/docx/html/json/py) |
+| 全ファイル数 | 約185 (本commitで185以上、md/svg/png/jpg/docx/html/json/py) |
 | 章別 (01-specification) | 31 |
-| 章別 (02-physics) | 57 (speaker_vs_resonance_box.md 追加) |
+| 章別 (02-physics) | 59 (resonance_box_vs_speaker.md と critical_review 追加) |
 | 章別 (03-design) | 58 |
-| journals/ | 34 (0501i 追加) |
-| ジャーナル本数 | 33本 (0501i 含む) |
+| journals/ | 35 (0501j 追加) |
+| ジャーナル本数 | 34本 (0501j 含む) |
 | 設計バージョン | v1, v2, v3, spinet (4世代、現役はv3) |
 | 撤回された設計 | v1, v2, spinet, 三角形共鳴箱、効率連鎖モデル |
+| **要検証文書** | **2 (speaker_vs_resonance_box.md, resonance_box_vs_speaker.md)** |
 
 ---
 
