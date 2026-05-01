@@ -85,7 +85,8 @@ pianica-organ/
 |---|---|---|
 | 22-paths/path_comprehensive_analysis.md | 22経路の包括音響分析 (5軸マトリクス) | 約530行 |
 | 22-paths/pianica_22paths_acoustic_analysis.md | 22経路解析 (KaTeX レンダリング想定) | 約400行 |
-| 22-paths/pianica_chinese_style_paths_analysis.md | 中華式（一体成形）ピアニカ経路解析 (22 -> 17経路、ABS壁直接接触5現象、17経路の個別構造検証 v1.2) | 約1000行 |
+| 22-paths/pianica_chinese_style_paths_analysis.md | 中華式（一体成形）ピアニカ経路解析 (22 -> 17経路、ABS壁直接接触5現象、17経路の個別構造検証、パワー収支精緻 v1.3) | 約1180行 |
+| 22-paths/scripts/power_balance_chinese_style.py | パワー収支再分配の検算スクリプト (v1.3 第3.3節再現) | 約140行 |
 | powerflow/pianica_powerflow_v2.md | パワーフロー v2.0 (1000Pa統一) | 約1000行 |
 | causal-mechanism/pianica_v3_causal_mechanism.md | v3因果機構 (BN1復元、3.4%効率) | 約400行 |
 | materials/air_chamber_material_physics.md | 材料物理 + Gamma計算 | 約300行 |
