@@ -135,6 +135,7 @@ CAHAYAではこれら3要素がすべて欠落:
 | 維持 | A1-A5, B1a, B1b, B2, B4, C1, C2, C3, C5, D1-D3 | 17経路はそのまま適用可能 |
 
 参考: `../../02-physics/22-paths/pianica_22paths_analysis.md` の付録分類表
+詳細: `../../02-physics/22-paths/pianica_chinese_style_paths_analysis.md` （中華式の17経路を物理的に再導出した分析）
 
 ### 維持される主要発見（CAHAYAでも継承可能）
 

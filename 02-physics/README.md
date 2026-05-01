@@ -9,7 +9,7 @@
 
 | ディレクトリ | テーマ | 主要文書 |
 |---|---|---|
-| `22-paths/` | 22振動伝達経路の同定・分類・定量分析 | `pianica_22paths_analysis.md`, `pianica_p32d_acoustic_report.md` |
+| `22-paths/` | 22振動伝達経路の同定・分類・定量分析 | `pianica_22paths_analysis.md`, `pianica_p32d_acoustic_report.md`, `pianica_chinese_style_paths_analysis.md` (中華式) |
 | `powerflow/` | パワーフロー数理モデルv2.0 | `pianica_powerflow_model_v2.md` |
 | `causal-mechanism/` | v3放射効率35%の因果機構 | `pianica_v3_causal_mechanism_v2.md` |
 | `materials/` | 空気室材料・魂柱・ブリッジ物理 | `air_chamber_material_physics.md`, `soundpost_physics_calculation.md` |
