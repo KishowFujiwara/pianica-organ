@@ -30,6 +30,16 @@ journals/           設計プロセスの時系列記録 (章別に分類)
 - `03-design/README.md` -- 設計進化の軌跡
 - `journals/README.md` -- 全ジャーナル時系列概観 (章別 + 月別)
 
+## 運用ドキュメント
+
+リポジトリのSSOT (Single Source of Truth):
+
+- `git-manifest.md` -- リポジトリコンテンツ台帳 (全ファイルの所在と来歴)
+- `github_workflow.md` -- GitHub運用手順 (コミット規則、ジャーナル分類規則、検証手法)
+
+**Project Knowledge (PK) は本プロジェクトでは利用しない**。運用ルールはすべて
+リポジトリ内に明示し、`git-manifest.md` と直近ジャーナルでセッション間の文脈を継承する。
+
 ジャーナルは設計プロセスの「索引」として独立した位置づけ:
 - 0430l: 03-design 配下に統合 (3章構造化の一環)
 - 0501f: 03-design から journals/ ルート直下に独立化
