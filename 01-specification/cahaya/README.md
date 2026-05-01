@@ -2,7 +2,7 @@
 
 **観測日**: 2026-04-30 (ジャーナル0430k参照)
 **観測者**: KishowFujiwara + Claude Opus 4.7
-**関連ジャーナル**: `../../03-design/journals/2026-04/0430k_opus_cahaya_disassembly_32keys_p32d_alignment.md`
+**関連ジャーナル**: `../../journals/2026-04/0430k_opus_cahaya_disassembly_32keys_p32d_alignment.md`
 
 ## 製品識別
 

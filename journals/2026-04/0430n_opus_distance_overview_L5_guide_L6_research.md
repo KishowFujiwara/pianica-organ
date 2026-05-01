@@ -261,6 +261,6 @@ v3確定 (0430j): L0-L4確定、L5-L9残 (60-70%残)
 
 - 直前ジャーナル: `journals/2026-04/0430m_opus_observation_after_repository_restructure.md`
 - 設計仕様: `../v3/design-spec-v3.md`
-- L5 実測手順: `../../../01-specification/cahaya/MEASUREMENT_GUIDE.md`
+- L5 実測手順: `../../01-specification/cahaya/MEASUREMENT_GUIDE.md`
 - L6 文献調査: `../v3/L6_construction_details.md`
 - 進路選択の文脈: 本セッション ユーザ判断 (γハイブリッド)

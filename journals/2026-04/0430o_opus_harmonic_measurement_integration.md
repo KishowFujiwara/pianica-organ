@@ -192,7 +192,7 @@ v3確定 (0430j): 60-70%残
 ## 参照
 
 - 直前ジャーナル: `journals/2026-04/0430n_opus_distance_overview_L5_guide_L6_research.md`
-- 更新ガイド: `../../../01-specification/cahaya/MEASUREMENT_GUIDE.md`
+- 更新ガイド: `../../01-specification/cahaya/MEASUREMENT_GUIDE.md`
 - 設計仕様: `../v3/design-spec-v3.md`
 - L6文献: `../v3/L6_construction_details.md`
 - 物理計算根拠: 本セッション内で実行 (倍音と共鳴の整合確認)

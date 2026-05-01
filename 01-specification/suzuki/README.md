@@ -1,7 +1,7 @@
 # 鈴木楽器 メロディオン (W-37C系)
 
 **ステータス**: 仕様詳細不明、ジャーナル0430bからの抽出のみ
-**関連ジャーナル**: `../../03-design/journals/2026-04/0430b_opus_soundboard_design_cahaya_experiment.md`
+**関連ジャーナル**: `../../journals/2026-04/0430b_opus_soundboard_design_cahaya_experiment.md`
 
 ## 概要
 

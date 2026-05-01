@@ -188,4 +188,4 @@ userPreferences の3点が本セッションで全て機能:
 - 直前ジャーナル: `journals/2026-04/0430l_opus_repository_three_chapter_restructure.md`
 - 設計仕様 (32鍵修正済): `../v3/design-spec-v3.md`
 - ルート索引: `../../README.md`
-- 各章索引: `../../../01-specification/README.md`, `../../../02-physics/README.md`, `../README.md`
+- 各章索引: `../../01-specification/README.md`, `../../02-physics/README.md`, `../README.md`

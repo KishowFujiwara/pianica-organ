@@ -14,7 +14,7 @@
 | `causal-mechanism/` | v3放射効率35%の因果機構 | `pianica_v3_causal_mechanism_v2.md` |
 | `materials/` | 空気室材料・魂柱・ブリッジ物理 | `air_chamber_material_physics.md`, `soundpost_physics_calculation.md` |
 | `helmholtz/` | ヘルムホルツ共鳴・音響弁設計 | `helmholtz_resonance_design.md`, `design_c_acoustic_valve.md` |
-| `three-instruments/` | ギター・ピアノ・バイオリンの共鳴構造比較 | (図面のみ、本文は `../03-design/journals/2026-04/0430f_*.md`) |
+| `three-instruments/` | ギター・ピアノ・バイオリンの共鳴構造比較 | (図面のみ、本文は `../journals/2026-04/0430f_*.md`) |
 
 ## 主要発見の要約
 
@@ -59,4 +59,4 @@ v3の35% (P-32D比98倍) を達成する因果連鎖を整理。
 
 - 仕様 (P-32D): `../01-specification/yamaha-p32d/`
 - 設計適用: `../03-design/v3/design-spec-v3.md`
-- 検討の経緯: `../03-design/journals/2026-04/0428_*.md` (22経路セッション群)
+- 検討の経緯: `../journals/2026-04/0428_*.md` (22経路セッション群)

@@ -40,5 +40,5 @@
 
 - 物理検証: `../02-physics/22-paths/` (P-32D基準)
 - 設計利用: `../03-design/v3/design-spec-v3.md` (CAHAYA流用)
-- 検討の経緯: `../03-design/journals/2026-04/0430b_*.md` (CAHAYA改造実験計画)
-- 観測ジャーナル: `../03-design/journals/2026-04/0430k_*.md` (CAHAYA分解観測, 32鍵確定)
+- 検討の経緯: `../journals/2026-04/0430b_*.md` (CAHAYA改造実験計画)
+- 観測ジャーナル: `../journals/2026-04/0430k_*.md` (CAHAYA分解観測, 32鍵確定)
