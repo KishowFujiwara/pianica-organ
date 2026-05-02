@@ -304,11 +304,17 @@ pianica-organ/
 |---|---|---|---|
 | (本commit) | 2026-05-01 | [physics+journal+fix] | 0501j 0501i 以降に生成した resonance_box_vs_speaker.md 続編 (3,303行) と前作 speaker_vs_resonance_box.md (2,294行) 計5,597行の自己批判的再検証 / Gamma=1.8物理計算誤り / 主聖堂楕円形を矩形と誤仮定 / 「実測f_11=96Hz」実機なし / 90倍効率差は比較基準のずれ / 魂柱=スピーカ「同型」はアナロジー誇張 / 信頼度A:25% B:30% C:25% D:20% / 両文書冒頭に警告ヘッダ追加 |
 
-### Phase 13: v1文書退役 + v2書き直し (本commit)
+### Phase 13: v1文書退役 + v2書き直し (Opus 4.6 版)
 
 | コミット | 日付 | カテゴリ | 内容 |
 |---|---|---|---|
-| (本commit) | 2026-05-02 | [physics+journal+rewrite] | 0502a: v1文書2本 (speaker_vs_resonance_box.md 2,294行 + resonance_box_vs_speaker.md 3,308行 = 5,597行) を退役 (git rm) / v2文書2本 (speaker_resonance_physics.md 331行 + pianica_v3_resonance_design.md 322行 = 653行) で書き直し / 0501j検証結果に基づく8件の誤り訂正 / Gamma次元不整合の明示 / 全数値に信頼度ラベル [A][B][C][D] / 原典0430fとの整合性確認 |
+| 8c75250 | 2026-05-02 | [physics+journal+rewrite] | 0502a: v1文書2本 (speaker_vs_resonance_box.md 2,294行 + resonance_box_vs_speaker.md 3,308行 = 5,597行) を退役 (git rm) / v2文書2本 (speaker_resonance_physics.md 331行 + pianica_v3_resonance_design.md 322行 = 653行) で書き直し / 0501j検証結果に基づく8件の誤り訂正 / Gamma次元不整合の明示 / 全数値に信頼度ラベル [A][B][C][D] / 原典0430fとの整合性確認 / Author: Opus 4.6 |
+
+### Phase 14: Opus 4.7 並行書き直し版 (本commit)
+
+| コミット | 日付 | カテゴリ | 内容 |
+|---|---|---|---|
+| (本commit) | 2026-05-02 | [physics+journal+rewrite-opus47] | 0502b: Opus 4.7 による並行書き直し版を共存配置 / Phase 13 (Opus 4.6) と物理的結論は一致 / アプローチ差: Opus 4.6 はファイル退役+新ファイル名、Opus 4.7 は同テーマで全面書き直し+識別子付き並行配置 / `*_opus47.md` 識別子付きで配置: speaker_vs_resonance_box_opus47.md (288行) + resonance_box_vs_speaker_opus47.md (398行) + critical_review_of_speaker_resonance_docs_opus47.md (242行) / Python検算スクリプト `verify_0430f_opus47.py` (180行) と実行結果ファイル追加 / Opus 4.6 が触らなかった critical_review (旧版476行) も書き直し対象に含めた / ユーザ判断 (No preference) を受け、両版共存とユーザによる最終取捨を待つ / Author: Opus 4.7 |
 
 ---
 
@@ -316,17 +322,18 @@ pianica-organ/
 
 | 項目 | 数量 |
 |---|---|
-| 総コミット数 | 49 (本commitで50) |
+| 総コミット数 | 50 (本commitで51) |
 | プロジェクト期間 | 5日間 (2026-04-28 〜 2026-05-02) |
-| 全ファイル数 | 約183 (旧2文書削除、新2文書+ジャーナル追加) |
+| 全ファイル数 | 約189 (Opus 4.7 並行版6ファイル追加) |
 | 章別 (01-specification) | 31 |
-| 章別 (02-physics) | 59 (旧2文書退役、新2文書追加で増減なし) |
+| 章別 (02-physics) | 62 (Opus 4.7 並行3文書追加) |
 | 章別 (03-design) | 58 |
-| journals/ | 36 (0502a 追加) |
-| ジャーナル本数 | 35本 (0502a 含む) |
+| journals/ | 37 (0502b 追加) |
+| ジャーナル本数 | 36本 (0502a Opus 4.6 + 0502b Opus 4.7 含む) |
 | 設計バージョン | v1, v2, v3, spinet (4世代、現役はv3) |
 | 撤回された設計 | v1, v2, spinet, 三角形共鳴箱、効率連鎖モデル |
 | 退役文書 | 2 (speaker_vs_resonance_box.md v1, resonance_box_vs_speaker.md v1, Git履歴で参照可能) |
+| 並行版 | 1 (Opus 4.7 版、Opus 4.6 版と共存、ユーザ取捨待ち) |
 
 ---
 
