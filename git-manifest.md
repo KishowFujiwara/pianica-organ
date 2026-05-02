@@ -1,6 +1,6 @@
 # Git Repository Manifest -- ピアニカ・オルガン リポジトリコンテンツ台帳
 
-最終更新: 2026-05-01 (0501j: speaker_vs_resonance_box および resonance_box_vs_speaker の自己批判的再検証、警告ヘッダ追加)
+最終更新: 2026-05-02 (0502a: speaker/resonance 2文書を書き直し -- 旧5,597行を退役、新2文書653行で置換)
 
 > このファイルはGitリポジトリの内容台帳である。
 > 本リポジトリはGit側のSSOT (Single Source of Truth) として機能する。
@@ -24,7 +24,7 @@
 **現在地 (v3 + 2段構造パラダイム)**:
 - フリーリード37音 (チューニングはCAHAYA 32鍵 = P-32D相当に整合)
 - 桐空気箱 (スパン60mm) + 共鳴箱の2段構造
-- 効率 Γ ≈ 41% (理論値、要実機検証)
+- 効率 Γ ≈ 36% (設計目標値、Gamma=1.78は逆算値であり物理式からの導出ではない。要実機検証)
 
 **実験プラットフォーム**:
 - CAHAYA CY0341-1 (鍵盤ハーモニカ32鍵、底面ABSを木材化して共鳴箱化)
@@ -91,9 +91,11 @@ pianica-organ/
 | causal-mechanism/pianica_v3_causal_mechanism.md | v3因果機構 (BN1復元、3.4%効率) | 約400行 |
 | materials/air_chamber_material_physics.md | 材料物理 + Gamma計算 | 約300行 |
 | three-instruments/three_instruments_comparison.md | 3楽器共鳴構造比較 | 約350行 |
-| **speaker_vs_resonance_box.md** | **スピーカ vs 共鳴箱 + Appendix B (小礼拝室Hi-Fi) + Appendix C (神戸中央教会主聖堂SR)** [警告ヘッダあり、要検証] | **約2,294行** |
-| **resonance_box_vs_speaker.md** | **共鳴箱主体版 (続編) + Appendix A-E** [警告ヘッダあり、要検証] | **約3,303行** |
-| **critical_review_of_speaker_resonance_docs.md** | **上記2文書の自己批判的再検証 (Gamma物理計算誤り、主聖堂楕円形誤仮定、実測誤記、信頼度分類)** | **約476行** |
+| **speaker_resonance_physics.md** | **スピーカと共鳴箱の物理的対比 (v2.0, 教科書的物理のみ)** | **約331行** |
+| **pianica_v3_resonance_design.md** | **ピアニカv3共鳴箱設計 (v2.0, 全数値に信頼度ラベル)** | **約322行** |
+| critical_review_of_speaker_resonance_docs.md | v1文書群 (5,597行) の自己批判的再検証 (0501j) | 約476行 |
+| ~~speaker_vs_resonance_box.md~~ | ~~退役 (v1, 2,294行, Git履歴で参照可能)~~ | ~~退役~~ |
+| ~~resonance_box_vs_speaker.md~~ | ~~退役 (v1, 3,308行, Git履歴で参照可能)~~ | ~~退役~~ |
 
 ---
 
@@ -137,10 +139,10 @@ pianica-organ/
 | 章 | 件数 | 主成果物 |
 |---|---|---|
 | 01-specification | 3本 | CAHAYA分解、計測ガイド |
-| 02-physics | 13本 | 22経路、Gamma、T0/T1、スピーカ vs 共鳴箱 |
+| 02-physics | 14本 | 22経路、Gamma、T0/T1、スピーカ vs 共鳴箱、書き直し |
 | 03-design | 10本 | 設計仕様書 v1/v2/v3 改訂 |
 | cross | 9本 | リポジトリ整備、検証、メタ |
-| **合計** | **33本** | |
+| **合計** | **35本** | |
 
 ### 01-specification ジャーナル (3本)
 
@@ -150,7 +152,7 @@ pianica-organ/
 | 01-specification/2026-04/0430o_opus_harmonic_measurement_integration.md | 2026-04-30 | 倍音計測のL5実測ガイド組込 |
 | 01-specification/2026-04/0430q_opus_gasket_observation_correction.md | 2026-04-30 | ガスケット問題訂正 (認知バイアス3段階記録) |
 
-### 02-physics ジャーナル (12本)
+### 02-physics ジャーナル (14本)
 
 | ファイル | 日付 | 内容 |
 |---|---|---|
@@ -168,6 +170,7 @@ pianica-organ/
 | 02-physics/2026-04/0430h_opus_T0T1_paradigm_energy_scale_classification.md | 2026-04-30 | T0/T1パラダイム |
 | 02-physics/2026-05/0501i_opus_speaker_vs_resonance_box_appendix_b_c.md | 2026-05-01 | スピーカ vs 共鳴箱 + Appendix B + C [要検証、0501j参照] |
 | 02-physics/2026-05/0501j_opus_critical_review_speaker_resonance_docs.md | 2026-05-01 | 0501i 以降に生成した5,597行の自己批判的再検証 |
+| 02-physics/2026-05/0502a_opus_rewrite_speaker_resonance_docs.md | 2026-05-02 | v1 (5,597行) 退役、v2 (653行) で書き直し |
 
 ### 03-design ジャーナル (10本)
 
@@ -301,23 +304,29 @@ pianica-organ/
 |---|---|---|---|
 | (本commit) | 2026-05-01 | [physics+journal+fix] | 0501j 0501i 以降に生成した resonance_box_vs_speaker.md 続編 (3,303行) と前作 speaker_vs_resonance_box.md (2,294行) 計5,597行の自己批判的再検証 / Gamma=1.8物理計算誤り / 主聖堂楕円形を矩形と誤仮定 / 「実測f_11=96Hz」実機なし / 90倍効率差は比較基準のずれ / 魂柱=スピーカ「同型」はアナロジー誇張 / 信頼度A:25% B:30% C:25% D:20% / 両文書冒頭に警告ヘッダ追加 |
 
+### Phase 13: v1文書退役 + v2書き直し (本commit)
+
+| コミット | 日付 | カテゴリ | 内容 |
+|---|---|---|---|
+| (本commit) | 2026-05-02 | [physics+journal+rewrite] | 0502a: v1文書2本 (speaker_vs_resonance_box.md 2,294行 + resonance_box_vs_speaker.md 3,308行 = 5,597行) を退役 (git rm) / v2文書2本 (speaker_resonance_physics.md 331行 + pianica_v3_resonance_design.md 322行 = 653行) で書き直し / 0501j検証結果に基づく8件の誤り訂正 / Gamma次元不整合の明示 / 全数値に信頼度ラベル [A][B][C][D] / 原典0430fとの整合性確認 |
+
 ---
 
 ## 統計
 
 | 項目 | 数量 |
 |---|---|
-| 総コミット数 | 48 (本commitで49) |
-| プロジェクト期間 | 4日間 (2026-04-28 〜 2026-05-01) |
-| 全ファイル数 | 約185 (本commitで185以上、md/svg/png/jpg/docx/html/json/py) |
+| 総コミット数 | 49 (本commitで50) |
+| プロジェクト期間 | 5日間 (2026-04-28 〜 2026-05-02) |
+| 全ファイル数 | 約183 (旧2文書削除、新2文書+ジャーナル追加) |
 | 章別 (01-specification) | 31 |
-| 章別 (02-physics) | 59 (resonance_box_vs_speaker.md と critical_review 追加) |
+| 章別 (02-physics) | 59 (旧2文書退役、新2文書追加で増減なし) |
 | 章別 (03-design) | 58 |
-| journals/ | 35 (0501j 追加) |
-| ジャーナル本数 | 34本 (0501j 含む) |
+| journals/ | 36 (0502a 追加) |
+| ジャーナル本数 | 35本 (0502a 含む) |
 | 設計バージョン | v1, v2, v3, spinet (4世代、現役はv3) |
 | 撤回された設計 | v1, v2, spinet, 三角形共鳴箱、効率連鎖モデル |
-| **要検証文書** | **2 (speaker_vs_resonance_box.md, resonance_box_vs_speaker.md)** |
+| 退役文書 | 2 (speaker_vs_resonance_box.md v1, resonance_box_vs_speaker.md v1, Git履歴で参照可能) |
 
 ---
 
