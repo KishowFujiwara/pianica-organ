@@ -1,0 +1,48 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="font-family: sans-serif; background: #fff;">
+  <text x="350" y="25" text-anchor="middle" font-size="14" font-weight="500">Valve closure and duty cycle: the universal mechanism</text>
+  
+  <!-- Three waveforms -->
+  <!-- Oboe: narrow pulse, duty ~25% -->
+  <text x="50" y="70" font-size="12" font-weight="500" fill="#E24B4A">Oboe (duty ~25%)</text>
+  <rect x="50" y="80" width="250" height="60" fill="none" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="50" y1="110" x2="300" y2="110" stroke="#eee" stroke-width="0.5"/>
+  <!-- pulse waveform -->
+  <polyline points="50,140 50,140 60,140 60,85 115,85 115,140 175,140 175,85 230,85 230,140 290,140 290,85 300,85" fill="none" stroke="#E24B4A" stroke-width="2"/>
+  <text x="85" y="100" font-size="9" fill="#E24B4A">open</text>
+  <text x="140" y="135" font-size="9" fill="#888">closed</text>
+  <!-- spectrum bars -->
+  <rect x="320" y="95" width="12" height="45" fill="#378ADD" rx="1"/><text x="326" y="92" text-anchor="middle" font-size="9" fill="#888">1</text>
+  <rect x="340" y="85" width="12" height="55" fill="#E24B4A" rx="1"/><text x="346" y="82" text-anchor="middle" font-size="9" fill="#888">2</text>
+  <rect x="360" y="100" width="12" height="40" fill="#1D9E75" rx="1"/><text x="366" y="97" text-anchor="middle" font-size="9" fill="#888">3</text>
+  <rect x="380" y="108" width="12" height="32" fill="#1D9E75" rx="1"/><text x="386" y="105" text-anchor="middle" font-size="9" fill="#888">4</text>
+  <rect x="400" y="115" width="12" height="25" fill="#1D9E75" rx="1"/><text x="406" y="112" text-anchor="middle" font-size="9" fill="#888">5</text>
+  <text x="450" y="120" font-size="10" fill="#E24B4A">2nd > 1st</text>
+
+  <!-- Pianica C4: medium pulse, duty ~40% -->
+  <text x="50" y="185" font-size="12" font-weight="500" fill="#378ADD">Pianica C4 (duty ~40%)</text>
+  <rect x="50" y="195" width="250" height="60" fill="none" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="50" y1="225" x2="300" y2="225" stroke="#eee" stroke-width="0.5"/>
+  <polyline points="50,255 50,255 60,255 60,200 130,200 130,255 175,255 175,200 245,200 245,255 290,255 290,200 300,200" fill="none" stroke="#378ADD" stroke-width="2"/>
+  <text x="90" y="215" font-size="9" fill="#378ADD">open</text>
+  <text x="148" y="250" font-size="9" fill="#888">closed</text>
+  <rect x="320" y="205" width="12" height="50" fill="#378ADD" rx="1"/><text x="326" y="202" text-anchor="middle" font-size="9" fill="#888">1</text>
+  <rect x="340" y="200" width="12" height="55" fill="#BA7517" rx="1"/><text x="346" y="197" text-anchor="middle" font-size="9" fill="#888">2</text>
+  <rect x="360" y="220" width="12" height="35" fill="#1D9E75" rx="1"/><text x="366" y="217" text-anchor="middle" font-size="9" fill="#888">3</text>
+  <rect x="380" y="225" width="12" height="30" fill="#1D9E75" rx="1"/><text x="386" y="222" text-anchor="middle" font-size="9" fill="#888">4</text>
+  <text x="450" y="235" font-size="10" fill="#378ADD">2nd ~ 1st</text>
+
+  <!-- Flute/Pianica C6: sinusoidal, duty ~50% -->
+  <text x="50" y="300" font-size="12" font-weight="500" fill="#1D9E75">Flute / Pianica C6 (duty ~50%)</text>
+  <rect x="50" y="310" width="250" height="60" fill="none" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="50" y1="340" x2="300" y2="340" stroke="#eee" stroke-width="0.5"/>
+  <!-- sine wave approximation -->
+  <path d="M50,340 Q75,310 100,340 Q125,370 150,340 Q175,310 200,340 Q225,370 250,340 Q275,310 300,340" fill="none" stroke="#1D9E75" stroke-width="2"/>
+  <text x="100" y="325" font-size="9" fill="#1D9E75">never fully closes</text>
+  <rect x="320" y="315" width="12" height="55" fill="#378ADD" rx="1"/><text x="326" y="312" text-anchor="middle" font-size="9" fill="#888">1</text>
+  <rect x="340" y="355" width="12" height="15" fill="#1D9E75" rx="1"/><text x="346" y="352" text-anchor="middle" font-size="9" fill="#888">2</text>
+  <rect x="360" y="362" width="12" height="8" fill="#1D9E75" rx="1"/><text x="366" y="359" text-anchor="middle" font-size="9" fill="#888">3</text>
+  <text x="450" y="345" font-size="10" fill="#1D9E75">1st >> 2nd</text>
+
+  <!-- Labels -->
+  <text x="350" y="390" text-anchor="middle" font-size="11" fill="#888">waveform (left) -> spectrum (right)</text>
+</svg>

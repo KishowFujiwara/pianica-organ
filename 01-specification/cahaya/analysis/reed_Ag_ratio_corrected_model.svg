@@ -1,0 +1,54 @@
+<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" style="font-family: sans-serif; background: #fff;">
+  <text x="350" y="25" text-anchor="middle" font-size="14" font-weight="500">Corrected model: A/g ratio determines harmonic richness</text>
+  
+  <!-- Reed diagrams for 4 cases -->
+  <!-- F3: A/g = 7 -->
+  <rect x="30" y="50" width="140" height="120" fill="none" stroke="#ddd" stroke-width="0.5" rx="4"/>
+  <text x="100" y="68" text-anchor="middle" font-size="11" font-weight="500" fill="#E24B4A">F3: A/g ~ 7</text>
+  <!-- slot -->
+  <rect x="60" y="100" width="80" height="3" fill="#888"/>
+  <!-- reed at max displacement (far past slot) -->
+  <line x1="60" y1="100" x2="140" y2="75" stroke="#E24B4A" stroke-width="2.5"/>
+  <text x="145" y="78" font-size="8" fill="#E24B4A">A</text>
+  <!-- gap annotation -->
+  <line x1="55" y1="100" x2="55" y2="103" stroke="#888" stroke-width="0.5"/>
+  <text x="45" y="108" font-size="7" fill="#888">g</text>
+  <text x="100" y="155" text-anchor="middle" font-size="9" fill="#E24B4A">reed far past slot</text>
+  <text x="100" y="165" text-anchor="middle" font-size="9" fill="#E24B4A">-> sharp pulse edges</text>
+
+  <!-- E4: A/g = 3.5 -->
+  <rect x="190" y="50" width="140" height="120" fill="none" stroke="#ddd" stroke-width="0.5" rx="4"/>
+  <text x="260" y="68" text-anchor="middle" font-size="11" font-weight="500" fill="#1D9E75">E4: A/g ~ 3.5</text>
+  <rect x="220" y="100" width="80" height="3" fill="#888"/>
+  <line x1="220" y1="100" x2="300" y2="86" stroke="#1D9E75" stroke-width="2.5"/>
+  <text x="260" y="155" text-anchor="middle" font-size="9" fill="#1D9E75">moderate overshoot</text>
+  <text x="260" y="165" text-anchor="middle" font-size="9" fill="#1D9E75">-> trapezoidal pulse</text>
+
+  <!-- F5: A/g = 1.5 -->
+  <rect x="350" y="50" width="140" height="120" fill="none" stroke="#ddd" stroke-width="0.5" rx="4"/>
+  <text x="420" y="68" text-anchor="middle" font-size="11" font-weight="500" fill="#378ADD">F5: A/g ~ 1.5</text>
+  <rect x="380" y="100" width="80" height="3" fill="#888"/>
+  <line x1="380" y1="100" x2="460" y2="94" stroke="#378ADD" stroke-width="2.5"/>
+  <text x="420" y="155" text-anchor="middle" font-size="9" fill="#378ADD">barely past slot</text>
+  <text x="420" y="165" text-anchor="middle" font-size="9" fill="#378ADD">-> rounded half-wave</text>
+
+  <!-- C6: A/g = 0.7 -->
+  <rect x="510" y="50" width="140" height="120" fill="none" stroke="#ddd" stroke-width="0.5" rx="4"/>
+  <text x="580" y="68" text-anchor="middle" font-size="11" font-weight="500" fill="#7F77DD">C6: A/g ~ 0.7</text>
+  <rect x="540" y="100" width="80" height="3" fill="#888"/>
+  <line x1="540" y1="100" x2="620" y2="97" stroke="#7F77DD" stroke-width="2.5"/>
+  <text x="580" y="155" text-anchor="middle" font-size="9" fill="#7F77DD">never fully clears!</text>
+  <text x="580" y="165" text-anchor="middle" font-size="9" fill="#7F77DD">-> near-sinusoidal</text>
+
+  <!-- Arrow showing progression -->
+  <line x1="100" y1="185" x2="580" y2="185" stroke="#888" stroke-width="1" marker-end="url(#arr2)"/>
+  <defs><marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#888"/></marker></defs>
+  <text x="340" y="200" text-anchor="middle" font-size="10" fill="#888">A/g decreasing -> harmonic richness decreasing</text>
+
+  <!-- Key insight box -->
+  <rect x="50" y="220" width="600" height="110" fill="#f8f8f0" stroke="#BA7517" stroke-width="1" rx="6"/>
+  <text x="350" y="245" text-anchor="middle" font-size="12" font-weight="500" fill="#633806">Key correction</text>
+  <text x="350" y="268" text-anchor="middle" font-size="11" fill="#444">The issue is NOT "does the valve close?" (all free reeds pass through the slot)</text>
+  <text x="350" y="288" text-anchor="middle" font-size="11" fill="#444">The issue IS "how far past the slot does the reed travel?"</text>
+  <text x="350" y="308" text-anchor="middle" font-size="11" font-weight="500" fill="#633806">A/g >> 1: rectangular pulse (oboe-like) | A/g ~ 1: sinusoidal (flute-like)</text>
+</svg>
